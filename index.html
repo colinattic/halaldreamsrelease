@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marhaba – Premium Indian Restaurant Bangkok</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
+    <style>
+        /* ============================================
+                   RESET & BASE
+                ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0c0806;
+            color: #e8ddd0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1410;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c9a84c;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ============================================
+                   TYPOGRAPHY
+                ============================================ */
+        h1,
+        h2,
+        h3,
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 1.05;
+        }
+
+        h2 {
+            font-size: 3.4rem;
+            margin-bottom: 0.8rem;
+            color: #f5ede4;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2 .gold {
+            color: #c9a84c;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, transparent);
+            margin-top: 6px;
+            border-radius: 4px;
+        }
+
+        h2.center::after {
+            margin: 8px auto 0;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #c9a84c;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #b8a99a;
+            max-width: 600px;
+            margin: -0.3rem auto 2.5rem auto;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .gold-text {
+            color: #c9a84c;
+        }
+
+        /* ============================================
+                   BUTTONS
+                ============================================ */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a84c, #b8923a);
+            color: #0c0806;
+            padding: 16px 44px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 30px rgba(201, 168, 76, 0.2);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 45px rgba(201, 168, 76, 0.35);
+            background: linear-gradient(135deg, #dbb95a, #c9a84c);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: #f5ede4;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(201, 168, 76, 0.5);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #c9a84c;
+            color: #0c0806;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 35px rgba(201, 168, 76, 0.2);
+            border-color: #c9a84c;
+        }
+
+        /* ============================================
+                   HEADER
+                ============================================ */
+        header {
+            padding: 16px 0;
+            background: rgba(12, 8, 6, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+            transition: 0.4s;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(12, 8, 6, 0.97);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            color: #f5ede4;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo .gold {
+            color: #c9a84c;
+            font-size: 2.4rem;
+        }
+
+        .logo i {
+            color: #c9a84c;
+            font-size: 1.4rem;
+        }
+
+        .logo .sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #b8a99a;
+            margin-left: 4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #c4b7a8;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c9a84c;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f5ede4;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links .btn-primary {
+            padding: 10px 28px;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        .nav-toggle span {
+            width: 28px;
+            height: 2px;
+            background: #f5ede4;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================
+                   HERO
+                ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 50%),
+                linear-gradient(180deg, #0c0806 0%, #1a1410 40%, #0c0806 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(180deg, transparent, #0c0806);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #c9a84c;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content .badge i {
+            font-size: 0.6rem;
+        }
+
+        .hero-content h1 {
+            color: #f5ede4;
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content h1 .gold {
+            color: #c9a84c;
+            font-style: italic;
+            position: relative;
+        }
+
+        .hero-content h1 .gold::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(201, 168, 76, 0.2);
+            border-radius: 4px;
+        }
+
+        .hero-content h1 .small-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #b8a99a;
+            display: block;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #b8a99a;
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+            font-weight: 300;
+            line-height: 1.9;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInRight 1.2s ease both;
+        }
+
+        .hero-image .image-frame {
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 4/3;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .hero-image .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image .image-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-image .image-frame .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 25px;
+            background: linear-gradient(180deg, transparent, rgba(12, 8, 6, 0.9));
+        }
+
+        .hero-image .image-frame .overlay .label {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #f5ede4;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image .image-frame .overlay .label i {
+            color: #c9a84c;
+            margin-right: 10px;
+        }
+
+        .hero-image .image-frame .overlay .sub-label {
+            font-size: 0.8rem;
+            color: #b8a99a;
+            font-weight: 300;
+        }
+
+        .hero-image .floating-badge {
+            position: absolute;
+            background: rgba(12, 8, 6, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            padding: 14px 22px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.top-right {
+            top: -10px;
+            right: -10px;
+            animation-delay: 0.5s;
+        }
+
+        .floating-badge.bottom-left {
+            bottom: -10px;
+            left: -10px;
+            animation-delay: 1.5s;
+        }
+
+        .floating-badge i {
+            font-size: 1.6rem;
+            color: #c9a84c;
+        }
+
+        .floating-badge .text {
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+        .floating-badge .text strong {
+            color: #f5ede4;
+            display: block;
+            font-size: 0.95rem;
+        }
+        .floating-badge .text span {
+            color: #b8a99a;
+            font-size: 0.75rem;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ============================================
+                   FEATURES / HIGHLIGHTS
+                ============================================ */
+        .features {
+            background: linear-gradient(180deg, #0c0806 0%, #16100c 100%);
+            border-top: 1px solid rgba(201, 168, 76, 0.06);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 168, 76, 0.06);
+            padding: 45px 30px;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(4px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(201, 168, 76, 0.03), transparent 70%);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(201, 168, 76, 0.2);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card .icon {
+            width: 76px;
+            height: 76px;
+            background: rgba(201, 168, 76, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 2.2rem;
+            color: #c9a84c;
+            border: 1px solid rgba(201, 168, 76, 0.08);
+            transition: 0.4s;
+        }
+
+        .feature-card:hover .icon {
+            background: rgba(201, 168, 76, 0.12);
+            border-color: #c9a84c;
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #f5ede4;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #b8a99a;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* ============================================
+                   MENU SECTION
+                ============================================ */
+        .menu-section {
+            background: #0c0806;
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .menu-section .ornament {
+            text-align: center;
+            color: rgba(201, 168, 76, 0.08);
+            font-size: 1.8rem;
+            letter-spacing: 16px;
+            margin-bottom: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 50px;
+            margin-top: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            transition: 0.3s;
+            cursor: default;
+        }
+
+        .menu-item:hover {
+            border-bottom-color: rgba(201, 168, 76, 0.15);
+        }
+
+        .menu-item .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item .name {
+            font-weight: 500;
+            color: #f5ede4;
+            font-size: 1.05rem;
+        }
+
+        .menu-item .name .gold {
+            color: #c9a84c;
+            margin-right: 6px;
+            font-size: 0.7rem;
+        }
+
+        .menu-item .desc {
+            font-size: 0.82rem;
+            color: #8a7d72;
+            font-weight: 300;
+        }
+
+        .menu-item .price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #c9a84c;
+        }
+
+        .menu-cta {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        /* ============================================
+                   BIRYANI SHOWCASE
+                ============================================ */
+        .biryani-showcase {
+            background: #16100c;
+            padding: 80px 0;
+            border-top: 1px solid rgba(201, 168, 76, 0.04);
+        }
+
+        .biryani-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .biryani-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 168, 76, 0.06);
+            transition: all 0.5s ease;
+        }
+
+        .biryani-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(201, 168, 76, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .biryani-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .biryani-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .biryani-card .info {
+            padding: 20px 24px 24px;
+        }
+
+        .biryani-card .info h3 {
+            color: #f5ede4;
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .biryani-card .info p {
+            color: #b8a99a;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .biryani-card .info .price-tag {
+            display: inline-block;
+            margin-top: 10px;
+            background: rgba(201, 168, 76, 0.1);
+            color: #c9a84c;
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        /* ============================================
+                   LOCATION
+                ============================================ */
+        .location-section {
+            background: linear-gradient(180deg, #0c0806 0%, #16100c 100%);
+            border-top: 1px solid rgba(201, 168, 76, 0.06);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+            padding: 90px 0;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-info .detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .location-info .detail i {
+            color: #c9a84c;
+            font-size: 1.2rem;
+            width: 28px;
+            margin-top: 4px;
+        }
+
+        .location-info .detail .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #8a7d72;
+            font-weight: 500;
+        }
+
+        .location-info .detail .value {
+            color: #f5ede4;
+            font-size: 1.05rem;
+        }
+
+        .location-info .detail .value a {
+            color: #c9a84c;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .location-info .detail .value a:hover {
+            text-decoration: underline;
+        }
+
+        .location-map {
+            background: linear-gradient(145deg, #1a1410, #0c0806);
+            border: 1px solid rgba(201, 168, 76, 0.08);
+            border-radius: 24px;
+            padding: 50px 30px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+
+        .location-map:hover {
+            border-color: rgba(201, 168, 76, 0.15);
+        }
+
+        .location-map i {
+            font-size: 3.8rem;
+            color: #c9a84c;
+            opacity: 0.3;
+            margin-bottom: 16px;
+        }
+
+        .location-map p {
+            color: #b8a99a;
+            font-size: 0.95rem;
+        }
+
+        .location-map .btn-primary {
+            margin-top: 20px;
+            padding: 12px 36px;
+        }
+
+        /* ============================================
+                   GALLERY
+                ============================================ */
+        .gallery-section {
+            background: #0c0806;
+            padding: 80px 0 100px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            border: 1px solid rgba(201, 168, 76, 0.04);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover {
+            border-color: rgba(201, 168, 76, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(180deg, transparent, rgba(12, 8, 6, 0.8));
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f5ede4;
+            font-weight: 500;
+        }
+
+        /* ============================================
+                   TESTIMONIALS
+                ============================================ */
+        .testimonials {
+            background: #16100c;
+            padding: 80px 0;
+            border-top: 1px solid rgba(201, 168, 76, 0.04);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 168, 76, 0.04);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(201, 168, 76, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card .stars {
+            color: #c9a84c;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: #d4c9bc;
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .testimonial-card .author {
+            margin-top: 14px;
+            font-weight: 500;
+            color: #f5ede4;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card .author span {
+            font-weight: 300;
+            color: #8a7d72;
+            font-size: 0.8rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                ============================================ */
+        footer {
+            background: #080605;
+            padding: 60px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(201, 168, 76, 0.04);
+        }
+
+        footer .logo {
+            justify-content: center;
+            font-size: 2.4rem;
+            margin-bottom: 2px;
+        }
+
+        footer .logo .sub {
+            font-size: 0.55rem;
+        }
+
+        .footer-divider {
+            width: 40px;
+            height: 2px;
+            background: #c9a84c;
+            margin: 14px auto 22px;
+            border-radius: 4px;
+            opacity: 0.4;
+        }
+
+        footer .socials {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 22px 0 26px;
+        }
+
+        footer .socials a {
+            color: #6b5d52;
+            font-size: 1.3rem;
+            transition: all 0.4s;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            text-decoration: none;
+        }
+
+        footer .socials a:hover {
+            color: #c9a84c;
+            border-color: rgba(201, 168, 76, 0.15);
+            transform: translateY(-4px);
+        }
+
+        footer p {
+            color: #6b5d52;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        footer p .gold {
+            color: #c9a84c;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                ============================================ */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3.6rem;
+            }
+            h2 {
+                font-size: 2.8rem;
+            }
+            .hero-grid {
+                gap: 40px;
+            }
+            .biryani-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1.2rem;
+                background: rgba(12, 8, 6, 0.98);
+                backdrop-filter: blur(12px);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 30px;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .hero {
+                min-height: auto;
+                padding: 110px 0 60px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .biryani-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 30px auto 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 20px auto 0;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .hero-image .image-frame {
+                max-width: 100%;
+                aspect-ratio: 4/3;
+            }
+
+            h1 {
+                font-size: 2.6rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-outline {
+                text-align: center;
+                width: 100%;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .location-grid {
+                gap: 30px;
+            }
+            .hero-content h1 .small-text {
+                font-size: 0.65rem;
+                letter-spacing: 2px;
+            }
+            .biryani-card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+    HEADER
+    ========================================== -->
+    <header id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <i class="fas fa-star-and-crescent"></i>
+                Marhaba <span class="gold">✦</span>
+                <span class="sub">Indian Restaurant</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#biryani">Biryani</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#" class="btn-primary">Reserve Table</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ==========================================
+    HERO
+    ========================================== -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-star"></i> 4.5 ★ Premium Indian Cuisine
+                </div>
+                <h1>
+                    Welcome to<br />
+                    <span class="gold">Marhaba</span>
+                    <span class="small-text">Indian Restaurant & Lounge</span>
+                </h1>
+                <p>
+                    Where the rich spices of India meet the elegance of Arabian hospitality.
+                    Open 24 hours for a royal dining experience in the heart of Bangkok.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn-primary">Explore Menu</a>
+                    <a href="#location" class="btn-outline">Find Us</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-frame">
+                    <img 
+                        src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&h=600&fit=crop&crop=center" 
+                        alt="Marhaba Indian Restaurant - Delicious Biryani" 
+                        loading="lazy"
+                    />
+                    <div class="overlay">
+                        <div class="label">
+                            <i class="fas fa-utensil-spoon"></i> Marhaba Dum Biryani & Lounge
+                        </div>
+                        <div class="sub-label">Signature Hyderabadi Dum Biryani</div>
+                    </div>
+                </div>
+
+                <div class="floating-badge top-right">
+                    <i class="fas fa-clock"></i>
+                    <div class="text">
+                        <strong>24/7 Open</strong>
+                        <span>Always serving</span>
+                    </div>
+                </div>
+
+                <div class="floating-badge bottom-left">
+                    <i class="fas fa-star"></i>
+                    <div class="text">
+                        <strong>4.5 ★</strong>
+                        <span>Google Reviews</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    FEATURES
+    ========================================== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h3>24/7 Royal Service</h3>
+                    <p>Day or night, indulge in authentic flavors. We never close our doors.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon"><i class="fas fa-utensil-spoon"></i></div>
+                    <h3>Signature Dum Biryani</h3>
+                    <p>Slow-cooked Hyderabadi biryani with aromatic spices and tender meat.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3>Arabian Lounge</h3>
+                    <p>Relax with shisha, premium teas, and a luxurious lounge atmosphere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    MENU
+    ========================================== -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Our Menu</span>
+                <h2 class="center">Royal <span class="gold">Signature</span> Dishes</h2>
+                <p class="section-subtitle" style="margin: -0.3rem auto 2.5rem;">
+                    A fusion of Indian and Arabian culinary traditions, crafted with premium ingredients.
+                </p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="info">
+                        <span class="name"><span class="gold">✦</span> Chicken Dum Biryani</span>
+                        <span class="desc">Hyderabadi style, slow-cooked with saffron</span>
+                    </div>
+                    <span class="price">฿220</span>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info">
+                        <span class="name"><span class="gold">✦</span> Lamb Mandi</span>
+                        <span class="desc">Arabian style with fragrant rice & nuts</span>
+                    </div>
+                    <span class="price">฿350</span>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="info">
+                        <span class="name"><span class="gold">✦</span> Paneer Butter Masala</span>
+                        <span class="desc">Creamy tomato gravy with cottage cheese</span>
+                    </div>
+                    <span class="price">฿195</span>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info">
+                        <span class="name"><span class="gold">✦</span> Garlic Naan & Hummus</span>
+                        <span class="desc">Freshly baked with homemade hummus</span>
+                    </div>
+                    <span class="price">฿85</span>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="info">
+                        <span class="name"><span class="gold">✦</span> Tandoori Chicken</span>
+                        <span class="desc">Marinated in yogurt & spices, grilled</span>
+                    </div>
+                    <span class="price">฿240</span>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info">
+                        <span class="name"><span class="gold">✦</span> Mango Lassi</span>
+                        <span class="desc">Sweet yogurt drink with mango pulp</span>
+                    </div>
+                    <span class="price">฿90</span>
+                </div>
+            </div>
+
+            <div class="menu-cta">
+                <a href="#" class="btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    BIRYANI SHOWCASE
+    ========================================== -->
+    <section class="biryani-showcase" id="biryani">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Our Specialty</span>
+                <h2 class="center">Premium <span class="gold">Biryani</span> Collection</h2>
+                <p class="section-subtitle">Authentic Dum Biryani cooked with love and traditional spices</p>
+            </div>
+
+            <div class="biryani-grid">
+                <div class="biryani-card" data-aos="flip-up" data-aos-delay="100">
+                    <img 
+                        src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop&crop=center" 
+                        alt="Chicken Dum Biryani - Marhaba" 
+                        loading="lazy"
+                    />
+                    <div class="info">
+                        <h3>Chicken Dum Biryani</h3>
+                        <p>Hyderabadi style with tender chicken, saffron rice & aromatic spices</p>
+                        <span class="price-tag">฿220</span>
+                    </div>
+                </div>
+
+                <div class="biryani-card" data-aos="flip-up" data-aos-delay="200">
+                    <img 
+                        src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&h=400&fit=crop&crop=center" 
+                        alt="Mutton Biryani - Marhaba" 
+                        loading="lazy"
+                    />
+                    <div class="info">
+                        <h3>Mutton Dum Biryani</h3>
+                        <p>Rich and flavorful with tender mutton, slow-cooked to perfection</p>
+                        <span class="price-tag">฿320</span>
+                    </div>
+                </div>
+
+                <div class="biryani-card" data-aos="flip-up" data-aos-delay="300">
+                    <img 
+                        src="https://images.unsplash.com/photo-1633945274405-b6c3c14ab0e3?w=600&h=400&fit=crop&crop=center" 
+                        alt="Vegetable Biryani - Marhaba" 
+                        loading="lazy"
+                    />
+                    <div class="info">
+                        <h3>Vegetable Dum Biryani</h3>
+                        <p>Fresh garden vegetables with aromatic basmati rice & spices</p>
+                        <span class="price-tag">฿185</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    LOCATION
+    ========================================== -->
+    <section class="location-section" id="location">
+        <div class="container location-grid">
+            <div class="location-info">
+                <span class="section-label">Visit Us</span>
+                <h2>Our <span class="gold">Palace</span></h2>
+                <p style="color: #b8a99a; margin-bottom: 30px; font-weight: 300;">
+                    Find us in the heart of Sukhumvit, Bangkok.
+                </p>
+
+                <div class="detail" data-aos="fade-right" data-aos-delay="50">
+                    <i class="fas fa-map-pin"></i>
+                    <div>
+                        <div class="label">Address</div>
+                        <div class="value">
+                            2nd Floor, Marhaba Dum Biryani & Lounge,<br />
+                            6/2-5 Sukhumvit Soi 3/1, Orchid Inn Hotel,<br />
+                            Wattana, Khlong Toei, Bangkok 10110
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail" data-aos="fade-right" data-aos-delay="150">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div class="label">Phone</div>
+                        <div class="value"><a href="tel:+66946595318">+66 94 659 5318</a></div>
+                    </div>
+                </div>
+
+                <div class="detail" data-aos="fade-right" data-aos-delay="250">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <div class="label">Opening Hours</div>
+                        <div class="value">24 Hours · 7 Days a Week</div>
+                    </div>
+                </div>
+
+                <a href="https://maps.app.goo.gl/iLKanTZdsW9RxmTV7?g_st=aw" target="_blank" class="btn-primary" style="margin-top: 10px;" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div>
+
+            <div class="location-map" data-aos="fade-left" data-aos-delay="200">
+                <i class="fas fa-map-marked-alt"></i>
+                <p style="font-size: 1.1rem; font-weight: 400;">📍 Marhaba · Sukhumvit Soi 3/1</p>
+                <p style="font-size: 0.85rem; color: #8a7d72;">Wattana, Khlong Toei, Bangkok</p>
+                <a href="https://maps.app.goo.gl/iLKanTZdsW9RxmTV7?g_st=aw" target="_blank" class="btn-primary">
+                    Open in Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    GALLERY
+    ========================================== -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Visual Journey</span>
+                <h2 class="center">Our <span class="gold">Ambiance</span></h2>
+                <p class="section-subtitle">A glimpse into the royal experience at Marhaba</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="50">
+                    <img 
+                        src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=400&fit=crop&crop=center" 
+                        alt="Restaurant interior" 
+                        loading="lazy"
+                    />
+                    <div class="overlay"><span>Dining Area</span></div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img 
+                        src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=400&fit=crop&crop=center" 
+                        alt="Delicious Biryani" 
+                        loading="lazy"
+                    />
+                    <div class="overlay"><span>Biryani</span></div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+                    <img 
+                        src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&h=400&fit=crop&crop=center" 
+                        alt="Indian Food" 
+                        loading="lazy"
+                    />
+                    <div class="overlay"><span>Dum Biryani</span></div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img 
+                        src="https://images.unsplash.com/photo-1633945274405-b6c3c14ab0e3?w=400&h=400&fit=crop&crop=center" 
+                        alt="Vegetable Biryani" 
+                        loading="lazy"
+                    />
+                    <div class="overlay"><span>Vegetarian</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    TESTIMONIALS
+    ========================================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Testimonials</span>
+                <h2 class="center">What <span class="gold">Guests</span> Say</h2>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <blockquote>"The best biryani in Bangkok! The flavors are authentic and the meat is so tender. 24/7 service is a game changer."</blockquote>
+                    <div class="author">Sarah M. <span>· Google</span></div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <blockquote>"Amazing atmosphere and even better food. The dum biryani is out of this world. Perfect for evening gatherings."</blockquote>
+                    <div class="author">John D. <span>· TripAdvisor</span></div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <blockquote>"Authentic Hyderabadi biryani, generous portions, and the staff is incredibly welcoming. Highly recommend!"</blockquote>
+                    <div class="author">Priya K. <span>· Google</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    FOOTER
+    ========================================== -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo" style="justify-content:center;">
+                <i class="fas fa-star-and-crescent"></i>
+                Marhaba <span class="gold">✦</span>
+                <span class="sub">Indian Restaurant</span>
+            </a>
+            <div class="footer-divider"></div>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-line"></i></a>
+                <a href="#"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+
+            <p>
+                © 2026 <span class="gold">Marhaba</span> · Indian Restaurant & Lounge · Bangkok
+            </p>
+            <p style="margin-top: 6px; font-size: 0.8rem; opacity: 0.6;">
+                2nd Floor, Sukhumvit Soi 3/1 · Open 24/7
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+    SCRIPTS
+    ========================================== -->
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+    <script>
+        // ==========================================
+        // INITIALIZE AOS ANIMATIONS
+        // ==========================================
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-cubic'
+        });
+
+        // ==========================================
+        // MOBILE NAV TOGGLE
+        // ==========================================
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close nav when clicking a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ==========================================
+        // HEADER SCROLL EFFECT
+        // ==========================================
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ==========================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ==========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                        headerHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ==========================================
+        // IMAGE LAZY LOADING WITH INTERSECTION OBSERVER
+        // ==========================================
+        if ('IntersectionObserver' in window) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.loading = 'eager';
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // ==========================================
+        // CONSOLE WELCOME
+        // ==========================================
+        console.log('✨ Marhaba - Premium Indian Restaurant');
+        console.log('📍 Sukhumvit Soi 3/1, Bangkok');
+        console.log('📞 +66 94 659 5318');
+        console.log('🌙 Open 24/7');
+        console.log('🍛 Best Biryani in Bangkok!');
+    </script>
+
+</body>
+</html>
