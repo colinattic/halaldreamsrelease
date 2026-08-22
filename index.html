@@ -4,30 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Thai Garden Resort | Luxury Tropical Escape</title>
+  <title>Thai Garden Resort | Luxury Thai Escape</title>
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
+
+    /* =====================================================
+       THAI GARDEN RESORT
+       Luxury Thai Inspired Design
+    ===================================================== */
+
     :root {
-      --green: #173d32;
-      --green-dark: #102d25;
-      --green-light: #285849;
-      --gold: #b08a57;
-      --gold-light: #d1b27f;
-      --cream: #f8f5ef;
-      --white: #ffffff;
-      --text: #292824;
-      --muted: #706b61;
-      --border: rgba(23,61,50,.12);
-      --shadow: 0 20px 60px rgba(20,35,29,.10);
+      --thai-green: #173f32;
+      --deep-green: #0e2b23;
+      --forest: #245646;
+
+      --thai-gold: #b58a4a;
+      --light-gold: #d9bc82;
+      --soft-gold: #ead9b8;
+
+      --cream: #faf6ee;
+      --warm-white: #fffdf9;
+      --sand: #eee4d2;
+
+      --text: #292722;
+      --muted: #746d61;
+
+      --shadow: 0 25px 60px rgba(24, 50, 41, .12);
     }
 
     * {
@@ -42,21 +54,21 @@
 
     body {
       font-family: "DM Sans", sans-serif;
-      color: var(--text);
       background: var(--cream);
-      line-height: 1.6;
+      color: var(--text);
+      line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     img {
       width: 100%;
       display: block;
       object-fit: cover;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     button {
@@ -68,7 +80,46 @@
       margin: auto;
     }
 
-    /* ================= HEADER ================= */
+    /* =====================================================
+       THAI DECORATIVE PATTERN
+    ===================================================== */
+
+    .thai-pattern {
+      height: 12px;
+      background:
+        linear-gradient(135deg,
+          transparent 35%,
+          rgba(181,138,74,.7) 36%,
+          rgba(181,138,74,.7) 50%,
+          transparent 51%
+        ) 0 0 / 24px 12px repeat-x;
+      opacity: .55;
+    }
+
+    .thai-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin: 18px 0 25px;
+    }
+
+    .thai-divider::before,
+    .thai-divider::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: var(--thai-gold);
+    }
+
+    .thai-divider span {
+      color: var(--thai-gold);
+      font-size: 17px;
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     header {
       position: fixed;
@@ -81,9 +132,9 @@
     }
 
     header.scrolled {
-      background: rgba(255,255,255,.96);
-      box-shadow: 0 8px 30px rgba(0,0,0,.08);
-      padding: 12px 0;
+      background: rgba(255, 253, 249, .97);
+      box-shadow: 0 8px 35px rgba(0,0,0,.08);
+      padding: 11px 0;
     }
 
     .nav {
@@ -92,25 +143,28 @@
       align-items: center;
     }
 
+    /* Logo */
+
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
       color: white;
-      font-family: "Playfair Display", serif;
+      font-family: "Playfair Display", "Noto Serif Thai", serif;
       font-size: 25px;
       font-weight: 700;
-      letter-spacing: .3px;
     }
 
     header.scrolled .logo {
-      color: var(--green);
+      color: var(--thai-green);
     }
 
-    .logo i {
-      color: var(--gold-light);
+    .logo-symbol {
+      color: var(--light-gold);
       font-size: 25px;
     }
+
+    /* Navigation */
 
     .nav-links {
       display: flex;
@@ -122,7 +176,7 @@
     }
 
     header.scrolled .nav-links {
-      color: var(--green);
+      color: var(--thai-green);
     }
 
     .nav-links a:not(.nav-btn) {
@@ -136,76 +190,103 @@
       bottom: -7px;
       width: 0;
       height: 2px;
-      background: var(--gold);
+      background: var(--thai-gold);
       transition: .3s;
     }
 
-    .nav-links a:hover::after {
+    .nav-links a:not(.nav-btn):hover::after {
       width: 100%;
     }
 
     .nav-btn {
-      background: var(--gold);
+      background: var(--thai-gold);
       color: white !important;
-      padding: 11px 21px;
+      padding: 11px 22px;
       border-radius: 30px;
       transition: .3s;
     }
 
     .nav-btn:hover {
-      background: #967242;
+      background: #95703b;
       transform: translateY(-2px);
     }
 
     .hamburger {
       display: none;
-      border: none;
       background: transparent;
+      border: none;
       color: white;
       font-size: 24px;
       cursor: pointer;
     }
 
     header.scrolled .hamburger {
-      color: var(--green);
+      color: var(--thai-green);
     }
 
-    /* ================= HERO ================= */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
       min-height: 100vh;
       position: relative;
       display: flex;
       align-items: center;
+
       background:
-        linear-gradient(90deg, rgba(10,30,24,.80), rgba(10,30,24,.35)),
-        url("https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=85")
+        linear-gradient(
+          90deg,
+          rgba(8,35,27,.84) 0%,
+          rgba(8,35,27,.58) 45%,
+          rgba(8,35,27,.20) 100%
+        ),
+        url("https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=2200&q=90")
         center/cover no-repeat;
+    }
+
+    /* Thai corner decoration */
+
+    .hero::before {
+      content: "✦";
+      position: absolute;
+      top: 120px;
+      right: 8%;
+      font-family: serif;
+      font-size: 110px;
+      color: rgba(217,188,130,.18);
     }
 
     .hero-content {
       color: white;
-      max-width: 720px;
+      max-width: 760px;
       padding-top: 70px;
     }
 
+    .thai-eyebrow {
+      font-family: "Noto Serif Thai", serif;
+      color: var(--light-gold);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
     .eyebrow {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 10px;
-      color: #ead4ad;
+      color: #ead5ad;
       text-transform: uppercase;
       letter-spacing: 3px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
 
     .eyebrow::before {
       content: "";
       width: 35px;
       height: 1px;
-      background: var(--gold-light);
+      background: var(--light-gold);
     }
 
     .hero h1 {
@@ -217,15 +298,15 @@
     }
 
     .hero h1 span {
-      color: #dfbf8b;
+      color: #dfbf87;
       font-style: italic;
     }
 
     .hero p {
-      max-width: 620px;
+      max-width: 630px;
       font-size: 18px;
       color: rgba(255,255,255,.88);
-      margin-bottom: 35px;
+      margin-bottom: 34px;
     }
 
     .hero-buttons {
@@ -248,26 +329,26 @@
     }
 
     .btn-gold {
-      background: var(--gold);
+      background: var(--thai-gold);
       color: white;
     }
 
     .btn-gold:hover {
-      background: #967242;
+      background: #95703b;
       transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(0,0,0,.2);
+      box-shadow: 0 15px 35px rgba(0,0,0,.25);
     }
 
     .btn-transparent {
       border-color: rgba(255,255,255,.7);
       color: white;
       background: rgba(255,255,255,.08);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(6px);
     }
 
     .btn-transparent:hover {
       background: white;
-      color: var(--green);
+      color: var(--thai-green);
     }
 
     .hero-bottom {
@@ -279,9 +360,10 @@
 
     .hero-info {
       display: flex;
-      gap: 40px;
+      gap: 38px;
       color: white;
       font-size: 13px;
+      flex-wrap: wrap;
     }
 
     .hero-info span {
@@ -292,20 +374,23 @@
     }
 
     .hero-info i {
-      color: #dfbf8b;
+      color: var(--light-gold);
     }
 
-    /* ================= INTRO ================= */
+    /* =====================================================
+       INTRO
+    ===================================================== */
 
     .intro {
-      background: white;
-      padding: 100px 0;
+      background: var(--warm-white);
+      padding: 110px 0;
+      position: relative;
     }
 
     .intro-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      gap: 75px;
       align-items: center;
     }
 
@@ -314,57 +399,64 @@
     }
 
     .intro-image img {
-      height: 500px;
-      border-radius: 4px 90px 4px 90px;
+      height: 510px;
+      border-radius: 5px 100px 5px 100px;
     }
 
-    .experience {
+    .experience-badge {
       position: absolute;
       right: -25px;
-      bottom: 30px;
-      background: var(--green);
+      bottom: 35px;
+      background: var(--thai-green);
       color: white;
       padding: 25px 28px;
       text-align: center;
-      border-radius: 3px;
       box-shadow: var(--shadow);
+      border-radius: 3px;
     }
 
-    .experience strong {
+    .experience-badge strong {
       display: block;
       font-family: "Playfair Display", serif;
-      font-size: 36px;
-      color: #d5b47c;
+      font-size: 38px;
+      color: var(--light-gold);
     }
 
-    .experience span {
-      font-size: 11px;
+    .experience-badge span {
+      display: block;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
     }
 
     .section-label {
-      color: var(--gold);
+      color: var(--thai-gold);
       text-transform: uppercase;
       letter-spacing: 2.5px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      margin-bottom: 12px;
+    }
+
+    .thai-title {
+      font-family: "Noto Serif Thai", serif;
+      color: var(--thai-gold);
+      font-size: 14px;
+      margin: 5px 0 7px;
     }
 
     .intro h2,
     .section-heading h2 {
-      font-family: "Playfair Display", serif;
-      color: var(--green);
+      font-family: "Playfair Display", "Noto Serif Thai", serif;
+      color: var(--thai-green);
       font-size: clamp(36px, 5vw, 52px);
       line-height: 1.15;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .intro p {
       color: var(--muted);
-      margin-bottom: 17px;
+      margin-bottom: 16px;
       font-size: 16px;
     }
 
@@ -381,23 +473,26 @@
       gap: 10px;
       font-size: 14px;
       font-weight: 600;
-      color: var(--green);
+      color: var(--thai-green);
     }
 
     .feature i {
-      color: var(--gold);
+      color: var(--thai-gold);
     }
 
-    /* ================= ROOMS ================= */
+    /* =====================================================
+       ROOMS
+    ===================================================== */
 
     .rooms {
-      padding: 100px 0;
-      background: #f6f3ed;
+      padding: 105px 0;
+      background: #f4efe5;
+      position: relative;
     }
 
     .section-heading {
       text-align: center;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
       margin-bottom: 50px;
     }
@@ -416,14 +511,16 @@
     .room-card {
       background: white;
       overflow: hidden;
-      border-radius: 5px;
-      box-shadow: 0 10px 35px rgba(23,61,50,.07);
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(23,61,50,.08);
       transition: .35s;
+      border-bottom: 3px solid transparent;
     }
 
     .room-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(23,61,50,.13);
+      border-bottom-color: var(--thai-gold);
+      box-shadow: 0 25px 55px rgba(23,61,50,.14);
     }
 
     .room-image {
@@ -446,9 +543,9 @@
       top: 15px;
       left: 15px;
       background: white;
-      color: var(--green);
+      color: var(--thai-green);
       padding: 7px 12px;
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 700;
@@ -461,7 +558,7 @@
     .room-content h3 {
       font-family: "Playfair Display", serif;
       font-size: 25px;
-      color: var(--green);
+      color: var(--thai-green);
       margin-bottom: 8px;
     }
 
@@ -474,30 +571,116 @@
     .room-details {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      border-top: 1px solid #eee;
+      gap: 13px;
+      border-top: 1px solid #eee8dd;
       padding-top: 15px;
       color: #69645b;
       font-size: 12px;
     }
 
     .room-details i {
-      color: var(--gold);
+      color: var(--thai-gold);
       margin-right: 5px;
     }
 
-    /* ================= EXPERIENCE ================= */
+    /* =====================================================
+       THAI CULTURE SECTION
+    ===================================================== */
+
+    .culture {
+      padding: 110px 0;
+      background: var(--warm-white);
+    }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .culture-images {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .culture-images img {
+      position: absolute;
+      width: 65%;
+      height: 310px;
+      object-fit: cover;
+      border-radius: 3px;
+      box-shadow: var(--shadow);
+    }
+
+    .culture-images img:first-child {
+      left: 0;
+      top: 0;
+    }
+
+    .culture-images img:last-child {
+      right: 0;
+      bottom: 0;
+    }
+
+    .culture-content h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--thai-green);
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .culture-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .thai-box {
+      margin-top: 25px;
+      padding: 22px;
+      background: #f5efe3;
+      border-left: 3px solid var(--thai-gold);
+    }
+
+    .thai-box strong {
+      display: block;
+      color: var(--thai-green);
+      font-family: "Noto Serif Thai", serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .thai-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =====================================================
+       EXPERIENCES
+    ===================================================== */
 
     .experience-section {
-      padding: 100px 0;
-      background: var(--green);
+      padding: 105px 0;
+      background: var(--thai-green);
       color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-section::after {
+      content: "❈";
+      position: absolute;
+      right: -30px;
+      bottom: -80px;
+      font-size: 300px;
+      color: rgba(255,255,255,.025);
     }
 
     .experience-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 65px;
       align-items: center;
     }
 
@@ -505,7 +688,7 @@
       font-family: "Playfair Display", serif;
       font-size: 48px;
       line-height: 1.15;
-      margin-bottom: 20px;
+      margin: 10px 0 20px;
     }
 
     .experience-section p {
@@ -527,12 +710,12 @@
     .experience-item i {
       width: 45px;
       height: 45px;
-      border: 1px solid rgba(255,255,255,.18);
+      border: 1px solid rgba(217,188,130,.4);
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #d4b27a;
+      color: var(--light-gold);
     }
 
     .experience-item span {
@@ -546,7 +729,7 @@
     }
 
     .experience-photo img {
-      height: 230px;
+      height: 235px;
       border-radius: 3px;
     }
 
@@ -554,10 +737,12 @@
       margin-top: 45px;
     }
 
-    /* ================= AMENITIES ================= */
+    /* =====================================================
+       AMENITIES
+    ===================================================== */
 
     .amenities {
-      padding: 100px 0;
+      padding: 105px 0;
       background: white;
     }
 
@@ -570,24 +755,25 @@
     .amenity {
       padding: 35px 20px;
       text-align: center;
-      border: 1px solid #ece7df;
+      border: 1px solid #ebe3d5;
+      background: #fffdfa;
       transition: .3s;
-      background: #fff;
     }
 
     .amenity:hover {
-      border-color: var(--gold-light);
+      border-color: var(--light-gold);
       transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(23,61,50,.07);
     }
 
     .amenity i {
-      color: var(--gold);
-      font-size: 30px;
+      color: var(--thai-gold);
+      font-size: 29px;
       margin-bottom: 15px;
     }
 
     .amenity h3 {
-      color: var(--green);
+      color: var(--thai-green);
       font-family: "Playfair Display", serif;
       font-size: 20px;
       margin-bottom: 7px;
@@ -598,26 +784,35 @@
       font-size: 13px;
     }
 
-    /* ================= CTA ================= */
+    /* =====================================================
+       BOOKING CTA
+    ===================================================== */
 
     .cta {
-      padding: 100px 0;
+      padding: 110px 0;
       background:
-        linear-gradient(rgba(15,42,34,.78),rgba(15,42,34,.78)),
-        url("https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=1800&q=85")
+        linear-gradient(
+          rgba(12,40,31,.82),
+          rgba(12,40,31,.82)
+        ),
+        url("https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=2000&q=90")
         center/cover;
       text-align: center;
       color: white;
     }
 
+    .cta .thai-title {
+      color: var(--light-gold);
+    }
+
     .cta h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(38px,5vw,58px);
-      margin-bottom: 15px;
+      font-size: clamp(38px,5vw,60px);
+      margin-bottom: 12px;
     }
 
     .cta p {
-      max-width: 600px;
+      max-width: 610px;
       margin: auto auto 30px;
       color: rgba(255,255,255,.82);
     }
@@ -638,13 +833,15 @@
     }
 
     .contact-details i {
-      color: #d4b27a;
+      color: var(--light-gold);
     }
 
-    /* ================= FOOTER ================= */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
-      background: #102d25;
+      background: #0c2921;
       color: white;
       padding: 45px 0 25px;
     }
@@ -664,7 +861,14 @@
     }
 
     .footer-logo i {
-      color: var(--gold-light);
+      color: var(--light-gold);
+    }
+
+    .footer-thai {
+      color: rgba(255,255,255,.55);
+      font-family: "Noto Serif Thai", serif;
+      font-size: 13px;
+      margin-top: 4px;
     }
 
     .social {
@@ -684,18 +888,20 @@
     }
 
     .social a:hover {
-      background: var(--gold);
-      border-color: var(--gold);
+      background: var(--thai-gold);
+      border-color: var(--thai-gold);
     }
 
     .copyright {
       text-align: center;
-      color: rgba(255,255,255,.5);
+      color: rgba(255,255,255,.45);
       font-size: 12px;
       padding-top: 22px;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
 
     @media(max-width: 900px) {
 
@@ -706,7 +912,7 @@
         left: 4%;
         width: 92%;
         background: white;
-        color: var(--green);
+        color: var(--thai-green);
         flex-direction: column;
         padding: 25px;
         border-radius: 5px;
@@ -722,6 +928,7 @@
       }
 
       .intro-grid,
+      .culture-grid,
       .experience-grid {
         grid-template-columns: 1fr;
       }
@@ -734,19 +941,20 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .intro-image img {
-        height: 420px;
+      .culture-images {
+        min-height: 450px;
       }
+
     }
 
     @media(max-width: 600px) {
 
       .hero {
-        min-height: 90vh;
+        min-height: 92vh;
       }
 
       .hero-content {
-        padding-top: 80px;
+        padding-top: 75px;
       }
 
       .hero p {
@@ -754,26 +962,25 @@
       }
 
       .hero-info {
-        gap: 15px;
-        flex-wrap: wrap;
+        gap: 14px;
       }
 
       .intro,
       .rooms,
+      .culture,
       .experience-section,
       .amenities,
       .cta {
-        padding: 70px 0;
+        padding: 75px 0;
       }
 
       .intro-image img {
         height: 350px;
-        border-radius: 4px 50px 4px 50px;
+        border-radius: 4px 55px 4px 55px;
       }
 
-      .experience {
+      .experience-badge {
         right: 10px;
-        bottom: 15px;
       }
 
       .features {
@@ -785,31 +992,45 @@
         grid-template-columns: 1fr;
       }
 
-      .experience-photo img {
-        height: 180px;
+      .culture-images {
+        min-height: 390px;
       }
 
+      .culture-images img {
+        height: 250px;
+      }
+
+      .culture-content h2,
       .experience-section h2 {
         font-size: 38px;
+      }
+
+      .experience-photo img {
+        height: 180px;
       }
 
       .footer-grid {
         flex-direction: column;
         text-align: center;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
 
   <header id="header">
+
     <div class="container nav">
 
       <a href="#" class="logo">
-        <i class="fas fa-leaf"></i>
+        <span class="logo-symbol">❈</span>
         Thai Garden
       </a>
 
@@ -818,18 +1039,27 @@
       </button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#rooms">Rooms</a>
+
+        <a href="#about">Our Story</a>
+        <a href="#rooms">Suites</a>
+        <a href="#culture">Thai Culture</a>
         <a href="#experiences">Experiences</a>
-        <a href="#amenities">Amenities</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-btn">Book Your Stay</a>
+
+        <a href="#contact" class="nav-btn">
+          Book Your Stay
+        </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
-  <!-- ================= HERO ================= -->
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
 
   <section class="hero">
 
@@ -837,30 +1067,36 @@
 
       <div class="hero-content">
 
+        <div class="thai-eyebrow">
+          สวัสดี · Welcome
+        </div>
+
         <div class="eyebrow">
           Luxury · Nature · Thai Hospitality
         </div>
 
         <h1>
-          A peaceful escape<br>
-          in <span>Thailand.</span>
+          Discover the soul<br>
+          of <span>Thailand.</span>
         </h1>
 
         <p>
-          Discover a private tropical sanctuary where traditional Thai
-          elegance meets modern comfort, surrounded by beautiful gardens
-          and unforgettable experiences.
+          An intimate tropical sanctuary where traditional Thai elegance,
+          lush gardens and modern luxury come together to create an
+          unforgettable escape.
         </p>
 
         <div class="hero-buttons">
+
           <a href="#rooms" class="btn btn-gold">
-            Explore Rooms
+            Explore Our Suites
             <i class="fas fa-arrow-right"></i>
           </a>
 
-          <a href="#contact" class="btn btn-transparent">
-            Contact Concierge
+          <a href="#culture" class="btn btn-transparent">
+            Discover Thailand
           </a>
+
         </div>
 
       </div>
@@ -868,7 +1104,9 @@
     </div>
 
     <div class="hero-bottom">
+
       <div class="container">
+
         <div class="hero-info">
 
           <span>
@@ -883,77 +1121,94 @@
 
           <span>
             <i class="fas fa-leaf"></i>
-            Sustainable Stay
+            Inspired by Thai Nature
           </span>
 
         </div>
+
       </div>
+
     </div>
 
   </section>
 
 
-  <!-- ================= INTRO ================= -->
+  <!-- Thai pattern -->
 
-  <section class="intro">
+  <div class="thai-pattern"></div>
+
+
+  <!-- =====================================================
+       INTRO
+  ===================================================== -->
+
+  <section class="intro" id="about">
 
     <div class="container intro-grid">
 
       <div class="intro-image">
 
         <img
-          src="https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&w=1200&q=85"
-          alt="Luxury tropical resort">
+          src="https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&w=1200&q=90"
+          alt="Thai luxury resort">
 
-        <div class="experience">
+        <div class="experience-badge">
           <strong>20+</strong>
           <span>Years of hospitality</span>
         </div>
 
       </div>
 
+
       <div>
 
         <div class="section-label">
-          Welcome to Thai Garden
+          The Thai Garden Story
+        </div>
+
+        <div class="thai-title">
+          ความสุขที่เรียบง่าย · Simple happiness
         </div>
 
         <h2>
-          Where nature meets timeless Thai elegance.
+          A garden inspired by the beauty of Thailand.
         </h2>
 
+        <div class="thai-divider">
+          <span>❈</span>
+        </div>
+
         <p>
-          Thai Garden Resort is designed for guests who want to slow down,
-          reconnect with nature, and experience authentic Thai hospitality
-          in a peaceful environment.
+          Thai Garden Resort is a peaceful retreat inspired by the
+          warmth, grace and natural beauty of Thailand.
         </p>
 
         <p>
-          From lush tropical gardens and private residences to thoughtful
-          wellness experiences, every detail is created around comfort,
-          privacy, and relaxation.
+          Surrounded by tropical gardens, traditional details and
+          thoughtful hospitality, our resort invites you to slow down,
+          reconnect and enjoy the simple pleasures of island life.
         </p>
 
         <div class="features">
 
           <div class="feature">
-            <i class="fas fa-check"></i>
-            Private Garden
+            <i class="fas fa-leaf"></i>
+            Tropical Gardens
           </div>
 
           <div class="feature">
-            <i class="fas fa-check"></i>
+            <i class="fas fa-hands-praying"></i>
             Thai Hospitality
           </div>
 
           <div class="feature">
-            <i class="fas fa-check"></i>
-            Farm-to-Table Dining
+            <i class="fas fa-bowl-food"></i>
+            Authentic Thai Cuisine
           </div>
 
           <div class="feature">
-            <i class="fas fa-check"></i>
-            Wellness Experiences
+            <i class="fas fa-spa"></i>
+            Traditional Wellness
           </div>
 
         </div>
@@ -965,7 +1220,9 @@
   </section>
 
 
-  <!-- ================= ROOMS ================= -->
+  <!-- =====================================================
+       ROOMS
+  ===================================================== -->
 
   <section class="rooms" id="rooms">
 
@@ -974,14 +1231,24 @@
       <div class="section-heading">
 
         <div class="section-label">
-          Stay Your Way
+          Stay in Comfort
         </div>
 
-        <h2>Signature Residences</h2>
+        <div class="thai-title">
+          ห้องพัก · Our Residences
+        </div>
+
+        <h2>
+          Signature Thai Stays
+        </h2>
+
+        <div class="thai-divider">
+          <span>✦</span>
+        </div>
 
         <p>
-          Beautifully designed spaces inspired by Thailand's natural
-          surroundings and traditional craftsmanship.
+          Elegant spaces combining contemporary comfort with
+          natural materials and subtle Thai-inspired details.
         </p>
 
       </div>
@@ -989,14 +1256,15 @@
 
       <div class="room-grid">
 
-        <!-- Room 1 -->
+
+        <!-- GARDEN PAVILION -->
 
         <article class="room-card">
 
           <div class="room-image">
 
             <img
-              src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=85"
+              src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=90"
               alt="Garden Pavilion">
 
             <span class="room-tag">
@@ -1010,22 +1278,27 @@
             <h3>Garden Pavilion</h3>
 
             <p>
-              A peaceful private retreat with a spacious terrace,
-              tropical views and elegant Thai-inspired interiors.
+              A peaceful private retreat surrounded by tropical
+              greenery and inspired by traditional Thai pavilions.
             </p>
 
             <div class="room-details">
+
               <span>
-                <i class="fas fa-user"></i> 2 Guests
+                <i class="fas fa-user"></i>
+                2 Guests
               </span>
 
               <span>
-                <i class="fas fa-bed"></i> King Bed
+                <i class="fas fa-bed"></i>
+                King Bed
               </span>
 
               <span>
-                <i class="fas fa-tree"></i> Garden View
+                <i class="fas fa-tree"></i>
+                Garden View
               </span>
+
             </div>
 
           </div>
@@ -1033,14 +1306,14 @@
         </article>
 
 
-        <!-- Room 2 -->
+        <!-- POOL SUITE -->
 
         <article class="room-card">
 
           <div class="room-image">
 
             <img
-              src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=85"
+              src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=90"
               alt="Lagoon Pool Suite">
 
             <span class="room-tag">
@@ -1054,22 +1327,27 @@
             <h3>Lagoon Pool Suite</h3>
 
             <p>
-              Step directly from your private suite into the tranquil
-              lagoon pool surrounded by lush tropical greenery.
+              Step from your elegant suite into a tranquil pool
+              surrounded by tropical gardens and natural stone.
             </p>
 
             <div class="room-details">
+
               <span>
-                <i class="fas fa-user"></i> 2 Guests
+                <i class="fas fa-user"></i>
+                2 Guests
               </span>
 
               <span>
-                <i class="fas fa-bed"></i> King Bed
+                <i class="fas fa-bed"></i>
+                King Bed
               </span>
 
               <span>
-                <i class="fas fa-water"></i> Pool Access
+                <i class="fas fa-water"></i>
+                Pool Access
               </span>
+
             </div>
 
           </div>
@@ -1077,15 +1355,15 @@
         </article>
 
 
-        <!-- Room 3 -->
+        <!-- HILLTOP -->
 
         <article class="room-card">
 
           <div class="room-image">
 
             <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85"
-              alt="Hilltop Bungalow">
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=90"
+              alt="Hilltop Thai Bungalow">
 
             <span class="room-tag">
               Premium
@@ -1098,22 +1376,27 @@
             <h3>Hilltop Bungalow</h3>
 
             <p>
-              Wake up to panoramic tropical views from this spacious
-              bungalow crafted with natural wood and Thai details.
+              A spacious sanctuary featuring natural teak details,
+              Thai-inspired interiors and panoramic tropical views.
             </p>
 
             <div class="room-details">
+
               <span>
-                <i class="fas fa-user"></i> 3 Guests
+                <i class="fas fa-user"></i>
+                3 Guests
               </span>
 
               <span>
-                <i class="fas fa-bed"></i> King Bed
+                <i class="fas fa-bed"></i>
+                King Bed
               </span>
 
               <span>
-                <i class="fas fa-mountain"></i> Valley View
+                <i class="fas fa-mountain"></i>
+                Valley View
               </span>
+
             </div>
 
           </div>
@@ -1127,7 +1410,80 @@
   </section>
 
 
-  <!-- ================= EXPERIENCES ================= -->
+  <!-- =====================================================
+       THAI CULTURE
+  ===================================================== -->
+
+  <section class="culture" id="culture">
+
+    <div class="container culture-grid">
+
+
+      <div class="culture-images">
+
+        <img
+          src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=90"
+          alt="Thai temple">
+
+        <img
+          src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1000&q=90"
+          alt="Thai resort">
+
+      </div>
+
+
+      <div class="culture-content">
+
+        <div class="section-label">
+          The Spirit of Thailand
+        </div>
+
+        <div class="thai-title">
+          วิถีไทย · The Thai Way of Life
+        </div>
+
+        <h2>
+          Experience Thailand beyond the resort.
+        </h2>
+
+        <div class="thai-divider">
+          <span>❈</span>
+        </div>
+
+        <p>
+          Thailand is more than beautiful beaches. It is a culture
+          shaped by kindness, tradition, spirituality, food and
+          an extraordinary connection with nature.
+        </p>
+
+        <p>
+          Our concierge can help you discover local markets,
+          temples, island adventures, Thai cooking and authentic
+          cultural experiences.
+        </p>
+
+        <div class="thai-box">
+
+          <strong>
+            ยินดีต้อนรับ · Yin Dee Ton Rap
+          </strong>
+
+          <span>
+            Welcome to Thailand. We are delighted to have you here.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       EXPERIENCES
+  ===================================================== -->
 
   <section class="experience-section" id="experiences">
 
@@ -1136,40 +1492,66 @@
       <div>
 
         <div class="section-label">
-          Discover Thailand
+          Curated Experiences
+        </div>
+
+        <div class="thai-title">
+          ประสบการณ์ · Experiences
         </div>
 
         <h2>
-          More than a stay.<br>
-          It's an experience.
+          Discover the Thailand we love.
         </h2>
 
         <p>
-          Let our concierge create memorable moments during your stay,
-          from peaceful mornings in the garden to unforgettable Thai
-          cultural experiences.
+          From peaceful mornings to unforgettable island adventures,
+          our concierge will help you experience the best of Thailand.
         </p>
+
 
         <div class="experience-list">
 
           <div class="experience-item">
+
             <i class="fas fa-spa"></i>
-            <span>Traditional Thai wellness & massage</span>
+
+            <span>
+              Traditional Thai massage & wellness
+            </span>
+
           </div>
 
+
           <div class="experience-item">
+
             <i class="fas fa-utensils"></i>
-            <span>Authentic Thai dining experiences</span>
+
+            <span>
+              Authentic Thai cooking & dining
+            </span>
+
           </div>
 
+
           <div class="experience-item">
+
             <i class="fas fa-place-of-worship"></i>
-            <span>Private temple & cultural tours</span>
+
+            <span>
+              Private temple & cultural tours
+            </span>
+
           </div>
 
+
           <div class="experience-item">
-            <i class="fas fa-water"></i>
-            <span>Island adventures & boat excursions</span>
+
+            <i class="fas fa-ship"></i>
+
+            <span>
+              Island cruises & ocean adventures
+            </span>
+
           </div>
 
         </div>
@@ -1180,12 +1562,12 @@
       <div class="experience-photo">
 
         <img
-          src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=900&q=85"
-          alt="Tropical resort pool">
+          src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=900&q=90"
+          alt="Thai tropical resort pool">
 
         <img
-          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85"
-          alt="Spa experience">
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=90"
+          alt="Thai spa">
 
       </div>
 
@@ -1194,23 +1576,35 @@
   </section>
 
 
-  <!-- ================= AMENITIES ================= -->
+  <!-- =====================================================
+       AMENITIES
+  ===================================================== -->
 
-  <section class="amenities" id="amenities">
+  <section class="amenities">
 
     <div class="container">
 
       <div class="section-heading">
 
         <div class="section-label">
-          Everything You Need
+          Thoughtful Comfort
         </div>
 
-        <h2>Resort Amenities</h2>
+        <div class="thai-title">
+          สิ่งอำนวยความสะดวก · Facilities
+        </div>
+
+        <h2>
+          Everything you need.
+        </h2>
+
+        <div class="thai-divider">
+          <span>✦</span>
+        </div>
 
         <p>
-          Thoughtful services designed to make your stay effortless,
-          comfortable and unforgettable.
+          Every detail is designed to make your stay comfortable,
+          peaceful and distinctly Thai.
         </p>
 
       </div>
@@ -1218,28 +1612,64 @@
 
       <div class="amenity-grid">
 
+
         <div class="amenity">
+
           <i class="fas fa-person-swimming"></i>
-          <h3>Infinity Pool</h3>
-          <p>Relax beside our peaceful tropical pool.</p>
+
+          <h3>
+            Infinity Pool
+          </h3>
+
+          <p>
+            Relax beside our peaceful tropical pool.
+          </p>
+
         </div>
 
+
         <div class="amenity">
+
           <i class="fas fa-spa"></i>
-          <h3>Thai Spa</h3>
-          <p>Traditional wellness treatments and massages.</p>
+
+          <h3>
+            Thai Spa
+          </h3>
+
+          <p>
+            Traditional wellness treatments and massage.
+          </p>
+
         </div>
 
-        <div class="amenity">
-          <i class="fas fa-utensils"></i>
-          <h3>Fine Dining</h3>
-          <p>Fresh ingredients and authentic Thai cuisine.</p>
-        </div>
 
         <div class="amenity">
+
+          <i class="fas fa-bowl-food"></i>
+
+          <h3>
+            Thai Dining
+          </h3>
+
+          <p>
+            Fresh local ingredients and authentic cuisine.
+          </p>
+
+        </div>
+
+
+        <div class="amenity">
+
           <i class="fas fa-wifi"></i>
-          <h3>Free Wi-Fi</h3>
-          <p>Stay connected throughout the resort.</p>
+
+          <h3>
+            Free Wi-Fi
+          </h3>
+
+          <p>
+            Stay connected throughout the resort.
+          </p>
+
         </div>
 
       </div>
@@ -1249,27 +1679,43 @@
   </section>
 
 
-  <!-- ================= CTA ================= -->
+  <!-- =====================================================
+       CTA / CONTACT
+  ===================================================== -->
 
   <section class="cta" id="contact">
 
     <div class="container">
 
       <div class="section-label">
-        Your Private Escape
+        Your Thai Escape
       </div>
 
-      <h2>Your Thai escape awaits.</h2>
+      <div class="thai-title">
+        แล้วพบกันใหม่ · See you soon
+      </div>
+
+      <h2>
+        Your escape awaits.
+      </h2>
+
+      <div class="thai-divider">
+        <span>❈</span>
+      </div>
 
       <p>
-        Contact our concierge and let us help create the perfect
-        tropical getaway for you.
+        Speak with our concierge and let us create a beautiful
+        Thai experience designed especially for you.
       </p>
 
-      <a href="tel:+66823456789" class="btn btn-gold">
+      <a
+        href="tel:+66823456789"
+        class="btn btn-gold"
+      >
         <i class="fas fa-phone"></i>
         Speak With Concierge
       </a>
+
 
       <div class="contact-details">
 
@@ -1295,7 +1741,9 @@
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
 
   <footer>
 
@@ -1303,10 +1751,19 @@
 
       <div class="footer-grid">
 
-        <div class="footer-logo">
-          <i class="fas fa-leaf"></i>
-          Thai Garden Resort
+        <div>
+
+          <div class="footer-logo">
+            <i class="fas fa-leaf"></i>
+            Thai Garden Resort
+          </div>
+
+          <div class="footer-thai">
+            ไทยการ์เด้น รีสอร์ท · ความสุขในแบบไทย
+          </div>
+
         </div>
+
 
         <div class="social">
 
@@ -1330,8 +1787,9 @@
 
       </div>
 
+
       <div class="copyright">
-        © 2026 Thai Garden Resort. All rights reserved.
+        © 2026 Thai Garden Resort · All Rights Reserved
       </div>
 
     </div>
@@ -1339,17 +1797,19 @@
   </footer>
 
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
 
   <script>
 
-    /* Header background on scroll */
+    /* Header changes when scrolling */
 
     const header = document.getElementById("header");
 
     window.addEventListener("scroll", () => {
 
-      if (window.scrollY > 50) {
+      if (window.scrollY > 60) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
@@ -1358,7 +1818,7 @@
     });
 
 
-    /* Mobile menu */
+    /* Mobile navigation */
 
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("navLinks");
@@ -1378,13 +1838,16 @@
     });
 
 
-    /* Close mobile menu after clicking a link */
+    /* Close menu after clicking */
 
     document.querySelectorAll(".nav-links a").forEach(link => {
 
       link.addEventListener("click", () => {
+
         navLinks.classList.remove("open");
+
         hamburger.querySelector("i").className = "fas fa-bars";
+
       });
 
     });
