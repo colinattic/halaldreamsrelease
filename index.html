@@ -1,1858 +1,771 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Thai Garden Resort | Luxury Thai Escape</title>
+<title>Baaimart.com | Movie Release Updates</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-
-    /* =====================================================
-       THAI GARDEN RESORT
-       Luxury Thai Inspired Design
-    ===================================================== */
-
-    :root {
-      --thai-green: #173f32;
-      --deep-green: #0e2b23;
-      --forest: #245646;
-
-      --thai-gold: #b58a4a;
-      --light-gold: #d9bc82;
-      --soft-gold: #ead9b8;
-
-      --cream: #faf6ee;
-      --warm-white: #fffdf9;
-      --sand: #eee4d2;
-
-      --text: #292722;
-      --muted: #746d61;
-
-      --shadow: 0 25px 60px rgba(24, 50, 41, .12);
-    }
-
+<style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b0b0f;
+        color: #ffffff;
     }
 
     a {
-      color: inherit;
-      text-decoration: none;
+        text-decoration: none;
+        color: inherit;
     }
 
-    img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* =====================================================
-       THAI DECORATIVE PATTERN
-    ===================================================== */
-
-    .thai-pattern {
-      height: 12px;
-      background:
-        linear-gradient(135deg,
-          transparent 35%,
-          rgba(181,138,74,.7) 36%,
-          rgba(181,138,74,.7) 50%,
-          transparent 51%
-        ) 0 0 / 24px 12px repeat-x;
-      opacity: .55;
-    }
-
-    .thai-divider {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      margin: 18px 0 25px;
-    }
-
-    .thai-divider::before,
-    .thai-divider::after {
-      content: "";
-      width: 55px;
-      height: 1px;
-      background: var(--thai-gold);
-    }
-
-    .thai-divider span {
-      color: var(--thai-gold);
-      font-size: 17px;
-    }
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
-
+    /* HEADER */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 18px 0;
-      transition: .3s ease;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(11, 11, 15, 0.95);
+        border-bottom: 1px solid #292930;
+        backdrop-filter: blur(10px);
     }
 
-    header.scrolled {
-      background: rgba(255, 253, 249, .97);
-      box-shadow: 0 8px 35px rgba(0,0,0,.08);
-      padding: 11px 0;
+    .navbar {
+        max-width: 1200px;
+        margin: auto;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
     }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Logo */
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      font-family: "Playfair Display", "Noto Serif Thai", serif;
-      font-size: 25px;
-      font-weight: 700;
+        font-size: 27px;
+        font-weight: 900;
+        letter-spacing: -1px;
     }
 
-    header.scrolled .logo {
-      color: var(--thai-green);
+    .logo span {
+        color: #e50914;
     }
 
-    .logo-symbol {
-      color: var(--light-gold);
-      font-size: 25px;
+    nav {
+        display: flex;
+        gap: 25px;
     }
 
-    /* Navigation */
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      color: white;
-      font-size: 14px;
-      font-weight: 500;
+    nav a {
+        color: #cccccc;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
     }
 
-    header.scrolled .nav-links {
-      color: var(--thai-green);
+    nav a:hover {
+        color: #e50914;
     }
 
-    .nav-links a:not(.nav-btn) {
-      position: relative;
+    .menu-btn {
+        display: none;
+        font-size: 25px;
+        cursor: pointer;
     }
 
-    .nav-links a:not(.nav-btn)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 2px;
-      background: var(--thai-gold);
-      transition: .3s;
-    }
-
-    .nav-links a:not(.nav-btn):hover::after {
-      width: 100%;
-    }
-
-    .nav-btn {
-      background: var(--thai-gold);
-      color: white !important;
-      padding: 11px 22px;
-      border-radius: 30px;
-      transition: .3s;
-    }
-
-    .nav-btn:hover {
-      background: #95703b;
-      transform: translateY(-2px);
-    }
-
-    .hamburger {
-      display: none;
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    header.scrolled .hamburger {
-      color: var(--thai-green);
-    }
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
+    /* HERO */
     .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(8,35,27,.84) 0%,
-          rgba(8,35,27,.58) 45%,
-          rgba(8,35,27,.20) 100%
-        ),
-        url("https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=2200&q=90")
-        center/cover no-repeat;
-    }
-
-    /* Thai corner decoration */
-
-    .hero::before {
-      content: "✦";
-      position: absolute;
-      top: 120px;
-      right: 8%;
-      font-family: serif;
-      font-size: 110px;
-      color: rgba(217,188,130,.18);
+        min-height: 500px;
+        background:
+            linear-gradient(to right, #0b0b0f 15%, rgba(11,11,15,.75) 50%, rgba(11,11,15,.2)),
+            linear-gradient(to top, #0b0b0f 0%, transparent 40%),
+            url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
     }
 
     .hero-content {
-      color: white;
-      max-width: 760px;
-      padding-top: 70px;
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+        padding: 50px 20px;
     }
 
-    .thai-eyebrow {
-      font-family: "Noto Serif Thai", serif;
-      color: var(--light-gold);
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #ead5ad;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 17px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 35px;
-      height: 1px;
-      background: var(--light-gold);
+    .tag {
+        display: inline-block;
+        background: #e50914;
+        padding: 7px 13px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 1.02;
-      font-weight: 600;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 span {
-      color: #dfbf87;
-      font-style: italic;
+        font-size: clamp(40px, 6vw, 72px);
+        max-width: 700px;
+        line-height: 1;
+        margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 630px;
-      font-size: 18px;
-      color: rgba(255,255,255,.88);
-      margin-bottom: 34px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+        max-width: 600px;
+        color: #d0d0d0;
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 25px;
     }
 
     .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 9px;
-      padding: 14px 25px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: .3s;
-      border: 1px solid transparent;
-    }
-
-    .btn-gold {
-      background: var(--thai-gold);
-      color: white;
-    }
-
-    .btn-gold:hover {
-      background: #95703b;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.25);
-    }
-
-    .btn-transparent {
-      border-color: rgba(255,255,255,.7);
-      color: white;
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(6px);
-    }
-
-    .btn-transparent:hover {
-      background: white;
-      color: var(--thai-green);
-    }
-
-    .hero-bottom {
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      width: 100%;
-    }
-
-    .hero-info {
-      display: flex;
-      gap: 38px;
-      color: white;
-      font-size: 13px;
-      flex-wrap: wrap;
-    }
-
-    .hero-info span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      opacity: .9;
-    }
-
-    .hero-info i {
-      color: var(--light-gold);
-    }
-
-    /* =====================================================
-       INTRO
-    ===================================================== */
-
-    .intro {
-      background: var(--warm-white);
-      padding: 110px 0;
-      position: relative;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 75px;
-      align-items: center;
-    }
-
-    .intro-image {
-      position: relative;
-    }
-
-    .intro-image img {
-      height: 510px;
-      border-radius: 5px 100px 5px 100px;
-    }
-
-    .experience-badge {
-      position: absolute;
-      right: -25px;
-      bottom: 35px;
-      background: var(--thai-green);
-      color: white;
-      padding: 25px 28px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border-radius: 3px;
-    }
-
-    .experience-badge strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 38px;
-      color: var(--light-gold);
-    }
-
-    .experience-badge span {
-      display: block;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .section-label {
-      color: var(--thai-gold);
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .thai-title {
-      font-family: "Noto Serif Thai", serif;
-      color: var(--thai-gold);
-      font-size: 14px;
-      margin: 5px 0 7px;
-    }
-
-    .intro h2,
-    .section-heading h2 {
-      font-family: "Playfair Display", "Noto Serif Thai", serif;
-      color: var(--thai-green);
-      font-size: clamp(36px, 5vw, 52px);
-      line-height: 1.15;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .intro p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 16px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--thai-green);
-    }
-
-    .feature i {
-      color: var(--thai-gold);
-    }
-
-    /* =====================================================
-       ROOMS
-    ===================================================== */
-
-    .rooms {
-      padding: 105px 0;
-      background: #f4efe5;
-      position: relative;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 720px;
-      margin: auto;
-      margin-bottom: 50px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .room-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .room-card {
-      background: white;
-      overflow: hidden;
-      border-radius: 4px;
-      box-shadow: 0 12px 40px rgba(23,61,50,.08);
-      transition: .35s;
-      border-bottom: 3px solid transparent;
-    }
-
-    .room-card:hover {
-      transform: translateY(-8px);
-      border-bottom-color: var(--thai-gold);
-      box-shadow: 0 25px 55px rgba(23,61,50,.14);
-    }
-
-    .room-image {
-      height: 250px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .room-image img {
-      height: 100%;
-      transition: .6s;
-    }
-
-    .room-card:hover .room-image img {
-      transform: scale(1.06);
-    }
-
-    .room-tag {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: white;
-      color: var(--thai-green);
-      padding: 7px 12px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-
-    .room-content {
-      padding: 25px;
-    }
-
-    .room-content h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 25px;
-      color: var(--thai-green);
-      margin-bottom: 8px;
-    }
-
-    .room-content p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .room-details {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      border-top: 1px solid #eee8dd;
-      padding-top: 15px;
-      color: #69645b;
-      font-size: 12px;
-    }
-
-    .room-details i {
-      color: var(--thai-gold);
-      margin-right: 5px;
-    }
-
-    /* =====================================================
-       THAI CULTURE SECTION
-    ===================================================== */
-
-    .culture {
-      padding: 110px 0;
-      background: var(--warm-white);
-    }
-
-    .culture-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .culture-images {
-      position: relative;
-      min-height: 500px;
-    }
-
-    .culture-images img {
-      position: absolute;
-      width: 65%;
-      height: 310px;
-      object-fit: cover;
-      border-radius: 3px;
-      box-shadow: var(--shadow);
-    }
-
-    .culture-images img:first-child {
-      left: 0;
-      top: 0;
-    }
-
-    .culture-images img:last-child {
-      right: 0;
-      bottom: 0;
-    }
-
-    .culture-content h2 {
-      font-family: "Playfair Display", serif;
-      color: var(--thai-green);
-      font-size: 48px;
-      line-height: 1.15;
-      margin-bottom: 10px;
-    }
-
-    .culture-content p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .thai-box {
-      margin-top: 25px;
-      padding: 22px;
-      background: #f5efe3;
-      border-left: 3px solid var(--thai-gold);
-    }
-
-    .thai-box strong {
-      display: block;
-      color: var(--thai-green);
-      font-family: "Noto Serif Thai", serif;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .thai-box span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       EXPERIENCES
-    ===================================================== */
-
-    .experience-section {
-      padding: 105px 0;
-      background: var(--thai-green);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .experience-section::after {
-      content: "❈";
-      position: absolute;
-      right: -30px;
-      bottom: -80px;
-      font-size: 300px;
-      color: rgba(255,255,255,.025);
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .experience-section h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 48px;
-      line-height: 1.15;
-      margin: 10px 0 20px;
-    }
-
-    .experience-section p {
-      color: rgba(255,255,255,.75);
-      margin-bottom: 30px;
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .experience-item {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .experience-item i {
-      width: 45px;
-      height: 45px;
-      border: 1px solid rgba(217,188,130,.4);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--light-gold);
-    }
-
-    .experience-item span {
-      font-size: 14px;
-    }
-
-    .experience-photo {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .experience-photo img {
-      height: 235px;
-      border-radius: 3px;
-    }
-
-    .experience-photo img:last-child {
-      margin-top: 45px;
-    }
-
-    /* =====================================================
-       AMENITIES
-    ===================================================== */
-
-    .amenities {
-      padding: 105px 0;
-      background: white;
-    }
-
-    .amenity-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 20px;
-    }
-
-    .amenity {
-      padding: 35px 20px;
-      text-align: center;
-      border: 1px solid #ebe3d5;
-      background: #fffdfa;
-      transition: .3s;
-    }
-
-    .amenity:hover {
-      border-color: var(--light-gold);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(23,61,50,.07);
-    }
-
-    .amenity i {
-      color: var(--thai-gold);
-      font-size: 29px;
-      margin-bottom: 15px;
-    }
-
-    .amenity h3 {
-      color: var(--thai-green);
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      margin-bottom: 7px;
-    }
-
-    .amenity p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       BOOKING CTA
-    ===================================================== */
-
-    .cta {
-      padding: 110px 0;
-      background:
-        linear-gradient(
-          rgba(12,40,31,.82),
-          rgba(12,40,31,.82)
-        ),
-        url("https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=2000&q=90")
-        center/cover;
-      text-align: center;
-      color: white;
-    }
-
-    .cta .thai-title {
-      color: var(--light-gold);
-    }
-
-    .cta h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(38px,5vw,60px);
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      max-width: 610px;
-      margin: auto auto 30px;
-      color: rgba(255,255,255,.82);
-    }
-
-    .contact-details {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    .contact-details span {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .contact-details i {
-      color: var(--light-gold);
-    }
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    footer {
-      background: #0c2921;
-      color: white;
-      padding: 45px 0 25px;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-
-    .footer-logo {
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
-    }
-
-    .footer-logo i {
-      color: var(--light-gold);
-    }
-
-    .footer-thai {
-      color: rgba(255,255,255,.55);
-      font-family: "Noto Serif Thai", serif;
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .social {
-      display: flex;
-      gap: 12px;
-    }
-
-    .social a {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 50%;
-      transition: .3s;
-    }
-
-    .social a:hover {
-      background: var(--thai-gold);
-      border-color: var(--thai-gold);
-    }
-
-    .copyright {
-      text-align: center;
-      color: rgba(255,255,255,.45);
-      font-size: 12px;
-      padding-top: 22px;
-    }
-
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
-
-    @media(max-width: 900px) {
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 4%;
-        width: 92%;
-        background: white;
-        color: var(--thai-green);
-        flex-direction: column;
-        padding: 25px;
+        display: inline-block;
+        background: #e50914;
+        padding: 13px 22px;
         border-radius: 5px;
-        box-shadow: 0 20px 40px rgba(0,0,0,.15);
-      }
+        font-weight: bold;
+        transition: .3s;
+    }
 
-      .nav-links.open {
+    .btn:hover {
+        background: #ff2530;
+        transform: translateY(-2px);
+    }
+
+    /* MAIN */
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 20px;
+    }
+
+    .section-title {
         display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .intro-grid,
-      .culture-grid,
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .room-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .amenity-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .culture-images {
-        min-height: 450px;
-      }
-
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
     }
 
-    @media(max-width: 600px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
 
-      .hero {
-        min-height: 92vh;
-      }
+    .section-title span {
+        color: #e50914;
+        font-size: 14px;
+        cursor: pointer;
+    }
 
-      .hero-content {
-        padding-top: 75px;
-      }
+    /* SEARCH */
+    .search-box {
+        margin-bottom: 35px;
+        display: flex;
+        gap: 10px;
+    }
 
-      .hero p {
-        font-size: 15px;
-      }
+    .search-box input {
+        flex: 1;
+        padding: 15px;
+        background: #17171d;
+        border: 1px solid #292930;
+        border-radius: 5px;
+        color: white;
+        outline: none;
+    }
 
-      .hero-info {
-        gap: 14px;
-      }
+    .search-box button {
+        background: #e50914;
+        border: none;
+        color: white;
+        padding: 0 22px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
-      .intro,
-      .rooms,
-      .culture,
-      .experience-section,
-      .amenities,
-      .cta {
-        padding: 75px 0;
-      }
+    /* MOVIE GRID */
+    .movie-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
 
-      .intro-image img {
-        height: 350px;
-        border-radius: 4px 55px 4px 55px;
-      }
+    .movie-card {
+        background: #15151b;
+        border-radius: 9px;
+        overflow: hidden;
+        border: 1px solid #24242b;
+        transition: .3s;
+    }
 
-      .experience-badge {
-        right: 10px;
-      }
+    .movie-card:hover {
+        transform: translateY(-6px);
+        border-color: #e50914;
+    }
 
-      .features {
-        grid-template-columns: 1fr;
-      }
+    .poster {
+        height: 290px;
+        position: relative;
+        overflow: hidden;
+    }
 
-      .room-grid,
-      .amenity-grid {
-        grid-template-columns: 1fr;
-      }
+    .poster img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .4s;
+    }
 
-      .culture-images {
-        min-height: 390px;
-      }
+    .movie-card:hover .poster img {
+        transform: scale(1.05);
+    }
 
-      .culture-images img {
-        height: 250px;
-      }
+    .release {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #e50914;
+        padding: 6px 9px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
+    }
 
-      .culture-content h2,
-      .experience-section h2 {
-        font-size: 38px;
-      }
+    .movie-info {
+        padding: 17px;
+    }
 
-      .experience-photo img {
+    .movie-info h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .movie-info p {
+        color: #999;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 14px;
+        color: #aaa;
+        font-size: 12px;
+    }
+
+    /* NEWS */
+    .news-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .news-card {
+        background: #15151b;
+        border: 1px solid #24242b;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .news-image {
         height: 180px;
-      }
-
-      .footer-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-
     }
 
-  </style>
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .news-content {
+        padding: 18px;
+    }
+
+    .news-content small {
+        color: #e50914;
+        font-weight: bold;
+    }
+
+    .news-content h3 {
+        margin: 9px 0;
+        line-height: 1.3;
+    }
+
+    .news-content p {
+        color: #999;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+        margin-top: 50px;
+        background: linear-gradient(135deg, #17171d, #101015);
+        border: 1px solid #292930;
+        border-radius: 10px;
+        padding: 45px 30px;
+        text-align: center;
+    }
+
+    .newsletter h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .newsletter p {
+        color: #999;
+        margin-bottom: 25px;
+    }
+
+    .newsletter input {
+        width: 60%;
+        max-width: 450px;
+        padding: 14px;
+        background: #0b0b0f;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .newsletter button {
+        padding: 14px 20px;
+        background: #e50914;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+        border-top: 1px solid #292930;
+        margin-top: 30px;
+        padding: 35px 20px;
+        text-align: center;
+        color: #777;
+        font-size: 13px;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+        .movie-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .news-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 650px) {
+        nav {
+            display: none;
+            position: absolute;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            background: #111116;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        nav.active {
+            display: flex;
+        }
+
+        .menu-btn {
+            display: block;
+        }
+
+        .hero {
+            min-height: 470px;
+        }
+
+        .movie-grid,
+        .news-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .newsletter input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .newsletter button {
+            width: 100%;
+        }
+
+        .search-box button {
+            padding: 0 15px;
+        }
+    }
+</style>
 </head>
 
 <body>
 
-  <!-- =====================================================
-       HEADER
-  ===================================================== -->
+<!-- HEADER -->
+<header>
+    <div class="navbar">
 
-  <header id="header">
-
-    <div class="container nav">
-
-      <a href="#" class="logo">
-        <span class="logo-symbol">❈</span>
-        Thai Garden
-      </a>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav class="nav-links" id="navLinks">
-
-        <a href="#about">Our Story</a>
-        <a href="#rooms">Suites</a>
-        <a href="#culture">Thai Culture</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#contact">Contact</a>
-
-        <a href="#contact" class="nav-btn">
-          Book Your Stay
+        <a href="#" class="logo">
+            BAAI<span>MART</span>
         </a>
 
-      </nav>
+        <nav id="navMenu">
+            <a href="#">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#news">News</a>
+            <a href="#">Reviews</a>
+            <a href="#">Trailers</a>
+            <a href="#">About</a>
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">LATEST RELEASE</span>
+
+        <h1>Movie News.<br>Release Updates.</h1>
+
+        <p>
+            Your destination for the latest movie release dates,
+            trailers, cinema news, reviews and entertainment updates.
+        </p>
+
+        <a href="#movies" class="btn">Explore Movies →</a>
 
     </div>
 
-  </header>
+</section>
 
 
-  <!-- =====================================================
-       HERO
-  ===================================================== -->
+<!-- MOVIES -->
+<main class="container" id="movies">
 
-  <section class="hero">
-
-    <div class="container">
-
-      <div class="hero-content">
-
-        <div class="thai-eyebrow">
-          สวัสดี · Welcome
-        </div>
-
-        <div class="eyebrow">
-          Luxury · Nature · Thai Hospitality
-        </div>
-
-        <h1>
-          Discover the soul<br>
-          of <span>Thailand.</span>
-        </h1>
-
-        <p>
-          An intimate tropical sanctuary where traditional Thai elegance,
-          lush gardens and modern luxury come together to create an
-          unforgettable escape.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#rooms" class="btn btn-gold">
-            Explore Our Suites
-            <i class="fas fa-arrow-right"></i>
-          </a>
-
-          <a href="#culture" class="btn btn-transparent">
-            Discover Thailand
-          </a>
-
-        </div>
-
-      </div>
-
+    <div class="section-title">
+        <h2>Latest Releases</h2>
+        <span>View All →</span>
     </div>
 
-    <div class="hero-bottom">
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input
+            type="text"
+            id="movieSearch"
+            placeholder="Search movies..."
+            onkeyup="searchMovies()"
+        >
 
-      <div class="container">
-
-        <div class="hero-info">
-
-          <span>
-            <i class="fas fa-location-dot"></i>
-            Koh Samui, Thailand
-          </span>
-
-          <span>
-            <i class="fas fa-star"></i>
-            4.9 Guest Rating
-          </span>
-
-          <span>
-            <i class="fas fa-leaf"></i>
-            Inspired by Thai Nature
-          </span>
-
-        </div>
-
-      </div>
-
+        <button onclick="searchMovies()">Search</button>
     </div>
 
-  </section>
 
+    <div class="movie-grid" id="movieGrid">
 
-  <!-- Thai pattern -->
+        <!-- MOVIE 1 -->
+        <article class="movie-card">
 
-  <div class="thai-pattern"></div>
+            <div class="poster">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80">
 
-
-  <!-- =====================================================
-       INTRO
-  ===================================================== -->
-
-  <section class="intro" id="about">
-
-    <div class="container intro-grid">
-
-      <div class="intro-image">
-
-        <img
-          src="https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&w=1200&q=90"
-          alt="Thai luxury resort">
-
-        <div class="experience-badge">
-          <strong>20+</strong>
-          <span>Years of hospitality</span>
-        </div>
-
-      </div>
-
-
-      <div>
-
-        <div class="section-label">
-          The Thai Garden Story
-        </div>
-
-        <div class="thai-title">
-          ความสุขที่เรียบง่าย · Simple happiness
-        </div>
-
-        <h2>
-          A garden inspired by the beauty of Thailand.
-        </h2>
-
-        <div class="thai-divider">
-          <span>❈</span>
-        </div>
-
-        <p>
-          Thai Garden Resort is a peaceful retreat inspired by the
-          warmth, grace and natural beauty of Thailand.
-        </p>
-
-        <p>
-          Surrounded by tropical gardens, traditional details and
-          thoughtful hospitality, our resort invites you to slow down,
-          reconnect and enjoy the simple pleasures of island life.
-        </p>
-
-        <div class="features">
-
-          <div class="feature">
-            <i class="fas fa-leaf"></i>
-            Tropical Gardens
-          </div>
-
-          <div class="feature">
-            <i class="fas fa-hands-praying"></i>
-            Thai Hospitality
-          </div>
-
-          <div class="feature">
-            <i class="fas fa-bowl-food"></i>
-            Authentic Thai Cuisine
-          </div>
-
-          <div class="feature">
-            <i class="fas fa-spa"></i>
-            Traditional Wellness
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       ROOMS
-  ===================================================== -->
-
-  <section class="rooms" id="rooms">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <div class="section-label">
-          Stay in Comfort
-        </div>
-
-        <div class="thai-title">
-          ห้องพัก · Our Residences
-        </div>
-
-        <h2>
-          Signature Thai Stays
-        </h2>
-
-        <div class="thai-divider">
-          <span>✦</span>
-        </div>
-
-        <p>
-          Elegant spaces combining contemporary comfort with
-          natural materials and subtle Thai-inspired details.
-        </p>
-
-      </div>
-
-
-      <div class="room-grid">
-
-
-        <!-- GARDEN PAVILION -->
-
-        <article class="room-card">
-
-          <div class="room-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=90"
-              alt="Garden Pavilion">
-
-            <span class="room-tag">
-              Most Popular
-            </span>
-
-          </div>
-
-          <div class="room-content">
-
-            <h3>Garden Pavilion</h3>
-
-            <p>
-              A peaceful private retreat surrounded by tropical
-              greenery and inspired by traditional Thai pavilions.
-            </p>
-
-            <div class="room-details">
-
-              <span>
-                <i class="fas fa-user"></i>
-                2 Guests
-              </span>
-
-              <span>
-                <i class="fas fa-bed"></i>
-                King Bed
-              </span>
-
-              <span>
-                <i class="fas fa-tree"></i>
-                Garden View
-              </span>
-
+                <span class="release">NEW</span>
             </div>
 
-          </div>
+            <div class="movie-info">
+                <h3>Midnight Mission</h3>
+
+                <p>
+                    Action thriller scheduled for release this month.
+                </p>
+
+                <div class="meta">
+                    <span>Sep 18, 2026</span>
+                    <span>★ 8.4</span>
+                </div>
+            </div>
 
         </article>
 
 
-        <!-- POOL SUITE -->
+        <!-- MOVIE 2 -->
+        <article class="movie-card">
 
-        <article class="room-card">
+            <div class="poster">
+                <img src="https://images.unsplash.com/photo-1533920379810-6bedac961555?auto=format&fit=crop&w=700&q=80">
 
-          <div class="room-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=90"
-              alt="Lagoon Pool Suite">
-
-            <span class="room-tag">
-              Pool Access
-            </span>
-
-          </div>
-
-          <div class="room-content">
-
-            <h3>Lagoon Pool Suite</h3>
-
-            <p>
-              Step from your elegant suite into a tranquil pool
-              surrounded by tropical gardens and natural stone.
-            </p>
-
-            <div class="room-details">
-
-              <span>
-                <i class="fas fa-user"></i>
-                2 Guests
-              </span>
-
-              <span>
-                <i class="fas fa-bed"></i>
-                King Bed
-              </span>
-
-              <span>
-                <i class="fas fa-water"></i>
-                Pool Access
-              </span>
-
+                <span class="release">COMING SOON</span>
             </div>
 
-          </div>
+            <div class="movie-info">
+                <h3>Beyond The Stars</h3>
+
+                <p>
+                    A science-fiction adventure coming to cinemas soon.
+                </p>
+
+                <div class="meta">
+                    <span>Oct 02, 2026</span>
+                    <span>★ 8.7</span>
+                </div>
+            </div>
 
         </article>
 
 
-        <!-- HILLTOP -->
+        <!-- MOVIE 3 -->
+        <article class="movie-card">
 
-        <article class="room-card">
+            <div class="poster">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=80">
 
-          <div class="room-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=90"
-              alt="Hilltop Thai Bungalow">
-
-            <span class="room-tag">
-              Premium
-            </span>
-
-          </div>
-
-          <div class="room-content">
-
-            <h3>Hilltop Bungalow</h3>
-
-            <p>
-              A spacious sanctuary featuring natural teak details,
-              Thai-inspired interiors and panoramic tropical views.
-            </p>
-
-            <div class="room-details">
-
-              <span>
-                <i class="fas fa-user"></i>
-                3 Guests
-              </span>
-
-              <span>
-                <i class="fas fa-bed"></i>
-                King Bed
-              </span>
-
-              <span>
-                <i class="fas fa-mountain"></i>
-                Valley View
-              </span>
-
+                <span class="release">NEW</span>
             </div>
 
-          </div>
+            <div class="movie-info">
+                <h3>Last Horizon</h3>
+
+                <p>
+                    An upcoming dramatic movie creating huge expectations.
+                </p>
+
+                <div class="meta">
+                    <span>Sep 25, 2026</span>
+                    <span>★ 8.1</span>
+                </div>
+            </div>
 
         </article>
 
-      </div>
+
+        <!-- MOVIE 4 -->
+        <article class="movie-card">
+
+            <div class="poster">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80">
+
+                <span class="release">UPCOMING</span>
+            </div>
+
+            <div class="movie-info">
+                <h3>City Lights</h3>
+
+                <p>
+                    A new romantic drama arriving in cinemas soon.
+                </p>
+
+                <div class="meta">
+                    <span>Oct 16, 2026</span>
+                    <span>★ 7.9</span>
+                </div>
+            </div>
+
+        </article>
 
     </div>
 
-  </section>
+</main>
 
 
-  <!-- =====================================================
-       THAI CULTURE
-  ===================================================== -->
+<!-- NEWS -->
+<section class="container" id="news">
 
-  <section class="culture" id="culture">
-
-    <div class="container culture-grid">
-
-
-      <div class="culture-images">
-
-        <img
-          src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=90"
-          alt="Thai temple">
-
-        <img
-          src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1000&q=90"
-          alt="Thai resort">
-
-      </div>
+    <div class="section-title">
+        <h2>Latest Movie News</h2>
+        <span>More News →</span>
+    </div>
 
 
-      <div class="culture-content">
+    <div class="news-grid">
 
-        <div class="section-label">
-          The Spirit of Thailand
-        </div>
+        <article class="news-card">
 
-        <div class="thai-title">
-          วิถีไทย · The Thai Way of Life
-        </div>
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80">
+            </div>
 
-        <h2>
-          Experience Thailand beyond the resort.
-        </h2>
+            <div class="news-content">
+                <small>MOVIE NEWS</small>
 
-        <div class="thai-divider">
-          <span>❈</span>
-        </div>
+                <h3>
+                    New movies announced for the upcoming season
+                </h3>
+
+                <p>
+                    Studios are preparing several major releases
+                    for audiences around the world.
+                </p>
+            </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=700&q=80">
+            </div>
+
+            <div class="news-content">
+                <small>TRAILER</small>
+
+                <h3>
+                    New trailer breaks online records
+                </h3>
+
+                <p>
+                    Fans react to the latest trailer release.
+                </p>
+            </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <div class="news-image">
+                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=700&q=80">
+            </div>
+
+            <div class="news-content">
+                <small>REVIEW</small>
+
+                <h3>
+                    Critics share their first reactions
+                </h3>
+
+                <p>
+                    Early reviews are arriving from movie critics.
+                </p>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="container">
+
+    <div class="newsletter">
+
+        <h2>Never Miss a Movie Update</h2>
 
         <p>
-          Thailand is more than beautiful beaches. It is a culture
-          shaped by kindness, tradition, spirituality, food and
-          an extraordinary connection with nature.
+            Get the latest movie news and release updates.
         </p>
 
-        <p>
-          Our concierge can help you discover local markets,
-          temples, island adventures, Thai cooking and authentic
-          cultural experiences.
-        </p>
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+        >
 
-        <div class="thai-box">
-
-          <strong>
-            ยินดีต้อนรับ · Yin Dee Ton Rap
-          </strong>
-
-          <span>
-            Welcome to Thailand. We are delighted to have you here.
-          </span>
-
-        </div>
-
-      </div>
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =====================================================
-       EXPERIENCES
-  ===================================================== -->
+<!-- FOOTER -->
+<footer>
 
-  <section class="experience-section" id="experiences">
+    <p>
+        © 2026 <strong>Baaimart.com</strong>.
+        All rights reserved.
+    </p>
 
-    <div class="container experience-grid">
+    <p style="margin-top:8px;">
+        Movie News • Releases • Reviews • Trailers
+    </p>
 
-      <div>
+</footer>
 
-        <div class="section-label">
-          Curated Experiences
-        </div>
 
-        <div class="thai-title">
-          ประสบการณ์ · Experiences
-        </div>
+<script>
 
-        <h2>
-          Discover the Thailand we love.
-        </h2>
+    // MOBILE MENU
+    function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        menu.classList.toggle("active");
+    }
 
-        <p>
-          From peaceful mornings to unforgettable island adventures,
-          our concierge will help you experience the best of Thailand.
-        </p>
 
+    // MOVIE SEARCH
+    function searchMovies() {
 
-        <div class="experience-list">
+        const input =
+            document.getElementById("movieSearch")
+            .value
+            .toLowerCase();
 
-          <div class="experience-item">
+        const cards =
+            document.querySelectorAll(".movie-card");
 
-            <i class="fas fa-spa"></i>
+        cards.forEach(function(card) {
 
-            <span>
-              Traditional Thai massage & wellness
-            </span>
+            const title =
+                card.querySelector("h3")
+                .textContent
+                .toLowerCase();
 
-          </div>
+            if (title.includes(input)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
 
+        });
 
-          <div class="experience-item">
+    }
 
-            <i class="fas fa-utensils"></i>
 
-            <span>
-              Authentic Thai cooking & dining
-            </span>
+    // NEWSLETTER
+    function subscribe() {
 
-          </div>
+        const email =
+            document.getElementById("email").value;
 
+        if (email === "") {
 
-          <div class="experience-item">
+            alert("Please enter your email.");
 
-            <i class="fas fa-place-of-worship"></i>
+            return;
+        }
 
-            <span>
-              Private temple & cultural tours
-            </span>
+        alert(
+            "Thanks for subscribing to Baaimart.com!"
+        );
 
-          </div>
+        document.getElementById("email").value = "";
 
+    }
 
-          <div class="experience-item">
-
-            <i class="fas fa-ship"></i>
-
-            <span>
-              Island cruises & ocean adventures
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="experience-photo">
-
-        <img
-          src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=900&q=90"
-          alt="Thai tropical resort pool">
-
-        <img
-          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=90"
-          alt="Thai spa">
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       AMENITIES
-  ===================================================== -->
-
-  <section class="amenities">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <div class="section-label">
-          Thoughtful Comfort
-        </div>
-
-        <div class="thai-title">
-          สิ่งอำนวยความสะดวก · Facilities
-        </div>
-
-        <h2>
-          Everything you need.
-        </h2>
-
-        <div class="thai-divider">
-          <span>✦</span>
-        </div>
-
-        <p>
-          Every detail is designed to make your stay comfortable,
-          peaceful and distinctly Thai.
-        </p>
-
-      </div>
-
-
-      <div class="amenity-grid">
-
-
-        <div class="amenity">
-
-          <i class="fas fa-person-swimming"></i>
-
-          <h3>
-            Infinity Pool
-          </h3>
-
-          <p>
-            Relax beside our peaceful tropical pool.
-          </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-          <i class="fas fa-spa"></i>
-
-          <h3>
-            Thai Spa
-          </h3>
-
-          <p>
-            Traditional wellness treatments and massage.
-          </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-          <i class="fas fa-bowl-food"></i>
-
-          <h3>
-            Thai Dining
-          </h3>
-
-          <p>
-            Fresh local ingredients and authentic cuisine.
-          </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-          <i class="fas fa-wifi"></i>
-
-          <h3>
-            Free Wi-Fi
-          </h3>
-
-          <p>
-            Stay connected throughout the resort.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       CTA / CONTACT
-  ===================================================== -->
-
-  <section class="cta" id="contact">
-
-    <div class="container">
-
-      <div class="section-label">
-        Your Thai Escape
-      </div>
-
-      <div class="thai-title">
-        แล้วพบกันใหม่ · See you soon
-      </div>
-
-      <h2>
-        Your escape awaits.
-      </h2>
-
-      <div class="thai-divider">
-        <span>❈</span>
-      </div>
-
-      <p>
-        Speak with our concierge and let us create a beautiful
-        Thai experience designed especially for you.
-      </p>
-
-      <a
-        href="tel:+66823456789"
-        class="btn btn-gold"
-      >
-        <i class="fas fa-phone"></i>
-        Speak With Concierge
-      </a>
-
-
-      <div class="contact-details">
-
-        <span>
-          <i class="fas fa-phone"></i>
-          +66 82 345 6789
-        </span>
-
-        <span>
-          <i class="fas fa-envelope"></i>
-          reserve@thaigarden.com
-        </span>
-
-        <span>
-          <i class="fas fa-location-dot"></i>
-          Koh Samui, Thailand
-        </span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       FOOTER
-  ===================================================== -->
-
-  <footer>
-
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-
-          <div class="footer-logo">
-            <i class="fas fa-leaf"></i>
-            Thai Garden Resort
-          </div>
-
-          <div class="footer-thai">
-            ไทยการ์เด้น รีสอร์ท · ความสุขในแบบไทย
-          </div>
-
-        </div>
-
-
-        <div class="social">
-
-          <a href="#" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <a href="#" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
-
-          <a href="#" aria-label="TripAdvisor">
-            <i class="fab fa-tripadvisor"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="copyright">
-        © 2026 Thai Garden Resort · All Rights Reserved
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ===================================================== -->
-
-  <script>
-
-    /* Header changes when scrolling */
-
-    const header = document.getElementById("header");
-
-    window.addEventListener("scroll", () => {
-
-      if (window.scrollY > 60) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-
-    });
-
-
-    /* Mobile navigation */
-
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-
-    hamburger.addEventListener("click", () => {
-
-      navLinks.classList.toggle("open");
-
-      const icon = hamburger.querySelector("i");
-
-      if (navLinks.classList.contains("open")) {
-        icon.className = "fas fa-xmark";
-      } else {
-        icon.className = "fas fa-bars";
-      }
-
-    });
-
-
-    /* Close menu after clicking */
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("open");
-
-        hamburger.querySelector("i").className = "fas fa-bars";
-
-      });
-
-    });
-
-  </script>
+</script>
 
 </body>
 </html>
+```
