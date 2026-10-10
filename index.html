@@ -3,18 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halal Dreams | In the Name of Allah</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Colin Attic | Movie & Film News</title>
   <style>
-    :root {
-      --primary: #0d5c4d;
-      --primary-dark: #083d33;
-      --gold: #c9a227;
-      --light-gold: #f5e6b8;
-      --cream: #faf7f0;
-      --text: #2c3e50;
-      --white: #ffffff;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     * {
       margin: 0;
@@ -22,679 +13,671 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+    :root {
+      --bg: #0b0b0b;
+      --card: #161616;
+      --card-hover: #1c1c1c;
+      --accent: #e50914;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+      --border: #2a2a2a;
     }
 
-    /* ===== NAVBAR ===== */
-    nav {
-      position: fixed;
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: rgba(11, 11, 11, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
       top: 0;
-      width: 100%;
-      background: rgba(13, 92, 77, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 5%;
+      z-index: 1000;
+      padding: 16px 5%;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      gap: 30px;
     }
 
-    .logo {
-      font-family: 'Amiri', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold);
-      text-decoration: none;
+    .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
 
-    .logo span {
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 400;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, #0a6b58 100%);
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 100px 5% 60px;
+      font-size: 1.5rem;
+    }
+
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .brand-text h1 span {
+      color: var(--accent);
+    }
+
+    .brand-text p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: white;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 10px 18px;
+      gap: 10px;
+      min-width: 240px;
+    }
+
+    .search-box input {
+      background: transparent;
+      border: none;
+      color: white;
+      outline: none;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1400px;
+      margin: 40px auto 20px;
+      padding: 0 5%;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 460px;
+      background: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 20%, rgba(0,0,0,0.4) 60%, transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 50px;
+      max-width: 680px;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+    }
+
+    .hero p {
+      color: #d0d0d0;
+      margin-bottom: 28px;
+      font-size: 1.1rem;
+      max-width: 560px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .btn:hover {
+      background: #f40612;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
+    }
+
+    /* Categories */
+    .categories {
+      max-width: 1400px;
+      margin: 50px auto 25px;
+      padding: 0 5%;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cat-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 9px 22px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .cat-btn:hover,
+    .cat-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    /* Section */
+    .section-header {
+      max-width: 1400px;
+      margin: 10px auto 30px;
+      padding: 0 5%;
+    }
+
+    .section-header h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    /* News Grid */
+    .news-grid {
+      max-width: 1400px;
+      margin: 0 auto 80px;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 30px;
+    }
+
+    .news-card {
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .news-card:hover {
+      transform: translateY(-8px);
+      background: var(--card-hover);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+      border-color: #333;
+    }
+
+    .card-img {
+      height: 220px;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: 'بِسْمِ اللَّهِ';
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .news-card:hover .card-img img {
+      transform: scale(1.08);
+    }
+
+    .card-img .tag {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Amiri', serif;
-      font-size: 18rem;
-      color: rgba(255,255,255,0.03);
-      white-space: nowrap;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      z-index: 1;
-      animation: fadeUp 1s ease;
-    }
-
-    .bismillah {
-      font-family: 'Amiri', serif;
-      font-size: 1.8rem;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-family: 'Amiri', serif;
-      font-size: 4rem;
+      top: 14px;
+      left: 14px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
       color: white;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: rgba(255,255,255,0.9);
-      margin: 1.5rem 0 2.5rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 36px;
-      background: var(--gold);
-      color: var(--primary-dark);
-      text-decoration: none;
+      font-size: 0.7rem;
+      padding: 5px 12px;
       border-radius: 50px;
       font-weight: 600;
-      transition: all 0.3s;
-      border: 2px solid var(--gold);
-      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .btn:hover {
-      background: transparent;
-      color: var(--gold);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(201,162,39,0.3);
+    .card-body {
+      padding: 24px;
     }
 
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-      margin-left: 15px;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: var(--primary);
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 90px 5%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-title h2 {
-      font-family: 'Amiri', serif;
-      font-size: 2.8rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #666;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .divider {
-      width: 80px;
-      height: 3px;
-      background: var(--gold);
-      margin: 15px auto;
-    }
-
-    /* ===== ABOUT ===== */
-    .about {
-      background: white;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .about-text h3 {
-      font-family: 'Amiri', serif;
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .about-text p {
-      margin-bottom: 1.2rem;
-      color: #555;
-    }
-
-    .quote-box {
-      background: var(--cream);
-      border-left: 4px solid var(--gold);
-      padding: 25px;
-      border-radius: 0 12px 12px 0;
-      margin-top: 25px;
-      font-style: italic;
-    }
-
-    .quote-box cite {
-      display: block;
-      margin-top: 10px;
-      font-style: normal;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .about-image {
-      background: linear-gradient(135deg, var(--primary), #0a7a65);
-      border-radius: 20px;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-family: 'Amiri', serif;
-      font-size: 2.5rem;
-      text-align: center;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(13,92,77,0.2);
-    }
-
-    /* ===== FEATURES ===== */
-    .features {
-      background: var(--cream);
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 16px;
-      text-align: center;
-      transition: all 0.3s;
-      border: 1px solid #eee;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-color: var(--gold);
-    }
-
-    .feature-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--primary), #0a7a65);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.8rem;
-      color: white;
-    }
-
-    .feature-card h3 {
-      font-family: 'Amiri', serif;
-      color: var(--primary);
+    .card-body h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 12px;
-      font-size: 1.4rem;
+      line-height: 1.35;
+      letter-spacing: -0.3px;
     }
 
-    /* ===== INSPIRATION ===== */
-    .inspiration {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: white;
-      text-align: center;
-    }
-
-    .inspiration .section-title h2 {
-      color: white;
-    }
-
-    .inspiration .section-title p {
-      color: rgba(255,255,255,0.85);
-    }
-
-    .ayah-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 800px;
-      margin: 0 auto;
-      backdrop-filter: blur(5px);
-    }
-
-    .ayah-arabic {
-      font-family: 'Amiri', serif;
-      font-size: 2rem;
-      line-height: 1.8;
+    .card-body p {
+      color: var(--muted);
+      font-size: 0.92rem;
       margin-bottom: 20px;
-      color: var(--light-gold);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .ayah-translation {
-      font-size: 1.15rem;
-      margin-bottom: 15px;
-      opacity: 0.95;
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
-    .ayah-ref {
-      color: var(--gold);
+    .meta .date {
+      color: var(--accent);
       font-weight: 600;
     }
 
-    /* ===== CONTACT ===== */
-    .contact {
-      background: white;
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: var(--cream);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--primary);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 18px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: border 0.3s;
-      background: white;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    /* ===== FOOTER ===== */
+    /* Footer */
     footer {
-      background: var(--primary-dark);
-      color: white;
-      padding: 50px 5% 30px;
+      background: #080808;
+      border-top: 1px solid var(--border);
+      padding: 50px 5%;
       text-align: center;
     }
 
-    footer .logo {
+    .footer-brand {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      margin-bottom: 15px;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .brand-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .footer-brand h4 span {
+      color: var(--accent);
     }
 
     footer p {
-      opacity: 0.85;
-      margin-bottom: 20px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 25px;
-      margin-top: 30px;
+      color: var(--muted);
       font-size: 0.9rem;
-      opacity: 0.7;
+      margin-top: 6px;
     }
 
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(6px);
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--primary-dark);
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-      }
+    .modal.active {
+      display: flex;
+    }
 
-      .nav-links.active {
-        display: flex;
-      }
+    .modal-content {
+      background: var(--card);
+      max-width: 720px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+    }
 
-      .menu-btn {
-        display: block;
-      }
+    .close-btn {
+      position: absolute;
+      top: 22px;
+      right: 26px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
 
-      .hero h1 {
-        font-size: 2.8rem;
-      }
+    .close-btn:hover {
+      color: white;
+    }
 
-      .hero::before {
-        font-size: 8rem;
-      }
+    .modal-content h2 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      padding-right: 40px;
+    }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
+    .modal-content .badge {
+      margin-bottom: 18px;
+    }
 
-      .about-image {
-        height: 280px;
-        font-size: 1.8rem;
-      }
+    .modal-content p {
+      color: #c8c8c8;
+      margin-bottom: 18px;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
 
-      .btn-outline {
-        margin-left: 0;
-        margin-top: 15px;
-        display: inline-block;
-      }
-
-      .section-title h2 {
-        font-size: 2.2rem;
-      }
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hero h2 { font-size: 1.9rem; }
+      .hero-card { height: 380px; }
+      .search-box { min-width: 160px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="#home" class="logo">Halal Dreams <span>| حلال أحلام</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Vision</a></li>
-      <li><a href="#inspiration">Inspiration</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="menu-btn" id="menuBtn">☰</button>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-      <h1>Halal <span>Dreams</span></h1>
-      <p>Pursue your aspirations with purity, sincerity, and the guidance of Allah.  
-         Every dream that begins with Bismillah is a step toward success in this life and the next.</p>
-      <a href="#about" class="btn">Discover More</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-title">
-      <h2>About Halal Dreams</h2>
-      <div class="divider"></div>
-      <p>Building a life of purpose under the shade of Islam</p>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-text">
-        <h3>In the Name of Allah, the Most Merciful</h3>
-        <p>Halal Dreams was created with one intention: to inspire Muslims to chase their goals while remaining firmly rooted in faith, ethics, and sincerity.</p>
-        <p>We believe that true success is not only measured by worldly achievements, but by how closely our intentions and actions align with the pleasure of Allah ﷻ.</p>
-        <p>Whether your dream is education, business, family, or personal growth — let it be Halal, pure, and blessed.</p>
-        
-        <div class="quote-box">
-          “And whoever fears Allah – He will make for him a way out and will provide for him from where he does not expect.”
-          <cite>— Surah At-Talaq (65:2-3)</cite>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="brand">
+        <div class="brand-icon">🎬</div>
+        <div class="brand-text">
+          <h1>Colin <span>Attic</span></h1>
+          <p>@colinattic • Movie News</p>
         </div>
       </div>
-      <div class="about-image">
-        حلال أحلام<br>
-        <small style="font-size:1rem;opacity:0.8">Pure Intentions.<br>Blessed Outcomes.</small>
+
+      <nav>
+        <a class="active" data-filter="all">Home</a>
+        <a data-filter="news">News</a>
+        <a data-filter="reviews">Reviews</a>
+        <a data-filter="trailers">Trailers</a>
+        <a data-filter="boxoffice">Box Office</a>
+      </nav>
+
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchInput" placeholder="Search movies & news...">
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="badge">Breaking News</span>
+        <h2>Dune: Part Three Officially Confirmed</h2>
+        <p>Denis Villeneuve returns to complete the epic saga. Timothée Chalamet and Zendaya are set to reprise their roles.</p>
+        <button class="btn" onclick="openModal(0)">Read Full Story →</button>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES / VISION -->
-  <section class="features" id="features">
-    <div class="section-title">
-      <h2>Our Vision</h2>
-      <div class="divider"></div>
-      <p>Three principles that guide every Halal Dream</p>
-    </div>
+  <!-- Categories -->
+  <div class="categories">
+    <button class="cat-btn active" data-filter="all">All Stories</button>
+    <button class="cat-btn" data-filter="news">News</button>
+    <button class="cat-btn" data-filter="reviews">Reviews</button>
+    <button class="cat-btn" data-filter="trailers">Trailers</button>
+    <button class="cat-btn" data-filter="boxoffice">Box Office</button>
+  </div>
 
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">☪</div>
-        <h3>Sincere Intention</h3>
-        <p>Every action begins with pure niyyah for the sake of Allah alone. Success starts in the heart.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">✦</div>
-        <h3>Halal Path</h3>
-        <p>We choose only the paths that are pleasing to Allah — honest, ethical, and free from harm.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">♡</div>
-        <h3>Trust in Allah</h3>
-        <p>We work hard, make dua, and leave the results to the Best of Planners. Tawakkul is our strength.</p>
-      </div>
-    </div>
-  </section>
+  <div class="section-header">
+    <h3>Latest Stories</h3>
+  </div>
 
-  <!-- INSPIRATION -->
-  <section class="inspiration" id="inspiration">
-    <div class="section-title">
-      <h2>A Reminder from the Quran</h2>
-      <div class="divider"></div>
-      <p>Let these words light the way for your dreams</p>
-    </div>
+  <!-- News Grid -->
+  <div class="news-grid" id="newsGrid"></div>
 
-    <div class="ayah-card">
-      <div class="ayah-arabic">
-        وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ۝ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ
-      </div>
-      <div class="ayah-translation">
-        “And whoever fears Allah – He will make for him a way out and will provide for him from where he does not expect. And whoever relies upon Allah – then He is sufficient for him.”
-      </div>
-      <div class="ayah-ref">— Surah At-Talaq 65:2-3</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="section-title">
-      <h2>Connect With Us</h2>
-      <div class="divider"></div>
-      <p>Share your Halal Dream or simply send a message of peace</p>
-    </div>
-
-    <form class="contact-form" id="contactForm">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com">
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
-      </div>
-      <button type="submit" class="btn" style="width:100%">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    <a href="#home" class="logo">Halal Dreams</a>
-    <p>In the Name of Allah, the Most Gracious, the Most Merciful</p>
-    <p>May Allah accept our efforts and grant us pure dreams that lead to Jannah.</p>
-    
-    <div class="footer-bottom">
-      © 2025 Halal Dreams · All rights reserved · Made with ❤️ for the Ummah
+    <div class="footer-brand">
+      <div class="brand-icon">🎬</div>
+      <h4>Colin <span>Attic</span></h4>
     </div>
+    <p>Follow on Instagram: <strong style="color:white;">@colinattic</strong></p>
+    <p>Your daily source for movie news, reviews & film industry updates.</p>
+    <p style="margin-top: 18px; font-size: 0.85rem;">© 2026 Colin Attic. All rights reserved.</p>
   </footer>
 
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <span class="badge" id="modalBadge"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDate" style="color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 22px;"></p>
+      <p id="modalBody"></p>
+    </div>
+  </div>
+
   <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Simple form handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('JazakAllah Khair! Your message has been received. May Allah bless your dreams.');
-      this.reset();
-    });
-
-    // Add slight shadow to navbar on scroll
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-      } else {
-        nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+    const newsData = [
+      {
+        id: 0,
+        title: "Dune: Part Three Officially Confirmed by Legendary",
+        category: "news",
+        date: "Oct 9, 2026",
+        image: "https://images.unsplash.com/photo-1598899134739-24c46f058b90?w=800&q=80",
+        excerpt: "Denis Villeneuve will return to complete the epic saga. Production is expected to begin in late 2026.",
+        full: "Legendary Entertainment has officially greenlit Dune: Part Three. Denis Villeneuve is set to return as director, with Timothée Chalamet, Zendaya, Rebecca Ferguson, and Josh Brolin expected to reprise their roles. The film will adapt the second half of Frank Herbert's original novel and is currently scheduled for a 2028 release."
+      },
+      {
+        id: 1,
+        title: "Deadpool & Wolverine Surpasses $1.5 Billion Worldwide",
+        category: "boxoffice",
+        date: "Oct 8, 2026",
+        image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=800&q=80",
+        excerpt: "Ryan Reynolds and Hugh Jackman's team-up becomes the highest-grossing R-rated film of all time.",
+        full: "Marvel's Deadpool & Wolverine has officially crossed the $1.5 billion mark at the global box office, making it the highest-grossing R-rated film in history. The film continues to perform strongly in international markets."
+      },
+      {
+        id: 2,
+        title: "Review: The Brutalist is a Masterpiece",
+        category: "reviews",
+        date: "Oct 7, 2026",
+        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
+        excerpt: "Brady Corbet's epic about an immigrant architect is one of the best films of the decade.",
+        full: "The Brutalist delivers a towering performance from Adrien Brody and stunning cinematography. Brady Corbet's three-and-a-half-hour epic explores ambition, trauma, and the American Dream. It currently holds a 97% on Rotten Tomatoes."
+      },
+      {
+        id: 3,
+        title: "New Trailer for Avatar 3: Fire and Ash Drops",
+        category: "trailers",
+        date: "Oct 6, 2026",
+        image: "https://images.unsplash.com/photo-1440404653329-ed414fb82a2a?w=800&q=80",
+        excerpt: "James Cameron unveils intense new footage featuring the Ash People and a darker tone.",
+        full: "The official trailer for Avatar: Fire and Ash has finally arrived. The third installment introduces the volcanic Ash People and promises a much darker story. Sam Worthington and Zoe Saldaña return."
+      },
+      {
+        id: 4,
+        title: "Christopher Nolan's The Odyssey Sets Record Budget",
+        category: "news",
+        date: "Oct 5, 2026",
+        image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80",
+        excerpt: "Nolan's next film is officially the most expensive of his career at $250 million.",
+        full: "Universal Pictures confirmed that Christopher Nolan's adaptation of Homer's The Odyssey will have a $250 million budget. Matt Damon, Zendaya, and Tom Holland are in early talks for key roles."
+      },
+      {
+        id: 5,
+        title: "A Quiet Place: Day One Breaks Horror Records",
+        category: "boxoffice",
+        date: "Oct 4, 2026",
+        image: "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=800&q=80",
+        excerpt: "The prequel opens to $53 million domestically — the biggest horror opening of the year.",
+        full: "A Quiet Place: Day One scared up $53 million in its opening weekend. Lupita Nyong'o leads the cast in this prequel set during the first day of the alien invasion in New York City."
+      },
+      {
+        id: 6,
+        title: "Review: Challengers Still Reigns Supreme",
+        category: "reviews",
+        date: "Oct 3, 2026",
+        image: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=800&q=80",
+        excerpt: "Luca Guadagnino's steamy sports drama continues to dominate conversations.",
+        full: "Even a year later, Challengers remains the gold standard for modern sports dramas. Zendaya, Mike Faist, and Josh O'Connor deliver electric performances with an unforgettable score."
+      },
+      {
+        id: 7,
+        title: "Marvel Announces Full Phase 7 Slate",
+        category: "news",
+        date: "Oct 2, 2026",
+        image: "https://images.unsplash.com/photo-1632260482994-5c2c5c5c5c5c?w=800&q=80",
+        excerpt: "Young Avengers, Doctor Doom solo film, and X-Men return revealed at Comic-Con.",
+        full: "Marvel Studios unveiled the Phase 7 slate including a Young Avengers film, a Doctor Doom origin story, and the long-awaited return of the X-Men into the MCU."
       }
+    ];
+
+    // Fix last image (placeholder) with a good one
+    newsData[7].image = "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80";
+
+    function renderNews(filter = "all", search = "") {
+      const grid = document.getElementById("newsGrid");
+      grid.innerHTML = "";
+
+      const filtered = newsData.filter(item => {
+        const matchesCategory = filter === "all" || item.category === filter;
+        const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase()) ||
+                              item.excerpt.toLowerCase().includes(search.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--muted); padding:60px 20px;">No stories found.</p>`;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "news-card";
+        card.onclick = () => openModal(item.id);
+        card.innerHTML = `
+          <div class="card-img">
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+            <span class="tag">${item.category}</span>
+          </div>
+          <div class="card-body">
+            <h4>${item.title}</h4>
+            <p>${item.excerpt}</p>
+            <div class="meta">
+              <span class="date">${item.date}</span>
+              <span>Read more →</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function openModal(id) {
+      const item = newsData.find(n => n.id === id);
+      if (!item) return;
+      document.getElementById("modalBadge").textContent = item.category;
+      document.getElementById("modalTitle").textContent = item.title;
+      document.getElementById("modalDate").textContent = item.date;
+      document.getElementById("modalBody").textContent = item.full;
+      document.getElementById("modal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.getElementById("modal").addEventListener("click", e => {
+      if (e.target.id === "modal") closeModal();
     });
+
+    document.querySelectorAll(".cat-btn, nav a").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".cat-btn, nav a").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(`[data-filter="${filter}"]`).forEach(el => el.classList.add("active"));
+        renderNews(filter, document.getElementById("searchInput").value);
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", e => {
+      const activeFilter = document.querySelector(".cat-btn.active")?.dataset.filter || "all";
+      renderNews(activeFilter, e.target.value);
+    });
+
+    renderNews();
   </script>
 </body>
 </html>
