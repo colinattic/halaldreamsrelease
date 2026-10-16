@@ -1,683 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colin Attic | Movie & Film News</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halal Dreams – Worship Allah Alone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #0d5c56;
+            --primary-light: #14b8a6;
+            --accent: #b45309;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 20px rgba(15, 118, 110, 0.08);
+            --shadow-hover: 0 12px 30px rgba(15, 118, 110, 0.15);
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    :root {
-      --bg: #0b0b0b;
-      --card: #161616;
-      --card-hover: #1c1c1c;
-      --accent: #e50914;
-      --text: #ffffff;
-      --muted: #a0a0a0;
-      --border: #2a2a2a;
-    }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 20px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Header */
-    header {
-      background: rgba(11, 11, 11, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 16px 5%;
-    }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--accent));
+        }
 
-    .header-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
+        .bismillah {
+            font-size: 1.35rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
 
-    .brand-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--accent);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 680px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
 
-    .brand-text h1 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-    }
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
 
-    .brand-text h1 span {
-      color: var(--accent);
-    }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+        }
 
-    .brand-text p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
 
-    nav {
-      display: flex;
-      gap: 28px;
-    }
+        nav a:hover {
+            background: #f0fdfa;
+            color: var(--primary);
+        }
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
 
-    nav a:hover,
-    nav a.active {
-      color: white;
-    }
+        /* Intro Card */
+        .intro {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+        }
 
-    .search-box {
-      display: flex;
-      align-items: center;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 10px 18px;
-      gap: 10px;
-      min-width: 240px;
-    }
+        .intro::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            border-radius: 16px 0 0 16px;
+        }
 
-    .search-box input {
-      background: transparent;
-      border: none;
-      color: white;
-      outline: none;
-      width: 100%;
-      font-size: 0.9rem;
-    }
+        .intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            color: var(--primary-dark);
+            margin-bottom: 14px;
+        }
 
-    /* Hero */
-    .hero {
-      max-width: 1400px;
-      margin: 40px auto 20px;
-      padding: 0 5%;
-    }
+        .intro p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .hero-card {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 460px;
-      background: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1600&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: flex-end;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    }
+        /* Search */
+        .search-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.92) 20%, rgba(0,0,0,0.4) 60%, transparent);
-    }
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 420px;
+        }
 
-    .hero-content {
-      position: relative;
-      padding: 50px;
-      max-width: 680px;
-      z-index: 2;
-    }
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 1.5px solid var(--border);
+            border-radius: 50px;
+            background: #ffffff;
+            font-size: 0.95rem;
+            color: var(--text);
+            outline: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
 
-    .badge {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 50px;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+        }
 
-    .hero h2 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      letter-spacing: -0.8px;
-    }
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            opacity: 0.5;
+        }
 
-    .hero p {
-      color: #d0d0d0;
-      margin-bottom: 28px;
-      font-size: 1.1rem;
-      max-width: 560px;
-    }
+        .stats {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s;
-    }
+        .stats span {
+            color: var(--primary);
+            font-weight: 600;
+        }
 
-    .btn:hover {
-      background: #f40612;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
-    }
+        /* Blog Grid */
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+        }
 
-    /* Categories */
-    .categories {
-      max-width: 1400px;
-      margin: 50px auto 25px;
-      padding: 0 5%;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .cat-btn {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 9px 22px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: #99f6e4;
+        }
 
-    .cat-btn:hover,
-    .cat-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-    }
+        .blog-card-content {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-    /* Section */
-    .section-header {
-      max-width: 1400px;
-      margin: 10px auto 30px;
-      padding: 0 5%;
-    }
+        .blog-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
 
-    .section-header h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
+        .blog-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-    /* News Grid */
-    .news-grid {
-      max-width: 1400px;
-      margin: 0 auto 80px;
-      padding: 0 5%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 30px;
-    }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid #f1f5f9;
+        }
 
-    .news-card {
-      background: var(--card);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-    .news-card:hover {
-      transform: translateY(-8px);
-      background: var(--card-hover);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-      border-color: #333;
-    }
+        .read-more::after {
+            content: '→';
+            transition: transform 0.2s;
+        }
 
-    .card-img {
-      height: 220px;
-      position: relative;
-      overflow: hidden;
-    }
+        .blog-card:hover .read-more::after {
+            transform: translateX(4px);
+        }
 
-    .card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
+        .author {
+            font-size: 0.82rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
 
-    .news-card:hover .card-img img {
-      transform: scale(1.08);
-    }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 40px 16px;
+        }
 
-    .card-img .tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(8px);
-      color: white;
-      font-size: 0.7rem;
-      padding: 5px 12px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        .modal-content {
+            background: #ffffff;
+            max-width: 760px;
+            margin: 30px auto;
+            padding: 48px 44px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
 
-    .card-body {
-      padding: 24px;
-    }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .card-body h4 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      line-height: 1.35;
-      letter-spacing: -0.3px;
-    }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
 
-    .card-body p {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 20px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
+        .close-btn:hover {
+            background: #e2e8f0;
+            color: var(--primary);
+        }
 
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
+        .modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+            padding-right: 50px;
+            line-height: 1.35;
+        }
 
-    .meta .date {
-      color: var(--accent);
-      font-weight: 600;
-    }
+        .modal-content .full-content {
+            color: #334155;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            margin-bottom: 32px;
+            white-space: pre-line;
+        }
 
-    /* Footer */
-    footer {
-      background: #080808;
-      border-top: 1px solid var(--border);
-      padding: 50px 5%;
-      text-align: center;
-    }
+        .modal-content .author {
+            font-size: 0.95rem;
+            text-align: right;
+            color: var(--accent);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
 
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 48px 20px;
+            margin-top: 20px;
+        }
 
-    .footer-brand .brand-icon {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-    }
+        footer p {
+            color: var(--text-light);
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
 
-    .footer-brand h4 {
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
+        footer p:first-child {
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
 
-    .footer-brand h4 span {
-      color: var(--accent);
-    }
+        footer .ameen {
+            color: var(--primary);
+            font-style: italic;
+            margin-top: 16px;
+        }
 
-    footer p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 6px;
-    }
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .intro {
+                padding: 28px 24px;
+            }
+            .blogs-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                padding: 36px 24px;
+            }
+            .search-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box {
+                max-width: 100%;
+            }
+        }
 
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.88);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      backdrop-filter: blur(6px);
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background: var(--card);
-      max-width: 720px;
-      width: 100%;
-      border-radius: 20px;
-      padding: 48px;
-      position: relative;
-      max-height: 90vh;
-      overflow-y: auto;
-      border: 1px solid var(--border);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 22px;
-      right: 26px;
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .close-btn:hover {
-      color: white;
-    }
-
-    .modal-content h2 {
-      font-size: 1.9rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      padding-right: 40px;
-    }
-
-    .modal-content .badge {
-      margin-bottom: 18px;
-    }
-
-    .modal-content p {
-      color: #c8c8c8;
-      margin-bottom: 18px;
-      font-size: 1.08rem;
-      line-height: 1.7;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      nav { display: none; }
-      .hero h2 { font-size: 1.9rem; }
-      .hero-card { height: 380px; }
-      .search-box { min-width: 160px; }
-    }
-  </style>
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
+            .bismillah {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        <h1>Halal Dreams</h1>
+        <p>A calm space dedicated to the pure worship of Allah alone. May every word increase our love, fear, and hope in the One True God.</p>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <div class="brand">
-        <div class="brand-icon">🎬</div>
-        <div class="brand-text">
-          <h1>Colin <span>Attic</span></h1>
-          <p>@colinattic • Movie News</p>
+    <nav>
+        <div class="nav-inner">
+            <a href="#" onclick="showAll(); return false;">Home</a>
+            <a href="#blogs" onclick="document.getElementById('blogsGrid').scrollIntoView({behavior:'smooth'}); return false;">All Blogs</a>
+            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to Top</a>
         </div>
-      </div>
+    </nav>
 
-      <nav>
-        <a class="active" data-filter="all">Home</a>
-        <a data-filter="news">News</a>
-        <a data-filter="reviews">Reviews</a>
-        <a data-filter="trailers">Trailers</a>
-        <a data-filter="boxoffice">Box Office</a>
-      </nav>
+    <div class="container">
+        <div class="intro">
+            <h2>Worship Allah Alone</h2>
+            <p>All praise is due to Allah, Lord of the worlds. The purpose of our creation is to worship Him alone without partners. This blog exists only to remind ourselves and others of the greatness of Allah, the beauty of Islam, and the path of the righteous. Every article is written with the sincere intention of seeking Allah’s pleasure.</p>
+        </div>
 
-      <div class="search-box">
-        <span>🔍</span>
-        <input type="text" id="searchInput" placeholder="Search movies & news...">
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-card">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="badge">Breaking News</span>
-        <h2>Dune: Part Three Officially Confirmed</h2>
-        <p>Denis Villeneuve returns to complete the epic saga. Timothée Chalamet and Zendaya are set to reprise their roles.</p>
-        <button class="btn" onclick="openModal(0)">Read Full Story →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories -->
-  <div class="categories">
-    <button class="cat-btn active" data-filter="all">All Stories</button>
-    <button class="cat-btn" data-filter="news">News</button>
-    <button class="cat-btn" data-filter="reviews">Reviews</button>
-    <button class="cat-btn" data-filter="trailers">Trailers</button>
-    <button class="cat-btn" data-filter="boxoffice">Box Office</button>
-  </div>
-
-  <div class="section-header">
-    <h3>Latest Stories</h3>
-  </div>
-
-  <!-- News Grid -->
-  <div class="news-grid" id="newsGrid"></div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-brand">
-      <div class="brand-icon">🎬</div>
-      <h4>Colin <span>Attic</span></h4>
-    </div>
-    <p>Follow on Instagram: <strong style="color:white;">@colinattic</strong></p>
-    <p>Your daily source for movie news, reviews & film industry updates.</p>
-    <p style="margin-top: 18px; font-size: 0.85rem;">© 2026 Colin Attic. All rights reserved.</p>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">×</button>
-      <span class="badge" id="modalBadge"></span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDate" style="color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 22px;"></p>
-      <p id="modalBody"></p>
-    </div>
-  </div>
-
-  <script>
-    const newsData = [
-      {
-        id: 0,
-        title: "Dune: Part Three Officially Confirmed by Legendary",
-        category: "news",
-        date: "Oct 9, 2026",
-        image: "https://images.unsplash.com/photo-1598899134739-24c46f058b90?w=800&q=80",
-        excerpt: "Denis Villeneuve will return to complete the epic saga. Production is expected to begin in late 2026.",
-        full: "Legendary Entertainment has officially greenlit Dune: Part Three. Denis Villeneuve is set to return as director, with Timothée Chalamet, Zendaya, Rebecca Ferguson, and Josh Brolin expected to reprise their roles. The film will adapt the second half of Frank Herbert's original novel and is currently scheduled for a 2028 release."
-      },
-      {
-        id: 1,
-        title: "Deadpool & Wolverine Surpasses $1.5 Billion Worldwide",
-        category: "boxoffice",
-        date: "Oct 8, 2026",
-        image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=800&q=80",
-        excerpt: "Ryan Reynolds and Hugh Jackman's team-up becomes the highest-grossing R-rated film of all time.",
-        full: "Marvel's Deadpool & Wolverine has officially crossed the $1.5 billion mark at the global box office, making it the highest-grossing R-rated film in history. The film continues to perform strongly in international markets."
-      },
-      {
-        id: 2,
-        title: "Review: The Brutalist is a Masterpiece",
-        category: "reviews",
-        date: "Oct 7, 2026",
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
-        excerpt: "Brady Corbet's epic about an immigrant architect is one of the best films of the decade.",
-        full: "The Brutalist delivers a towering performance from Adrien Brody and stunning cinematography. Brady Corbet's three-and-a-half-hour epic explores ambition, trauma, and the American Dream. It currently holds a 97% on Rotten Tomatoes."
-      },
-      {
-        id: 3,
-        title: "New Trailer for Avatar 3: Fire and Ash Drops",
-        category: "trailers",
-        date: "Oct 6, 2026",
-        image: "https://images.unsplash.com/photo-1440404653329-ed414fb82a2a?w=800&q=80",
-        excerpt: "James Cameron unveils intense new footage featuring the Ash People and a darker tone.",
-        full: "The official trailer for Avatar: Fire and Ash has finally arrived. The third installment introduces the volcanic Ash People and promises a much darker story. Sam Worthington and Zoe Saldaña return."
-      },
-      {
-        id: 4,
-        title: "Christopher Nolan's The Odyssey Sets Record Budget",
-        category: "news",
-        date: "Oct 5, 2026",
-        image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80",
-        excerpt: "Nolan's next film is officially the most expensive of his career at $250 million.",
-        full: "Universal Pictures confirmed that Christopher Nolan's adaptation of Homer's The Odyssey will have a $250 million budget. Matt Damon, Zendaya, and Tom Holland are in early talks for key roles."
-      },
-      {
-        id: 5,
-        title: "A Quiet Place: Day One Breaks Horror Records",
-        category: "boxoffice",
-        date: "Oct 4, 2026",
-        image: "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=800&q=80",
-        excerpt: "The prequel opens to $53 million domestically — the biggest horror opening of the year.",
-        full: "A Quiet Place: Day One scared up $53 million in its opening weekend. Lupita Nyong'o leads the cast in this prequel set during the first day of the alien invasion in New York City."
-      },
-      {
-        id: 6,
-        title: "Review: Challengers Still Reigns Supreme",
-        category: "reviews",
-        date: "Oct 3, 2026",
-        image: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=800&q=80",
-        excerpt: "Luca Guadagnino's steamy sports drama continues to dominate conversations.",
-        full: "Even a year later, Challengers remains the gold standard for modern sports dramas. Zendaya, Mike Faist, and Josh O'Connor deliver electric performances with an unforgettable score."
-      },
-      {
-        id: 7,
-        title: "Marvel Announces Full Phase 7 Slate",
-        category: "news",
-        date: "Oct 2, 2026",
-        image: "https://images.unsplash.com/photo-1632260482994-5c2c5c5c5c5c?w=800&q=80",
-        excerpt: "Young Avengers, Doctor Doom solo film, and X-Men return revealed at Comic-Con.",
-        full: "Marvel Studios unveiled the Phase 7 slate including a Young Avengers film, a Doctor Doom origin story, and the long-awaited return of the X-Men into the MCU."
-      }
-    ];
-
-    // Fix last image (placeholder) with a good one
-    newsData[7].image = "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80";
-
-    function renderNews(filter = "all", search = "") {
-      const grid = document.getElementById("newsGrid");
-      grid.innerHTML = "";
-
-      const filtered = newsData.filter(item => {
-        const matchesCategory = filter === "all" || item.category === filter;
-        const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase()) ||
-                              item.excerpt.toLowerCase().includes(search.toLowerCase());
-        return matchesCategory && matchesSearch;
-      });
-
-      if (filtered.length === 0) {
-        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--muted); padding:60px 20px;">No stories found.</p>`;
-        return;
-      }
-
-      filtered.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "news-card";
-        card.onclick = () => openModal(item.id);
-        card.innerHTML = `
-          <div class="card-img">
-            <img src="${item.image}" alt="${item.title}" loading="lazy">
-            <span class="tag">${item.category}</span>
-          </div>
-          <div class="card-body">
-            <h4>${item.title}</h4>
-            <p>${item.excerpt}</p>
-            <div class="meta">
-              <span class="date">${item.date}</span>
-              <span>Read more →</span>
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search articles about worshipping Allah..." onkeyup="filterBlogs()">
             </div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
+            <div class="stats" id="stats"></div>
+        </div>
 
-    function openModal(id) {
-      const item = newsData.find(n => n.id === id);
-      if (!item) return;
-      document.getElementById("modalBadge").textContent = item.category;
-      document.getElementById("modalTitle").textContent = item.title;
-      document.getElementById("modalDate").textContent = item.date;
-      document.getElementById("modalBody").textContent = item.full;
-      document.getElementById("modal").classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
+        <div class="blogs-grid" id="blogsGrid"></div>
+    </div>
 
-    function closeModal() {
-      document.getElementById("modal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
+    <!-- Modal -->
+    <div class="modal" id="blogModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()" aria-label="Close">×</button>
+            <h2 id="modalTitle"></h2>
+            <div class="full-content" id="modalContent"></div>
+            <div class="author" id="modalAuthor"></div>
+        </div>
+    </div>
 
-    document.getElementById("modal").addEventListener("click", e => {
-      if (e.target.id === "modal") closeModal();
-    });
+    <footer>
+        <p>Halal Dreams – Dedicated to the Worship of Allah Alone</p>
+        <p>All content written by Lukman Nawas</p>
+        <p class="ameen">May Allah accept this work and make it a means of guidance for many. Ameen.</p>
+        <p style="margin-top: 20px; font-size: 0.85rem;">© 2025 Halal Dreams. All rights reserved for the sake of Allah.</p>
+    </footer>
 
-    document.querySelectorAll(".cat-btn, nav a").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".cat-btn, nav a").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        const filter = btn.dataset.filter;
-        document.querySelectorAll(`[data-filter="${filter}"]`).forEach(el => el.classList.add("active"));
-        renderNews(filter, document.getElementById("searchInput").value);
-      });
-    });
+    <script>
+        const blogs = [
+            {
+                title: "The Purpose of Our Creation is to Worship Allah",
+                content: "Allah says in the Quran: 'And I did not create the jinn and mankind except to worship Me.' (51:56). This single verse is the foundation of our entire existence. Every breath we take, every action we perform, must ultimately lead to the pure worship of Allah alone. When we remember this purpose, life gains true meaning. Let us strive daily to make our prayers, our work, our family time, and even our rest acts of worship. Worship is not limited to the mosque – it is a complete way of life."
+            },
+            {
+                title: "Tawhid – The Pure Oneness of Allah",
+                content: "The greatest blessing Allah has given us is the knowledge of His Oneness. Tawhid is the first and most important pillar of Islam. To worship Allah alone without any partners, without associating anything with Him, is the essence of our faith. Every prophet called his people to this pure monotheism. When we say La ilaha illallah, we declare that none is worthy of worship except Allah. Protect your Tawhid, for it is the key to Paradise."
+            },
+            {
+                title: "The Beauty of Salah – Standing Before Allah",
+                content: "There is no greater honor than standing before the Lord of the worlds five times a day. Salah is the direct connection between the servant and his Creator. In every bow and prostration, we express our complete submission to Allah. The Prophet ﷺ said that the coolness of his eyes was in prayer. Make your Salah sincere, focused, and full of humility. It is the first thing we will be asked about on the Day of Judgment."
+            },
+            {
+                title: "Remembering Allah Through Dhikr",
+                content: "The hearts find rest only in the remembrance of Allah. Dhikr softens the heart, removes anxiety, and brings immense reward. Saying Subhanallah, Alhamdulillah, Allahu Akbar, and La ilaha illallah throughout the day keeps our tongues and hearts connected to our Lord. Even a few moments of sincere remembrance can transform our entire day. Never let your tongue be free from the remembrance of Allah."
+            },
+            {
+                title: "The Quran – The Greatest Gift from Allah",
+                content: "The Quran is the speech of Allah revealed to guide mankind. Reading it, understanding it, and living by it is one of the highest forms of worship. Every letter carries reward. The Quran softens the hardest hearts and brings light into the darkest lives. Make a daily habit of reading even a few verses with reflection. Let the words of Allah shape your thoughts, your actions, and your dreams."
+            },
+            {
+                title: "Fasting – Training the Soul to Obey Allah",
+                content: "Fasting is not only about abstaining from food and drink. It is a complete training of the soul to obey Allah. Through fasting we learn patience, self-control, and empathy for those who have less. Ramadan is a school of worship where every moment can become an act of devotion. Even voluntary fasts throughout the year keep our hearts connected to Allah and cleanse our souls."
+            },
+            {
+                title: "Sincerity – Doing Everything Only for Allah",
+                content: "Actions are judged by intentions. The purest worship is the one done solely for the sake of Allah, without seeking praise or recognition from people. Sincerity is the soul of every good deed. Before every action, pause and ask yourself: Am I doing this for Allah alone? When sincerity enters the heart, even small deeds become heavy on the scale of good deeds."
+            },
+            {
+                title: "Gratitude – Thanking Allah in Every Situation",
+                content: "A grateful heart is a heart that is close to Allah. Whether in ease or hardship, saying Alhamdulillah keeps us connected to our Lord. Gratitude increases blessings and removes arrogance. The more we thank Allah, the more He gives us. Make gratitude a constant habit – upon waking, before sleeping, and in every moment in between."
+            },
+            {
+                title: "The Importance of Seeking Knowledge for Allah’s Sake",
+                content: "Seeking knowledge is an act of worship when done for the sake of Allah. Understanding the Quran and Sunnah helps us worship our Lord correctly. Knowledge protects us from ignorance and innovation. The angels lower their wings for the seeker of knowledge. Let us seek beneficial knowledge that brings us closer to Allah and helps us serve His creation."
+            },
+            {
+                title: "Trusting Allah Completely – Tawakkul",
+                content: "True reliance on Allah brings peace to the heart. After doing our best, we leave the results to Him. Tawakkul does not mean sitting idle; it means working hard while knowing that success comes only from Allah. When we trust Allah completely, fear and anxiety leave our hearts. He is sufficient for us."
+            },
+            {
+                title: "The Power of Dua – Calling Upon Allah Alone",
+                content: "Dua is the weapon of the believer and a direct conversation with Allah. There is no barrier between the servant and his Lord when he raises his hands. Ask Allah for everything – big or small. He loves those who call upon Him. Never feel shy to ask, for Allah is the Most Generous."
+            },
+            {
+                title: "Charity – Giving for the Sake of Allah",
+                content: "Spending in the way of Allah purifies wealth and softens the heart. Whether it is Zakat or voluntary charity, every coin given sincerely is multiplied by Allah. Charity extinguishes sins and brings barakah. Give quietly, give regularly, and give with the intention of seeking only Allah’s pleasure."
+            },
+            {
+                title: "Patience – A Beautiful Form of Worship",
+                content: "Patience is half of faith. In times of difficulty, remaining patient while trusting Allah is a high form of worship. Allah is with the patient. Every moment of hardship endured for His sake is rewarded beyond measure. Let patience be our companion in every trial."
+            },
+            {
+                title: "The Night Prayer – Standing Alone with Allah",
+                content: "The quiet hours of the night are a special time for the closest servants of Allah. Tahajjud is a secret conversation between the lover and the Beloved. Those who rise at night while others sleep receive a special nearness to their Lord. Even two rak’ahs with sincerity can change a life."
+            },
+            {
+                title: "Loving the Prophet ﷺ for the Sake of Allah",
+                content: "Loving the Messenger of Allah is part of perfect faith. We love him because Allah loves him and chose him as the best example. Following his Sunnah is the practical way of worshipping Allah correctly. The more we love and follow him, the closer we draw to Allah."
+            },
+            {
+                title: "Avoiding Shirk – Protecting Our Worship",
+                content: "Shirk is the greatest injustice. Associating partners with Allah nullifies all good deeds. We must be extremely careful to keep our worship pure – no praying to graves, no seeking help from the dead, no believing that anyone shares in Allah’s power. Pure Tawhid is the only path to salvation."
+            },
+            {
+                title: "The Blessing of the Masjid",
+                content: "The houses of Allah are the most beloved places on earth. Praying in congregation multiplies the reward and strengthens the community. Going to the masjid with sincerity is itself an act of worship. Let us fill the mosques with remembrance of Allah and leave the dunya behind when we enter."
+            },
+            {
+                title: "Repentance – Returning to Allah Always",
+                content: "Allah loves those who constantly return to Him. No matter how many times we fall, the door of tawbah remains open. Sincere repentance wipes away sins and elevates ranks. Never despair of the mercy of Allah. Turn back to Him with a broken heart, and He will accept you."
+            },
+            {
+                title: "The Hereafter – Living for the Meeting with Allah",
+                content: "This world is temporary. The real life is the life of the Hereafter. Every action we do should be with the intention of meeting Allah with a pure heart. Remembering death and the Day of Judgment keeps our worship sincere and our priorities straight."
+            },
+            {
+                title: "Kindness to Parents – An Act of Worship",
+                content: "After the rights of Allah, the rights of parents are the greatest. Serving them with love and patience is a form of worship that brings immense reward. Paradise lies at the feet of the mother. Honoring parents is a path to Allah’s pleasure."
+            },
+            {
+                title: "Controlling the Tongue for Allah’s Sake",
+                content: "The tongue can lead to Paradise or Hellfire. Speaking only what is good, avoiding backbiting, lying, and harsh words is part of perfecting our worship. Silence is often better than speech. Let every word that leaves our mouth be pleasing to Allah."
+            },
+            {
+                title: "The Beauty of Islamic Brotherhood",
+                content: "Loving for the sake of Allah is one of the strongest bonds. When we love our brothers and sisters in faith purely for Allah, it becomes an act of worship. Supporting one another, advising with kindness, and remaining united strengthens the ummah and pleases our Lord."
+            },
+            {
+                title: "Modesty and Lowering the Gaze",
+                content: "Protecting the eyes and maintaining modesty is a command from Allah. Lowering the gaze purifies the heart and protects faith. Both men and women are ordered to guard their modesty. This outward and inward purity is a beautiful form of worship."
+            },
+            {
+                title: "The Virtues of Saying Subhanallah",
+                content: "Glorifying Allah with Subhanallah is a light on the tongue and heavy on the scale. It is one of the most beloved phrases to Allah. Fill your day with this beautiful remembrance and watch how your heart finds peace."
+            },
+            {
+                title: "Waking Up for Fajr – A Sign of True Faith",
+                content: "The one who prays Fajr in congregation is under the protection of Allah for the entire day. Leaving the comfort of sleep to stand before Allah is a powerful act of worship. Make Fajr a non-negotiable priority in your life."
+            },
+            {
+                title: "The Importance of Good Character",
+                content: "The Prophet ﷺ was sent to perfect good character. Treating people with kindness, honesty, and patience is part of worshipping Allah. Good character is heavier on the scale than many voluntary deeds. Let your manners reflect your faith."
+            },
+            {
+                title: "Avoiding Wastefulness – A Form of Gratitude",
+                content: "Allah does not love those who waste. Being careful with food, water, time, and money is an expression of gratitude and responsibility. Simple living for the sake of Allah brings barakah and keeps the heart free from attachment to the dunya."
+            },
+            {
+                title: "The Blessing of Rain and Nature",
+                content: "Every drop of rain, every sunrise, every tree is a sign of Allah’s power and mercy. Reflecting on the creation increases our love and awe for the Creator. Nature itself calls us to worship the One who created it all."
+            },
+            {
+                title: "Teaching Children to Worship Allah",
+                content: "One of the greatest responsibilities is to raise children who love and worship Allah. Teaching them Salah, Quran, and good manners from a young age is an investment for the Hereafter. A righteous child is a continuing charity."
+            },
+            {
+                title: "The Power of Istighfar",
+                content: "Seeking forgiveness opens the doors of mercy and provision. The Prophet ﷺ sought forgiveness more than seventy times a day. Regular istighfar cleanses the heart and brings relief from difficulties. Never stop asking Allah to forgive you."
+            },
+            {
+                title: "Being Content with Allah’s Decree",
+                content: "Contentment (rida) with what Allah has written is a high station of faith. Whether we receive what we want or not, we trust that Allah knows what is best. This attitude turns every situation into an opportunity for worship."
+            },
+            {
+                title: "The Value of Time in Worship",
+                content: "Time is a trust from Allah. Wasting time is wasting the chance to gain reward. Use every free moment for dhikr, Quran, or beneficial knowledge. The smart believer treats time as more precious than gold."
+            },
+            {
+                title: "Smiling as an Act of Charity",
+                content: "A smile for the sake of Allah is charity. Spreading happiness and positivity among people is part of good character and worship. Never underestimate the reward of a sincere smile."
+            },
+            {
+                title: "The Dangers of Showing Off in Worship",
+                content: "Riya (showing off) destroys good deeds. Worship done to impress people has no value with Allah. Guard your intentions carefully. The best deeds are those done in secret between you and your Lord."
+            },
+            {
+                title: "Preparing for Ramadan All Year",
+                content: "Ramadan is the peak of worship, but the preparation should start early. Building habits of Quran, prayer, and fasting throughout the year makes Ramadan more fruitful. Every day can be a preparation for the blessed month."
+            },
+            {
+                title: "The Rights of the Body in Worship",
+                content: "Our body is a trust from Allah. Taking care of health through proper food, sleep, and exercise allows us to worship better. A strong body helps in performing Salah, fasting, and serving others for Allah’s sake."
+            },
+            {
+                title: "Reflecting on Death Daily",
+                content: "Remembering death softens the heart and increases the desire to worship. Visit the graves, reflect on how short life is, and increase good deeds. The one who remembers death often will not be attached to this temporary world."
+            },
+            {
+                title: "The Beauty of Du’a in Sujood",
+                content: "The closest a servant is to Allah is when he is in prostration. Make long and heartfelt duas in sujood. Pour out your heart to the One who hears every whisper. This is a special time of acceptance."
+            },
+            {
+                title: "Avoiding Haram for the Sake of Allah",
+                content: "Staying away from what Allah has forbidden is a great act of worship. The one who leaves haram out of fear of Allah receives special protection and reward. Taqwa is the foundation of a pure life."
+            },
+            {
+                title: "The Blessing of a Righteous Spouse",
+                content: "A spouse who helps you worship Allah is one of the greatest gifts. Supporting each other in prayer, Quran, and good deeds turns the home into a place of worship. Choose and be a partner who brings you closer to Allah."
+            },
+            {
+                title: "Giving Salaam – Spreading Peace",
+                content: "Spreading the greeting of peace is a Sunnah and a means of reward. Saying Assalamu Alaikum with sincerity creates love and unity. It is a simple yet powerful act of worship that costs nothing."
+            },
+            {
+                title: "The Importance of Wudu",
+                content: "Wudu is not just physical cleanliness – it is spiritual purification. Performing wudu properly and with mindfulness prepares the heart for standing before Allah. The Prophet ﷺ said that wudu washes away sins."
+            },
+            {
+                title: "Loving What Allah Loves",
+                content: "True faith is to love what Allah loves and hate what Allah hates. Aligning our desires with the pleasure of Allah is the essence of worship. When our love and dislike are for Allah alone, our heart becomes pure."
+            },
+            {
+                title: "The Reward of Feeding Others",
+                content: "Feeding people for the sake of Allah brings tremendous reward. Whether it is the poor, guests, or family, providing food with a pure intention is a beloved act of worship. Share what you have and watch the barakah increase."
+            },
+            {
+                title: "Keeping Promises for Allah’s Sake",
+                content: "Fulfilling promises is a sign of true faith. Breaking promises is a characteristic of the hypocrite. Be people of your word, for Allah loves those who keep their covenants."
+            },
+            {
+                title: "The Quiet Worship of the Heart",
+                content: "Not all worship is visible. The constant remembrance of Allah in the heart, the fear of displeasing Him, and the hope in His mercy are forms of worship that only Allah sees. Guard the purity of your heart."
+            },
+            {
+                title: "Traveling as a Form of Reflection",
+                content: "Traveling and seeing the creation of Allah increases faith. Reflecting on different lands and peoples reminds us of the greatness of the Creator. Every journey can become a means of coming closer to Allah."
+            },
+            {
+                title: "The Virtue of Silence",
+                content: "Silence is often better than unnecessary speech. Controlling the tongue and speaking only when beneficial is a high form of discipline and worship. The wise person thinks before speaking."
+            },
+            {
+                title: "Making the Intention Pure in Daily Work",
+                content: "Even ordinary work becomes worship when done with the right intention. Earning a halal living to provide for family and avoid asking others is beloved to Allah. Transform your daily routine into continuous worship."
+            },
+            {
+                title: "The Final Goal – Meeting Allah",
+                content: "The ultimate hope of every believer is to meet Allah with a pure heart and accepted deeds. Live every day as if it is preparation for that meeting. May Allah make us among those who are pleased and whom He is pleased with. Ameen."
+            },
+            {
+                title: "Consistency in Small Good Deeds",
+                content: "The most beloved deeds to Allah are those that are consistent, even if small. A daily page of Quran, a few minutes of dhikr, or regular charity – consistency builds a strong relationship with Allah over time."
+            },
+            {
+                title: "The Role of Hope and Fear in Worship",
+                content: "A balanced heart worships Allah with both hope in His mercy and fear of His punishment. Too much hope can lead to laziness, too much fear can lead to despair. The middle path is the way of the prophets."
+            },
+            {
+                title: "Protecting the Eyes and Ears",
+                content: "What we see and hear affects the heart. Guarding the eyes and ears from haram is essential for pure worship. Fill them instead with Quran, beneficial knowledge, and reminders of Allah."
+            },
+            {
+                title: "The Joy of Serving Others for Allah",
+                content: "Helping people with their needs for the sake of Allah brings sweetness to the heart. Whether it is a smile, advice, or practical help, service done purely for Allah is high-ranking worship."
+            },
+            {
+                title: "Never Despair of Allah’s Mercy",
+                content: "No matter how many sins we have committed, Allah’s mercy is greater. The door of repentance is always open. Turn to Him with sincerity, and He will accept you. Despair is from Shaytan – hope is from Allah."
+            }
+        ];
 
-    document.getElementById("searchInput").addEventListener("input", e => {
-      const activeFilter = document.querySelector(".cat-btn.active")?.dataset.filter || "all";
-      renderNews(activeFilter, e.target.value);
-    });
+        function renderBlogs(filteredBlogs = blogs) {
+            const grid = document.getElementById('blogsGrid');
+            grid.innerHTML = '';
 
-    renderNews();
-  </script>
+            document.getElementById('stats').innerHTML = `Showing <span>${filteredBlogs.length}</span> articles • All written to remind us to worship Allah alone`;
+
+            filteredBlogs.forEach((blog) => {
+                const card = document.createElement('div');
+                card.className = 'blog-card';
+                card.onclick = () => openModal(blog);
+                card.innerHTML = `
+                    <div class="blog-card-content">
+                        <h3>${blog.title}</h3>
+                        <p>${blog.content.substring(0, 145)}...</p>
+                        <div class="card-footer">
+                            <span class="read-more">Read Article</span>
+                            <span class="author">Lukman Nawas</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(blog) {
+            document.getElementById('modalTitle').textContent = blog.title;
+            document.getElementById('modalContent').textContent = blog.content;
+            document.getElementById('modalAuthor').textContent = 'Written by Lukman Nawas';
+            document.getElementById('blogModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('blogModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function filterBlogs() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = blogs.filter(blog => 
+                blog.title.toLowerCase().includes(query) || 
+                blog.content.toLowerCase().includes(query)
+            );
+            renderBlogs(filtered);
+        }
+
+        function showAll() {
+            document.getElementById('searchInput').value = '';
+            renderBlogs();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('blogModal')) {
+                closeModal();
+            }
+        };
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initial render
+        renderBlogs();
+    </script>
 </body>
 </html>
