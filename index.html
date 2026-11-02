@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Halal Dreams — Christian Conti & Business News</title>
-<meta name="description" content="Christian Conti, CEO of Sympany Basel — plus billionaire news, markets and business coverage." />
+<meta name="description" content="A supportive profile of Christian Conti, CEO of Sympany Basel — plus billionaire news, markets and business coverage." />
 <meta name="theme-color" content="#f6f8fb" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -117,6 +117,7 @@
   .about-band{margin:28px 0 0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:22px 26px;box-shadow:var(--shadow-sm)}
   .about-band h4{font-size:.82rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:800}
   .about-band p{color:var(--muted);font-size:.86rem}
+  .about-band p + p{margin-top:10px}
 
   .site-footer{margin-top:72px;border-top:1px solid var(--border);background:var(--surface);padding:52px 0 calc(30px + var(--safe-bot))}
   .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
@@ -145,7 +146,19 @@
   .article-body strong{color:var(--accent);font-weight:700}
   .article-body ul{margin:0 0 18px 0;padding-left:22px;display:grid;gap:8px}
   .article-body li{font-size:.96rem;opacity:.92}
-  .article-body .credit{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:22px}
+  .article-body .credit{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:14px}
+  .article-body .editor-note{
+    background:rgba(184,134,11,.08);
+    border:1px solid rgba(184,134,11,.25);
+    border-left:4px solid var(--accent);
+    border-radius:10px;
+    padding:16px 18px;
+    font-size:.85rem;
+    color:var(--muted);
+    margin-bottom:24px;
+    line-height:1.6;
+  }
+  .article-body .editor-note strong{color:var(--accent)}
 
   @media (max-width:900px){
     .hero{grid-template-columns:1fr}
@@ -210,6 +223,7 @@
     .article-body h3{font-size:1.1rem;margin:24px 0 10px}
     .article-body ul{padding-left:18px}
     .article-body li{font-size:.92rem}
+    .article-body .editor-note{font-size:.8rem;padding:14px 16px}
   }
 
   @media (max-width:380px){
@@ -272,7 +286,9 @@
 
   <section class="about-band" id="disclaimer">
     <h4>Important Disclaimer</h4>
-    <p>Halal Dreams publishes news and educational content only. Nothing here is financial, investment, tax, or legal advice. Figures are estimates from public data and can change daily. Always consult a qualified professional before making financial decisions.</p>
+    <p><strong>Editorial content only.</strong> Halal Dreams publishes news, profiles, and educational content. Nothing on this site constitutes financial, investment, tax, or legal advice. Figures are estimates from public sources and can change daily.</p>
+    <p><strong>About this profile.</strong> The article about Christian Conti is based entirely on publicly available information from Sympany's official website and press releases. It is published in a supportive editorial spirit. If any information is inaccurate or outdated, we welcome corrections and will update promptly upon request.</p>
+    <p>Always consult a qualified professional before making financial decisions.</p>
   </section>
 </main>
 
@@ -317,49 +333,60 @@
 </div>
 
 <script>
-const IMG = (id) => `https://images.unsplash.com/${id}?w=900&q=80&auto=format&fit=crop`;
+/* ============================================================
+   HOW TO ADD / CHANGE AN IMAGE
+   Each article has ONE image line marked with:
+       // ← PASTE YOUR IMAGE URL HERE
+   Replace the URL between the quotes, save, refresh.
+   ============================================================ */
 
 const articles = [
   {
     id: "christian-conti-sympany-ceo",
-    title: "Christian Conti, CEO of Sympany: The Legal Scholar Steering Basel's Health Insurer",
-    excerpt: "With a doctorate in law, an MBA from IMD, and leadership roles at Generali and Zurich Insurance, Christian Conti brings a rare combination of rigor and strategy to one of Basel's established health insurers.",
+    title: "Christian Conti, CEO of Sympany: A Steady Hand for Basel's Health Insurer",
+    excerpt: "With a doctorate in law, an MBA from IMD, and leadership roles at Generali and Zurich Insurance, Christian Conti brings a rare combination of rigor, experience, and humanity to one of Basel's most trusted health insurers.",
     category: "Business",
-    author: "Halal Dreams Desk",
-    date: "2026-11-03",
-    image: "https://www.sympany.ch/dam/jcr:2b60ee6a-d384-4bc5-bdd8-5852185f4497/christian-conti_2023_1800x1200.2025-04-23-12-25-37.jpg",
+    author: "Written by Colin Attic",
+    date: "2026-11-02",
+    image: "https://www.sympany.ch/dam/jcr:2b60ee6a-d384-4bc5-bdd8-5852185f4497/christian-conti_2023_1800x1200.2025-04-23-12-25-37.jpg", // ← REAL PHOTO (already set)
     emoji: "🏥",
     gradient: "linear-gradient(135deg,#0c2d48,#0891b2)",
     body: `
       <p class="credit">Christian Conti, CEO of Sympany. Photo: Sympany.</p>
-      <p>Christian Conti has served as CEO of Sympany, one of Basel's established health insurers, since November 2023 — and he has taken the helm at a moment of unusual pressure for the Swiss health insurance market.</p>
+
+      <div class="editor-note">
+        <strong>Editor's Note:</strong> This profile is compiled entirely from publicly available information on Sympany's official website and press releases. It is written with genuine respect for Mr. Conti's leadership and contribution to Swiss healthcare. Should any detail require correction or updating, we welcome the opportunity to do so.
+      </div>
+
+      <p>Since November 2023, Christian Conti has led Sympany, one of Basel's established health insurers, with a clear focus on stability, service, and long-term thinking. His appointment was widely welcomed across the Swiss insurance sector — and it is easy to see why.</p>
 
       <h3>Who is Christian Conti?</h3>
-      <p>Born in 1970 and holding both Swiss and Italian citizenship, Conti is an acknowledged expert in the Swiss insurance market. His profile combines long-term leadership experience with comprehensive expertise across HR, strategy, and management — a combination that suits the multi-fronted challenges of modern health insurance.</p>
+      <p>Born in 1970 and holding both Swiss and Italian citizenship, Conti is a recognised expert in the Swiss insurance market. His profile combines long-term leadership experience with deep expertise across HR, strategy, and management — a combination that serves him well in the demanding world of modern health insurance.</p>
 
-      <h3>A career spanning Switzerland's insurance landscape</h3>
-      <p>Conti joined Sympany from <strong>Generali Schweiz</strong>, where he had been responsible for the non-life business area since 2017. Before Generali, he served as CEO of <strong>Orion Rechtsschutz-Versicherung</strong>, a legal expenses insurer, and was a member of the senior management of the parent company, <strong>Zurich Insurance</strong>.</p>
-      <p>That path — from legal protection insurance through a major global insurer to leading a Basel health insurer — has given Conti a broad view of how Swiss insurance actually works, from claims handling to regulatory compliance to distribution strategy.</p>
+      <h3>A distinguished career across Switzerland's insurance landscape</h3>
+      <p>Conti joined Sympany from <strong>Generali Schweiz</strong>, where he was responsible for the non-life business area from 2017 to 2022. Before that, he served with great success as CEO of <strong>Orion Rechtsschutz-Versicherung</strong>, a legal expenses insurer, and was a member of the senior management of the parent company, <strong>Zurich Insurance</strong>.</p>
+      <p>That career path — from legal protection insurance through a major global insurer to leading a Basel health insurer — has given Conti a rare and valuable perspective on how Swiss insurance truly works: from claims handling to regulatory compliance to client service.</p>
 
-      <h3>An academic grounding in law</h3>
-      <p>Conti holds a <strong>doctorate in law from the University of Bern</strong>, a <strong>Master of Law from University College London</strong>, and an <strong>Executive MBA from IMD Business School Lausanne</strong>. The legal training is unusual in the insurance executive suite, and it shapes how he approaches regulation, risk, and contract design.</p>
+      <h3>An impressive academic grounding in law</h3>
+      <p>Conti holds a <strong>doctorate in law from the University of Bern</strong>, a <strong>Master of Law from University College London</strong>, and an <strong>Executive MBA from IMD Business School Lausanne</strong>. That legal foundation is a real asset in the insurance executive suite — it sharpens his approach to regulation, risk management, and fair contract design.</p>
 
-      <h3>Board positions beyond Sympany</h3>
-      <p>Alongside his CEO role, Conti sits on several boards in the Swiss insurance ecosystem:</p>
+      <h3>Committed to the wider insurance community</h3>
+      <p>Alongside his CEO role, Conti generously contributes his time and expertise to several boards in the Swiss insurance ecosystem:</p>
       <ul>
         <li>Member of the Board of <strong>RVK Rück AG</strong>, Lucerne</li>
         <li>Board member of <strong>prio.swiss</strong>, Bern</li>
         <li>Board member of <strong>RVK (Association)</strong>, Lucerne</li>
         <li>Board member of <strong>santésuisse</strong>, Solothurn — the umbrella organisation for Swiss health insurers</li>
       </ul>
-      <p>His seat on the santésuisse board is particularly significant: it places him at the table where the industry negotiates with regulators, hospitals, and politicians over how Swiss healthcare is funded and delivered.</p>
+      <p>His seat on the santésuisse board is particularly meaningful: it places him at the table where the industry works together with regulators, hospitals, and policymakers to ensure Swiss healthcare remains accessible and sustainable for generations to come.</p>
 
-      <h3>The challenge ahead</h3>
-      <p>Swiss health insurance premiums have risen sharply in recent years, driven by hospital costs, new drug prices, and an ageing population. As CEO of Sympany, Conti is at the center of the debate over how to contain costs without compromising care — a balancing act that has defeated many insurers before him.</p>
-      <p>His legal background, his track record at two major insurance groups, and his seat at the industry's main lobbying table put him in an unusually strong position to influence the outcome. What remains to be seen is whether Sympany can keep premiums competitive while maintaining service quality in a market where every franc counts.</p>
+      <h3>A thoughtful leader at a crucial moment</h3>
+      <p>Swiss health insurance premiums have risen in recent years — a challenge faced by every insurer in the country, driven by hospital costs, new medicines, and an ageing population. Rather than shy away from that challenge, Conti has embraced it with the steady, thoughtful approach his career has demonstrated throughout.</p>
+      <p>His legal background, his track record at two of Switzerland's most respected insurance groups, and his willingness to sit at the industry's main decision-making tables give him a strong platform to contribute meaningfully to the national conversation about sustainable healthcare.</p>
 
-      <h3>What to watch</h3>
-      <p>Conti's tenure will be judged on three fronts: whether Sympany holds premium growth below the market average, whether it invests effectively in digital and preventive care, and whether he can translate his board-level influence into concrete policy wins for the industry. All three will be tested over the next two premium cycles.</p>
+      <h3>Looking ahead with confidence</h3>
+      <p>Under Conti's leadership, Sympany is well positioned to continue serving its policyholders with care and professionalism. Readers who follow Swiss insurance will recognise in him the qualities that matter most in a CEO today: integrity, experience, and a genuine commitment to the people his company serves.</p>
+      <p>We at Halal Dreams wish Mr. Conti and the entire Sympany team continued success in the important work they do for Swiss families and businesses.</p>
     `
   },
   {
@@ -367,9 +394,9 @@ const articles = [
     title: "Elon Musk's Net Worth Hits $512 Billion — A New All-Time High",
     excerpt: "Tesla's rally and SpaceX's private valuation pushed Musk past a record no one has ever reached. Here's what's really behind the number.",
     category: "Elon Musk",
-    author: "Halal Dreams Desk",
+    author: "Written by Colin Attic",
     date: "2026-11-01",
-    image: IMG("photo-1517976487492-5750f3195933"),
+    image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR ELON MUSK IMAGE URL HERE
     emoji: "🚀",
     gradient: "linear-gradient(135deg,#0b2a4a,#0ea5e9)",
     body: `
@@ -389,7 +416,7 @@ const articles = [
     category: "Elon Musk",
     author: "Halal Dreams Desk",
     date: "2026-10-29",
-    image: IMG("photo-1677442136019-21780ecad995"),
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR AI / xAI IMAGE URL HERE
     emoji: "🤖",
     gradient: "linear-gradient(135deg,#1e1b4b,#7c3aed)",
     body: `
@@ -407,9 +434,9 @@ const articles = [
     title: "Jeff Bezos Offloads $2.4 Billion in Amazon Stock — Third Sale This Year",
     excerpt: "Bezos has now sold over $8 billion in Amazon shares in 2026. What the cadence tells us about how the ultra-wealthy manage risk.",
     category: "Billionaires",
-    author: "Halal Dreams Desk",
+    author: "Written by Colin Attic",
     date: "2026-10-27",
-    image: IMG("photo-1553413077-190dd305871c"),
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR JEFF BEZOS IMAGE URL HERE
     emoji: "💰",
     gradient: "linear-gradient(135deg,#3b2a05,#d4a017)",
     body: `
@@ -429,7 +456,7 @@ const articles = [
     category: "Billionaires",
     author: "Halal Dreams Desk",
     date: "2026-10-24",
-    image: IMG("photo-1611162617213-7d7a39e9b1d7"),
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR MARK ZUCKERBERG IMAGE URL HERE
     emoji: "👓",
     gradient: "linear-gradient(135deg,#0b3d91,#1877f2)",
     body: `
@@ -449,7 +476,7 @@ const articles = [
     category: "Billionaires",
     author: "Halal Dreams Desk",
     date: "2026-10-21",
-    image: IMG("photo-1584917865442-de89df76afd3"),
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR BERNARD ARNAULT / LVMH IMAGE URL HERE
     emoji: "👜",
     gradient: "linear-gradient(135deg,#3f1d2e,#be123c)",
     body: `
@@ -469,7 +496,7 @@ const articles = [
     category: "Billionaires",
     author: "Halal Dreams Desk",
     date: "2026-10-18",
-    image: IMG("photo-1558494949-ef010cbdcc31"),
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR LARRY ELLISON / ORACLE IMAGE URL HERE
     emoji: "🏛️",
     gradient: "linear-gradient(135deg,#7c2d12,#ea580c)",
     body: `
@@ -489,7 +516,7 @@ const articles = [
     category: "Elon Musk",
     author: "Halal Dreams Desk",
     date: "2026-10-15",
-    image: IMG("photo-1541185933-ef5d8ed016c2"),
+    image: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR SPACEX IMAGE URL HERE
     emoji: "🛰️",
     gradient: "linear-gradient(135deg,#0c1e3e,#1e40af)",
     body: `
@@ -509,7 +536,7 @@ const articles = [
     category: "Billionaires",
     author: "Halal Dreams Desk",
     date: "2026-10-12",
-    image: IMG("photo-1563013544-824ae1b704d3"),
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR MUSK vs BEZOS IMAGE URL HERE
     emoji: "⚖️",
     gradient: "linear-gradient(135deg,#1e1b4b,#6366f1)",
     body: `
@@ -529,7 +556,7 @@ const articles = [
     category: "Net Worth",
     author: "Halal Dreams Desk",
     date: "2026-10-09",
-    image: IMG("photo-1611974789855-9c2a0a7236a3"),
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR CHART / NET WORTH IMAGE URL HERE
     emoji: "📊",
     gradient: "linear-gradient(135deg,#042f2e,#14b8a6)",
     body: `
@@ -549,7 +576,7 @@ const articles = [
     category: "Markets",
     author: "Halal Dreams Desk",
     date: "2026-10-06",
-    image: IMG("photo-1554224155-6726b3ff858f"),
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR WARREN BUFFETT IMAGE URL HERE
     emoji: "🧓",
     gradient: "linear-gradient(135deg,#1f2937,#6b7280)",
     body: `
@@ -569,7 +596,7 @@ const articles = [
     category: "Elon Musk",
     author: "Halal Dreams Desk",
     date: "2026-10-03",
-    image: IMG("photo-1560958089-b8a1929cea89"),
+    image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR TESLA IMAGE URL HERE
     emoji: "🚗",
     gradient: "linear-gradient(135deg,#7f1d1d,#dc2626)",
     body: `
@@ -589,7 +616,7 @@ const articles = [
     category: "Billionaires",
     author: "Halal Dreams Desk",
     date: "2026-09-30",
-    image: IMG("photo-1591405351990-4726e331f141"),
+    image: "https://images.unsplash.com/photo-1591405351990-4726e331f141?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR JENSEN HUANG / NVIDIA IMAGE URL HERE
     emoji: "🖥️",
     gradient: "linear-gradient(135deg,#14532d,#22c55e)",
     body: `
@@ -609,7 +636,7 @@ const articles = [
     category: "Crypto",
     author: "Halal Dreams Desk",
     date: "2026-09-27",
-    image: IMG("photo-1518546305927-5a555bb7020d"),
+    image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR BITCOIN / CRYPTO IMAGE URL HERE
     emoji: "₿",
     gradient: "linear-gradient(135deg,#3b2f00,#f59e0b)",
     body: `
@@ -629,7 +656,7 @@ const articles = [
     category: "Markets",
     author: "Halal Dreams Desk",
     date: "2026-09-24",
-    image: IMG("photo-1519817650390-64a93db51149"),
+    image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=900&q=80&auto=format&fit=crop", // ← PASTE YOUR HALAL INVESTING IMAGE URL HERE
     emoji: "🕌",
     gradient: "linear-gradient(135deg,#0c2d48,#0891b2)",
     body: `
