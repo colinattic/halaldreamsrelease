@@ -1,787 +1,827 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halal Dreams – Worship Allah Alone</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0f766e;
-            --primary-dark: #0d5c56;
-            --primary-light: #14b8a6;
-            --accent: #b45309;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 4px 20px rgba(15, 118, 110, 0.08);
-            --shadow-hover: 0 12px 30px rgba(15, 118, 110, 0.15);
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Halal Dreams — Billionaire & Finance News</title>
+<meta name="description" content="Daily updates on Elon Musk, Jeff Bezos, billionaires, markets and business news." />
+<meta name="theme-color" content="#f6f8fb" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://images.unsplash.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:#f6f8fb; --surface:#ffffff; --surface-2:#eef3f9;
+    --text:#0b1420; --muted:#5b6b80; --border:#e2e9f1;
+    --accent:#b8860b; --accent-soft:rgba(184,134,11,.10); --accent-2:#1d4ed8;
+    --header:rgba(255,255,255,.92);
+    --shadow-sm:0 1px 2px rgba(15,23,42,.04),0 4px 12px rgba(15,23,42,.04);
+    --shadow-md:0 4px 10px rgba(15,23,42,.06),0 16px 32px rgba(15,23,42,.08);
+    --shadow-lg:0 8px 20px rgba(15,23,42,.08),0 28px 56px rgba(15,23,42,.14);
+    --radius:16px;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bot: env(safe-area-inset-bottom, 0px);
+  }
+  [data-theme="dark"] {
+    --bg:#0a0e13; --surface:#111821; --surface-2:#18212c;
+    --text:#e6edf3; --muted:#8b9bb0; --border:#22303f;
+    --accent:#e3b341; --accent-soft:rgba(227,179,65,.14); --accent-2:#58a6ff;
+    --header:rgba(10,14,19,.92);
+    --shadow-sm:0 1px 2px rgba(0,0,0,.2),0 4px 12px rgba(0,0,0,.2);
+    --shadow-md:0 4px 10px rgba(0,0,0,.3),0 16px 32px rgba(0,0,0,.35);
+    --shadow-lg:0 8px 20px rgba(0,0,0,.4),0 28px 56px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease;overflow-x:hidden}
+  body.no-scroll{overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  :focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  /* HEADER */
+  .site-header{position:sticky;top:0;z-index:50;background:var(--header);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding-top:var(--safe-top)}
+  .header-inner{display:flex;align-items:center;gap:14px;height:70px}
+  .logo{font-family:"Playfair Display",serif;font-weight:900;font-size:1.45rem;letter-spacing:-.02em;white-space:nowrap;line-height:1;flex-shrink:0}
+  .logo span{color:var(--accent)}
+  .logo small{display:block;font-family:"Inter",sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .search-box{flex:1;max-width:420px;margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:9px 16px;transition:border-color .2s,box-shadow .2s}
+  .search-box:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .search-box svg{flex:0 0 auto;color:var(--muted)}
+  .search-box input{flex:1;min-width:0;background:transparent;border:0;color:var(--text);font-size:16px;outline:none}
+  .search-box input::placeholder{color:var(--muted)}
+  .icon-btn{flex:0 0 auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:1.1rem;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .icon-btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .icon-btn:active{transform:scale(.95)}
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            min-height: 100vh;
-        }
+  /* CHIPS */
+  .chips-bar{position:sticky;top:calc(70px + var(--safe-top));z-index:40;background:var(--header);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+  .chips-scroll{display:flex;gap:10px;padding:14px 20px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips-scroll::-webkit-scrollbar{display:none}
+  .chip-btn{flex:0 0 auto;background:var(--surface);color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-size:.82rem;font-weight:600;transition:all .18s ease;white-space:nowrap}
+  .chip-btn:hover{color:var(--text);border-color:var(--accent)}
+  .chip-btn:active{transform:scale(.97)}
+  .chip-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700;box-shadow:var(--shadow-sm)}
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 28px 20px 32px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+  /* MEDIA */
+  .media{position:relative;overflow:hidden;background:#0b1420}
+  .media-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:54px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.3))}
+  .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.3,1)}
+  .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.45) 100%);opacity:.7;pointer-events:none}
+  .chip{display:inline-block;background:rgba(0,0,0,.6);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:4px 12px;border-radius:999px;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;position:absolute;top:14px;left:14px;z-index:2}
+  .badge-new{position:absolute;top:14px;right:14px;background:#dc2626;color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.12em;padding:4px 10px;border-radius:999px;box-shadow:0 2px 10px rgba(220,38,38,.5);z-index:2;animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.72}}
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--accent));
-        }
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.1fr 1fr;margin-top:34px;background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-md)}
+  .hero .media{min-height:400px}
+  .hero:hover .media img{transform:scale(1.04)}
+  .hero .media-fallback{font-size:120px}
+  .hero-content{padding:44px;display:flex;flex-direction:column;justify-content:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--accent);border-radius:2px}
+  .hero-title{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+  .hero-excerpt{color:var(--muted);font-size:1.02rem;margin-bottom:22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:14px 28px;font-size:.92rem;font-weight:700;transition:transform .18s,box-shadow .18s;width:fit-content;min-height:48px}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(184,134,11,.4)}
+  .btn-primary:active{transform:scale(.98)}
 
-        .bismillah {
-            font-size: 1.35rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
+  /* CARD META */
+  .card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:.78rem;color:var(--muted);margin-bottom:20px}
+  .avatar{width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:.66rem;font-weight:800;border:1px solid var(--accent);flex-shrink:0}
+  .dot{width:3px;height:3px;border-radius:50%;background:var(--muted);opacity:.6}
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: var(--primary-dark);
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
+  /* GRID */
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:56px 0 24px;padding-bottom:14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+  .section-head h2{font-family:"Playfair Display",serif;font-size:1.6rem;letter-spacing:-.01em}
+  .result-count{font-size:.82rem;color:var(--muted);font-weight:500}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform .28s cubic-bezier(.2,.8,.3,1),border-color .28s,box-shadow .28s;position:relative}
+  .card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:var(--shadow-lg)}
+  .card:hover .media img{transform:scale(1.06)}
+  .card:active{transform:scale(.99)}
+  .card .media{aspect-ratio:16/10}
+  .card-body{padding:22px;display:flex;flex-direction:column;flex:1}
+  .card-title{font-family:"Playfair Display",serif;font-size:1.18rem;line-height:1.32;margin-bottom:10px;letter-spacing:-.008em}
+  .card-excerpt{color:var(--muted);font-size:.88rem;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .card .card-meta{margin:auto 0 0;font-size:.74rem;margin-bottom:0}
+  .empty{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:var(--radius);background:var(--surface)}
+  .empty strong{display:block;color:var(--text);font-size:1.05rem;margin-bottom:6px}
 
-        header p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 680px;
-            margin: 0 auto;
-            font-weight: 400;
-        }
+  /* NEWSLETTER */
+  .newsletter{margin:64px 0 0;background:linear-gradient(135deg,rgba(184,134,11,.12),rgba(29,78,216,.10));border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+  .newsletter h3{font-family:"Playfair Display",serif;font-size:1.55rem;margin-bottom:8px}
+  .newsletter p{color:var(--muted);font-size:.92rem}
+  .newsletter form{display:flex;gap:10px;flex-wrap:wrap}
+  .newsletter input[type="email"]{flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:14px 20px;color:var(--text);font-size:16px;outline:none;transition:border-color .18s}
+  .newsletter input[type="email"]:focus{border-color:var(--accent-2)}
+  .form-msg{width:100%;font-size:.82rem;font-weight:600}
 
-        /* Navigation */
-        nav {
-            background: #ffffff;
-            border-bottom: 1px solid var(--border);
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
+  /* DISCLAIMER */
+  .about-band{margin:28px 0 0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:22px 26px;box-shadow:var(--shadow-sm)}
+  .about-band h4{font-size:.82rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:800}
+  .about-band p{color:var(--muted);font-size:.86rem}
 
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 20px;
-            flex-wrap: wrap;
-        }
+  /* FOOTER */
+  .site-footer{margin-top:72px;border-top:1px solid var(--border);background:var(--surface);padding:52px 0 calc(30px + var(--safe-bot))}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
+  .footer-grid h5{font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:16px;font-weight:800}
+  .footer-grid ul{list-style:none;display:grid;gap:11px}
+  .footer-grid a{color:var(--muted);font-size:.88rem;transition:color .18s;display:inline-block;padding:4px 0}
+  .footer-grid a:hover{color:var(--accent)}
+  .footer-brand p{color:var(--muted);font-size:.86rem;margin-top:12px;max-width:360px}
+  .footer-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--muted)}
 
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.25s ease;
-        }
+  /* MODAL */
+  .modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(11,20,32,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .24s}
+  .modal.open{opacity:1;pointer-events:auto}
+  .modal-card{position:relative;width:100%;max-width:820px;max-height:90vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:0 0 40px;transform:translateY(16px) scale(.98);transition:transform .3s cubic-bezier(.2,.9,.3,1.1);box-shadow:var(--shadow-lg)}
+  .modal.open .modal-card{transform:translateY(0) scale(1)}
+  .modal-close{position:sticky;top:16px;float:right;margin-right:16px;z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:1.15rem;backdrop-filter:blur(8px);transition:background .18s}
+  .modal-close:hover{background:rgba(0,0,0,.85)}
+  .modal-close:active{transform:scale(.92)}
+  .modal .media{height:280px}
+  .modal .media-fallback{font-size:90px}
+  .modal .chip{position:relative;top:-18px;left:34px;background:var(--accent);color:#fff;border-color:transparent}
+  .modal-inner{padding:0 38px}
+  .modal-inner h2{font-family:"Playfair Display",serif;font-size:clamp(1.45rem,3vw,2.1rem);line-height:1.2;margin:6px 0 14px;letter-spacing:-.018em}
+  .modal-meta{font-size:.8rem;color:var(--muted);padding-bottom:22px;margin-bottom:24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .article-body p{margin-bottom:18px;font-size:.98rem;opacity:.92}
+  .article-body h3{font-family:"Playfair Display",serif;font-size:1.22rem;margin:30px 0 12px}
+  .article-body strong{color:var(--accent);font-weight:700}
 
-        nav a:hover {
-            background: #f0fdfa;
-            color: var(--primary);
-        }
+  /* ============ TABLET (<=900px) ============ */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr}
+    .hero .media{min-height:280px;aspect-ratio:16/10}
+    .hero .media-fallback{font-size:90px}
+    .hero-content{padding:32px}
+    .hero-title{font-size:clamp(1.5rem,4vw,2rem)}
+    .newsletter{grid-template-columns:1fr;padding:32px}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .footer-brand{grid-column:1/-1}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+  }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px 60px;
-        }
+  /* ============ MOBILE (<=640px) ============ */
+  @media (max-width:640px){
+    .wrap{padding:0 16px}
 
-        /* Intro Card */
-        .intro {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 36px 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            text-align: center;
-            position: relative;
-        }
+    /* Header — two rows: logo+theme on top, search below */
+    .header-inner{display:grid;grid-template-columns:1fr auto;gap:10px 12px;height:auto;padding:12px 0}
+    .logo{font-size:1.3rem}
+    .logo small{display:none}
+    .icon-btn{grid-column:2;grid-row:1;width:42px;height:42px}
+    .search-box{grid-column:1/-1;grid-row:2;max-width:none;padding:10px 14px;margin:0}
 
-        .intro::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 5px;
-            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
-            border-radius: 16px 0 0 16px;
-        }
+    /* Chips — taller touch targets, edge-to-edge scroll */
+    .chips-bar{top:calc(118px + var(--safe-top))}
+    .chips-scroll{padding:12px 16px;gap:8px}
+    .chip-btn{padding:10px 16px;font-size:.8rem}
 
-        .intro h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.7rem;
-            color: var(--primary-dark);
-            margin-bottom: 14px;
-        }
+    /* Hero — image on top, full-width text */
+    .hero{margin-top:24px;border-radius:16px}
+    .hero .media{min-height:220px;aspect-ratio:16/9}
+    .hero .media-fallback{font-size:70px}
+    .hero-content{padding:24px 22px 26px}
+    .hero-title{font-size:1.5rem;margin-bottom:12px}
+    .hero-excerpt{font-size:.94rem;margin-bottom:18px}
+    .eyebrow{font-size:.66rem}
+    .btn{width:100%;justify-content:center}
 
-        .intro p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* Section head */
+    .section-head{margin:36px 0 18px}
+    .section-head h2{font-size:1.3rem}
+    .result-count{font-size:.76rem}
 
-        /* Search */
-        .search-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
+    /* Grid — one column */
+    .grid{grid-template-columns:1fr;gap:18px}
+    .card-body{padding:18px}
+    .card-title{font-size:1.1rem}
+    .card-excerpt{font-size:.85rem;-webkit-line-clamp:2}
 
-        .search-box {
-            position: relative;
-            flex: 1;
-            max-width: 420px;
-        }
+    /* Newsletter */
+    .newsletter{margin:44px 0 0;padding:24px 20px;gap:18px;border-radius:14px}
+    .newsletter h3{font-size:1.3rem}
+    .newsletter p{font-size:.86rem}
+    .newsletter form{flex-direction:column;gap:10px}
+    .newsletter input[type="email"]{width:100%;padding:14px 18px}
+    .newsletter .btn{width:100%;justify-content:center}
 
-        .search-box input {
-            width: 100%;
-            padding: 14px 20px 14px 48px;
-            border: 1.5px solid var(--border);
-            border-radius: 50px;
-            background: #ffffff;
-            font-size: 0.95rem;
-            color: var(--text);
-            outline: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
+    /* Disclaimer */
+    .about-band{padding:18px 20px;margin-top:22px}
+    .about-band h4{font-size:.74rem}
+    .about-band p{font-size:.82rem}
 
-        .search-box input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
-        }
+    /* Footer */
+    .site-footer{margin-top:52px;padding:38px 0 calc(24px + var(--safe-bot))}
+    .footer-grid{grid-template-columns:1fr;gap:26px}
+    .footer-brand .logo{font-size:1.3rem}
+    .footer-bottom{margin-top:28px;padding-top:18px;flex-direction:column;text-align:center;font-size:.74rem}
 
-        .search-box::before {
-            content: '🔍';
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1rem;
-            opacity: 0.5;
-        }
+    /* Modal — full screen sheet on phones */
+    .modal{padding:0;align-items:stretch}
+    .modal-card{max-height:100vh;height:100%;max-width:100%;border-radius:0;padding:0 0 calc(30px + var(--safe-bot))}
+    .modal-close{top:calc(14px + var(--safe-top));margin-right:14px}
+    .modal .media{height:210px;border-radius:0}
+    .modal .media-fallback{font-size:68px}
+    .modal .chip{left:22px;top:-14px;font-size:.62rem}
+    .modal-inner{padding:0 22px}
+    .modal-inner h2{font-size:1.35rem;margin-top:2px}
+    .modal-meta{font-size:.74rem;gap:8px;padding-bottom:16px;margin-bottom:18px}
+    .article-body p{font-size:.95rem}
+    .article-body h3{font-size:1.1rem;margin:24px 0 10px}
+  }
 
-        .stats {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
+  /* ============ SMALL PHONES (<=380px) ============ */
+  @media (max-width:380px){
+    .logo{font-size:1.15rem}
+    .hero-title{font-size:1.32rem}
+    .hero .media{min-height:190px}
+    .card-title{font-size:1.02rem}
+    .newsletter h3{font-size:1.15rem}
+  }
 
-        .stats span {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Blog Grid */
-        .blogs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 28px;
-        }
-
-        .blog-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: #99f6e4;
-        }
-
-        .blog-card-content {
-            padding: 28px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-card h3 {
-            font-size: 1.25rem;
-            color: var(--primary-dark);
-            margin-bottom: 12px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .blog-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            flex: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 16px;
-            border-top: 1px solid #f1f5f9;
-        }
-
-        .read-more {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .read-more::after {
-            content: '→';
-            transition: transform 0.2s;
-        }
-
-        .blog-card:hover .read-more::after {
-            transform: translateX(4px);
-        }
-
-        .author {
-            font-size: 0.82rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.55);
-            backdrop-filter: blur(6px);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 40px 16px;
-        }
-
-        .modal-content {
-            background: #ffffff;
-            max-width: 760px;
-            margin: 30px auto;
-            padding: 48px 44px;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            position: relative;
-            animation: modalIn 0.3s ease;
-        }
-
-        @keyframes modalIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 24px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: #f1f5f9;
-            color: var(--text);
-            font-size: 1.4rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-
-        .close-btn:hover {
-            background: #e2e8f0;
-            color: var(--primary);
-        }
-
-        .modal-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.9rem;
-            color: var(--primary-dark);
-            margin-bottom: 24px;
-            padding-right: 50px;
-            line-height: 1.35;
-        }
-
-        .modal-content .full-content {
-            color: #334155;
-            font-size: 1.08rem;
-            line-height: 1.85;
-            margin-bottom: 32px;
-            white-space: pre-line;
-        }
-
-        .modal-content .author {
-            font-size: 0.95rem;
-            text-align: right;
-            color: var(--accent);
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        footer {
-            background: #ffffff;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 48px 20px;
-            margin-top: 20px;
-        }
-
-        footer p {
-            color: var(--text-light);
-            margin: 8px 0;
-            font-size: 0.95rem;
-        }
-
-        footer p:first-child {
-            color: var(--primary-dark);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        footer .ameen {
-            color: var(--primary);
-            font-style: italic;
-            margin-top: 16px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            .intro {
-                padding: 28px 24px;
-            }
-            .blogs-grid {
-                grid-template-columns: 1fr;
-            }
-            .modal-content {
-                padding: 36px 24px;
-            }
-            .search-section {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .search-box {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.9rem;
-            }
-            .bismillah {
-                font-size: 1.15rem;
-            }
-        }
-    </style>
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-        <h1>Halal Dreams</h1>
-        <p>A calm space dedicated to the pure worship of Allah alone. May every word increase our love, fear, and hope in the One True God.</p>
-    </header>
 
-    <nav>
-        <div class="nav-inner">
-            <a href="#" onclick="showAll(); return false;">Home</a>
-            <a href="#blogs" onclick="document.getElementById('blogsGrid').scrollIntoView({behavior:'smooth'}); return false;">All Blogs</a>
-            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to Top</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="intro">
-            <h2>Worship Allah Alone</h2>
-            <p>All praise is due to Allah, Lord of the worlds. The purpose of our creation is to worship Him alone without partners. This blog exists only to remind ourselves and others of the greatness of Allah, the beauty of Islam, and the path of the righteous. Every article is written with the sincere intention of seeking Allah’s pleasure.</p>
-        </div>
-
-        <div class="search-section">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search articles about worshipping Allah..." onkeyup="filterBlogs()">
-            </div>
-            <div class="stats" id="stats"></div>
-        </div>
-
-        <div class="blogs-grid" id="blogsGrid"></div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#" class="logo" aria-label="Halal Dreams home">
+      Halal<span>Dreams</span>
+      <small>Billionaire &amp; Finance News</small>
+    </a>
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+      <span id="themeIcon" aria-hidden="true">🌙</span>
+    </button>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <input id="searchInput" type="search" placeholder="Search Elon Musk, Bezos, insurance…" aria-label="Search articles" />
     </div>
+  </div>
+</header>
 
-    <!-- Modal -->
-    <div class="modal" id="blogModal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()" aria-label="Close">×</button>
-            <h2 id="modalTitle"></h2>
-            <div class="full-content" id="modalContent"></div>
-            <div class="author" id="modalAuthor"></div>
-        </div>
+<nav class="chips-bar" aria-label="Categories">
+  <div class="chips-scroll" id="chips"></div>
+</nav>
+
+<main class="wrap">
+  <section id="hero" class="hero" aria-label="Featured story"></section>
+
+  <div class="section-head">
+    <h2>Latest Stories</h2>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+  <section class="grid" id="grid" aria-live="polite"></section>
+
+  <section class="newsletter">
+    <div>
+      <h3>The Halal Dreams Brief</h3>
+      <p>Billionaire net worth moves, market shake-ups, and business news — in your inbox every Friday.</p>
     </div>
+    <form id="newsletterForm" novalidate>
+      <input type="email" placeholder="you@example.com" aria-label="Email address" required />
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </section>
 
-    <footer>
-        <p>Halal Dreams – Dedicated to the Worship of Allah Alone</p>
-        <p>All content written by Lukman Nawas</p>
-        <p class="ameen">May Allah accept this work and make it a means of guidance for many. Ameen.</p>
-        <p style="margin-top: 20px; font-size: 0.85rem;">© 2025 Halal Dreams. All rights reserved for the sake of Allah.</p>
-    </footer>
+  <section class="about-band" id="disclaimer">
+    <h4>Important Disclaimer</h4>
+    <p>Halal Dreams publishes news and educational content only. Nothing here is financial, investment, tax, or legal advice. Figures are estimates from public data and can change daily. Always consult a qualified professional before making financial decisions.</p>
+  </section>
+</main>
 
-    <script>
-        const blogs = [
-            {
-                title: "The Purpose of Our Creation is to Worship Allah",
-                content: "Allah says in the Quran: 'And I did not create the jinn and mankind except to worship Me.' (51:56). This single verse is the foundation of our entire existence. Every breath we take, every action we perform, must ultimately lead to the pure worship of Allah alone. When we remember this purpose, life gains true meaning. Let us strive daily to make our prayers, our work, our family time, and even our rest acts of worship. Worship is not limited to the mosque – it is a complete way of life."
-            },
-            {
-                title: "Tawhid – The Pure Oneness of Allah",
-                content: "The greatest blessing Allah has given us is the knowledge of His Oneness. Tawhid is the first and most important pillar of Islam. To worship Allah alone without any partners, without associating anything with Him, is the essence of our faith. Every prophet called his people to this pure monotheism. When we say La ilaha illallah, we declare that none is worthy of worship except Allah. Protect your Tawhid, for it is the key to Paradise."
-            },
-            {
-                title: "The Beauty of Salah – Standing Before Allah",
-                content: "There is no greater honor than standing before the Lord of the worlds five times a day. Salah is the direct connection between the servant and his Creator. In every bow and prostration, we express our complete submission to Allah. The Prophet ﷺ said that the coolness of his eyes was in prayer. Make your Salah sincere, focused, and full of humility. It is the first thing we will be asked about on the Day of Judgment."
-            },
-            {
-                title: "Remembering Allah Through Dhikr",
-                content: "The hearts find rest only in the remembrance of Allah. Dhikr softens the heart, removes anxiety, and brings immense reward. Saying Subhanallah, Alhamdulillah, Allahu Akbar, and La ilaha illallah throughout the day keeps our tongues and hearts connected to our Lord. Even a few moments of sincere remembrance can transform our entire day. Never let your tongue be free from the remembrance of Allah."
-            },
-            {
-                title: "The Quran – The Greatest Gift from Allah",
-                content: "The Quran is the speech of Allah revealed to guide mankind. Reading it, understanding it, and living by it is one of the highest forms of worship. Every letter carries reward. The Quran softens the hardest hearts and brings light into the darkest lives. Make a daily habit of reading even a few verses with reflection. Let the words of Allah shape your thoughts, your actions, and your dreams."
-            },
-            {
-                title: "Fasting – Training the Soul to Obey Allah",
-                content: "Fasting is not only about abstaining from food and drink. It is a complete training of the soul to obey Allah. Through fasting we learn patience, self-control, and empathy for those who have less. Ramadan is a school of worship where every moment can become an act of devotion. Even voluntary fasts throughout the year keep our hearts connected to Allah and cleanse our souls."
-            },
-            {
-                title: "Sincerity – Doing Everything Only for Allah",
-                content: "Actions are judged by intentions. The purest worship is the one done solely for the sake of Allah, without seeking praise or recognition from people. Sincerity is the soul of every good deed. Before every action, pause and ask yourself: Am I doing this for Allah alone? When sincerity enters the heart, even small deeds become heavy on the scale of good deeds."
-            },
-            {
-                title: "Gratitude – Thanking Allah in Every Situation",
-                content: "A grateful heart is a heart that is close to Allah. Whether in ease or hardship, saying Alhamdulillah keeps us connected to our Lord. Gratitude increases blessings and removes arrogance. The more we thank Allah, the more He gives us. Make gratitude a constant habit – upon waking, before sleeping, and in every moment in between."
-            },
-            {
-                title: "The Importance of Seeking Knowledge for Allah’s Sake",
-                content: "Seeking knowledge is an act of worship when done for the sake of Allah. Understanding the Quran and Sunnah helps us worship our Lord correctly. Knowledge protects us from ignorance and innovation. The angels lower their wings for the seeker of knowledge. Let us seek beneficial knowledge that brings us closer to Allah and helps us serve His creation."
-            },
-            {
-                title: "Trusting Allah Completely – Tawakkul",
-                content: "True reliance on Allah brings peace to the heart. After doing our best, we leave the results to Him. Tawakkul does not mean sitting idle; it means working hard while knowing that success comes only from Allah. When we trust Allah completely, fear and anxiety leave our hearts. He is sufficient for us."
-            },
-            {
-                title: "The Power of Dua – Calling Upon Allah Alone",
-                content: "Dua is the weapon of the believer and a direct conversation with Allah. There is no barrier between the servant and his Lord when he raises his hands. Ask Allah for everything – big or small. He loves those who call upon Him. Never feel shy to ask, for Allah is the Most Generous."
-            },
-            {
-                title: "Charity – Giving for the Sake of Allah",
-                content: "Spending in the way of Allah purifies wealth and softens the heart. Whether it is Zakat or voluntary charity, every coin given sincerely is multiplied by Allah. Charity extinguishes sins and brings barakah. Give quietly, give regularly, and give with the intention of seeking only Allah’s pleasure."
-            },
-            {
-                title: "Patience – A Beautiful Form of Worship",
-                content: "Patience is half of faith. In times of difficulty, remaining patient while trusting Allah is a high form of worship. Allah is with the patient. Every moment of hardship endured for His sake is rewarded beyond measure. Let patience be our companion in every trial."
-            },
-            {
-                title: "The Night Prayer – Standing Alone with Allah",
-                content: "The quiet hours of the night are a special time for the closest servants of Allah. Tahajjud is a secret conversation between the lover and the Beloved. Those who rise at night while others sleep receive a special nearness to their Lord. Even two rak’ahs with sincerity can change a life."
-            },
-            {
-                title: "Loving the Prophet ﷺ for the Sake of Allah",
-                content: "Loving the Messenger of Allah is part of perfect faith. We love him because Allah loves him and chose him as the best example. Following his Sunnah is the practical way of worshipping Allah correctly. The more we love and follow him, the closer we draw to Allah."
-            },
-            {
-                title: "Avoiding Shirk – Protecting Our Worship",
-                content: "Shirk is the greatest injustice. Associating partners with Allah nullifies all good deeds. We must be extremely careful to keep our worship pure – no praying to graves, no seeking help from the dead, no believing that anyone shares in Allah’s power. Pure Tawhid is the only path to salvation."
-            },
-            {
-                title: "The Blessing of the Masjid",
-                content: "The houses of Allah are the most beloved places on earth. Praying in congregation multiplies the reward and strengthens the community. Going to the masjid with sincerity is itself an act of worship. Let us fill the mosques with remembrance of Allah and leave the dunya behind when we enter."
-            },
-            {
-                title: "Repentance – Returning to Allah Always",
-                content: "Allah loves those who constantly return to Him. No matter how many times we fall, the door of tawbah remains open. Sincere repentance wipes away sins and elevates ranks. Never despair of the mercy of Allah. Turn back to Him with a broken heart, and He will accept you."
-            },
-            {
-                title: "The Hereafter – Living for the Meeting with Allah",
-                content: "This world is temporary. The real life is the life of the Hereafter. Every action we do should be with the intention of meeting Allah with a pure heart. Remembering death and the Day of Judgment keeps our worship sincere and our priorities straight."
-            },
-            {
-                title: "Kindness to Parents – An Act of Worship",
-                content: "After the rights of Allah, the rights of parents are the greatest. Serving them with love and patience is a form of worship that brings immense reward. Paradise lies at the feet of the mother. Honoring parents is a path to Allah’s pleasure."
-            },
-            {
-                title: "Controlling the Tongue for Allah’s Sake",
-                content: "The tongue can lead to Paradise or Hellfire. Speaking only what is good, avoiding backbiting, lying, and harsh words is part of perfecting our worship. Silence is often better than speech. Let every word that leaves our mouth be pleasing to Allah."
-            },
-            {
-                title: "The Beauty of Islamic Brotherhood",
-                content: "Loving for the sake of Allah is one of the strongest bonds. When we love our brothers and sisters in faith purely for Allah, it becomes an act of worship. Supporting one another, advising with kindness, and remaining united strengthens the ummah and pleases our Lord."
-            },
-            {
-                title: "Modesty and Lowering the Gaze",
-                content: "Protecting the eyes and maintaining modesty is a command from Allah. Lowering the gaze purifies the heart and protects faith. Both men and women are ordered to guard their modesty. This outward and inward purity is a beautiful form of worship."
-            },
-            {
-                title: "The Virtues of Saying Subhanallah",
-                content: "Glorifying Allah with Subhanallah is a light on the tongue and heavy on the scale. It is one of the most beloved phrases to Allah. Fill your day with this beautiful remembrance and watch how your heart finds peace."
-            },
-            {
-                title: "Waking Up for Fajr – A Sign of True Faith",
-                content: "The one who prays Fajr in congregation is under the protection of Allah for the entire day. Leaving the comfort of sleep to stand before Allah is a powerful act of worship. Make Fajr a non-negotiable priority in your life."
-            },
-            {
-                title: "The Importance of Good Character",
-                content: "The Prophet ﷺ was sent to perfect good character. Treating people with kindness, honesty, and patience is part of worshipping Allah. Good character is heavier on the scale than many voluntary deeds. Let your manners reflect your faith."
-            },
-            {
-                title: "Avoiding Wastefulness – A Form of Gratitude",
-                content: "Allah does not love those who waste. Being careful with food, water, time, and money is an expression of gratitude and responsibility. Simple living for the sake of Allah brings barakah and keeps the heart free from attachment to the dunya."
-            },
-            {
-                title: "The Blessing of Rain and Nature",
-                content: "Every drop of rain, every sunrise, every tree is a sign of Allah’s power and mercy. Reflecting on the creation increases our love and awe for the Creator. Nature itself calls us to worship the One who created it all."
-            },
-            {
-                title: "Teaching Children to Worship Allah",
-                content: "One of the greatest responsibilities is to raise children who love and worship Allah. Teaching them Salah, Quran, and good manners from a young age is an investment for the Hereafter. A righteous child is a continuing charity."
-            },
-            {
-                title: "The Power of Istighfar",
-                content: "Seeking forgiveness opens the doors of mercy and provision. The Prophet ﷺ sought forgiveness more than seventy times a day. Regular istighfar cleanses the heart and brings relief from difficulties. Never stop asking Allah to forgive you."
-            },
-            {
-                title: "Being Content with Allah’s Decree",
-                content: "Contentment (rida) with what Allah has written is a high station of faith. Whether we receive what we want or not, we trust that Allah knows what is best. This attitude turns every situation into an opportunity for worship."
-            },
-            {
-                title: "The Value of Time in Worship",
-                content: "Time is a trust from Allah. Wasting time is wasting the chance to gain reward. Use every free moment for dhikr, Quran, or beneficial knowledge. The smart believer treats time as more precious than gold."
-            },
-            {
-                title: "Smiling as an Act of Charity",
-                content: "A smile for the sake of Allah is charity. Spreading happiness and positivity among people is part of good character and worship. Never underestimate the reward of a sincere smile."
-            },
-            {
-                title: "The Dangers of Showing Off in Worship",
-                content: "Riya (showing off) destroys good deeds. Worship done to impress people has no value with Allah. Guard your intentions carefully. The best deeds are those done in secret between you and your Lord."
-            },
-            {
-                title: "Preparing for Ramadan All Year",
-                content: "Ramadan is the peak of worship, but the preparation should start early. Building habits of Quran, prayer, and fasting throughout the year makes Ramadan more fruitful. Every day can be a preparation for the blessed month."
-            },
-            {
-                title: "The Rights of the Body in Worship",
-                content: "Our body is a trust from Allah. Taking care of health through proper food, sleep, and exercise allows us to worship better. A strong body helps in performing Salah, fasting, and serving others for Allah’s sake."
-            },
-            {
-                title: "Reflecting on Death Daily",
-                content: "Remembering death softens the heart and increases the desire to worship. Visit the graves, reflect on how short life is, and increase good deeds. The one who remembers death often will not be attached to this temporary world."
-            },
-            {
-                title: "The Beauty of Du’a in Sujood",
-                content: "The closest a servant is to Allah is when he is in prostration. Make long and heartfelt duas in sujood. Pour out your heart to the One who hears every whisper. This is a special time of acceptance."
-            },
-            {
-                title: "Avoiding Haram for the Sake of Allah",
-                content: "Staying away from what Allah has forbidden is a great act of worship. The one who leaves haram out of fear of Allah receives special protection and reward. Taqwa is the foundation of a pure life."
-            },
-            {
-                title: "The Blessing of a Righteous Spouse",
-                content: "A spouse who helps you worship Allah is one of the greatest gifts. Supporting each other in prayer, Quran, and good deeds turns the home into a place of worship. Choose and be a partner who brings you closer to Allah."
-            },
-            {
-                title: "Giving Salaam – Spreading Peace",
-                content: "Spreading the greeting of peace is a Sunnah and a means of reward. Saying Assalamu Alaikum with sincerity creates love and unity. It is a simple yet powerful act of worship that costs nothing."
-            },
-            {
-                title: "The Importance of Wudu",
-                content: "Wudu is not just physical cleanliness – it is spiritual purification. Performing wudu properly and with mindfulness prepares the heart for standing before Allah. The Prophet ﷺ said that wudu washes away sins."
-            },
-            {
-                title: "Loving What Allah Loves",
-                content: "True faith is to love what Allah loves and hate what Allah hates. Aligning our desires with the pleasure of Allah is the essence of worship. When our love and dislike are for Allah alone, our heart becomes pure."
-            },
-            {
-                title: "The Reward of Feeding Others",
-                content: "Feeding people for the sake of Allah brings tremendous reward. Whether it is the poor, guests, or family, providing food with a pure intention is a beloved act of worship. Share what you have and watch the barakah increase."
-            },
-            {
-                title: "Keeping Promises for Allah’s Sake",
-                content: "Fulfilling promises is a sign of true faith. Breaking promises is a characteristic of the hypocrite. Be people of your word, for Allah loves those who keep their covenants."
-            },
-            {
-                title: "The Quiet Worship of the Heart",
-                content: "Not all worship is visible. The constant remembrance of Allah in the heart, the fear of displeasing Him, and the hope in His mercy are forms of worship that only Allah sees. Guard the purity of your heart."
-            },
-            {
-                title: "Traveling as a Form of Reflection",
-                content: "Traveling and seeing the creation of Allah increases faith. Reflecting on different lands and peoples reminds us of the greatness of the Creator. Every journey can become a means of coming closer to Allah."
-            },
-            {
-                title: "The Virtue of Silence",
-                content: "Silence is often better than unnecessary speech. Controlling the tongue and speaking only when beneficial is a high form of discipline and worship. The wise person thinks before speaking."
-            },
-            {
-                title: "Making the Intention Pure in Daily Work",
-                content: "Even ordinary work becomes worship when done with the right intention. Earning a halal living to provide for family and avoid asking others is beloved to Allah. Transform your daily routine into continuous worship."
-            },
-            {
-                title: "The Final Goal – Meeting Allah",
-                content: "The ultimate hope of every believer is to meet Allah with a pure heart and accepted deeds. Live every day as if it is preparation for that meeting. May Allah make us among those who are pleased and whom He is pleased with. Ameen."
-            },
-            {
-                title: "Consistency in Small Good Deeds",
-                content: "The most beloved deeds to Allah are those that are consistent, even if small. A daily page of Quran, a few minutes of dhikr, or regular charity – consistency builds a strong relationship with Allah over time."
-            },
-            {
-                title: "The Role of Hope and Fear in Worship",
-                content: "A balanced heart worships Allah with both hope in His mercy and fear of His punishment. Too much hope can lead to laziness, too much fear can lead to despair. The middle path is the way of the prophets."
-            },
-            {
-                title: "Protecting the Eyes and Ears",
-                content: "What we see and hear affects the heart. Guarding the eyes and ears from haram is essential for pure worship. Fill them instead with Quran, beneficial knowledge, and reminders of Allah."
-            },
-            {
-                title: "The Joy of Serving Others for Allah",
-                content: "Helping people with their needs for the sake of Allah brings sweetness to the heart. Whether it is a smile, advice, or practical help, service done purely for Allah is high-ranking worship."
-            },
-            {
-                title: "Never Despair of Allah’s Mercy",
-                content: "No matter how many sins we have committed, Allah’s mercy is greater. The door of repentance is always open. Turn to Him with sincerity, and He will accept you. Despair is from Shaytan – hope is from Allah."
-            }
-        ];
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Halal<span>Dreams</span></div>
+        <p>Independent coverage of billionaires, business and the financial forces shaping our future.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#disclaimer">Disclaimer</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Affiliate Disclosure</a></li>
+          <li><a href="#">Editorial Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Halal Dreams · halaldreams.org</span>
+      <span>Photos via Unsplash · Single-file blog</span>
+    </div>
+  </div>
+</footer>
 
-        function renderBlogs(filteredBlogs = blogs) {
-            const grid = document.getElementById('blogsGrid');
-            grid.innerHTML = '';
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Article reader">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close article">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
-            document.getElementById('stats').innerHTML = `Showing <span>${filteredBlogs.length}</span> articles • All written to remind us to worship Allah alone`;
+<script>
+const IMG = (id) => `https://images.unsplash.com/${id}?w=900&q=80&auto=format&fit=crop`;
 
-            filteredBlogs.forEach((blog) => {
-                const card = document.createElement('div');
-                card.className = 'blog-card';
-                card.onclick = () => openModal(blog);
-                card.innerHTML = `
-                    <div class="blog-card-content">
-                        <h3>${blog.title}</h3>
-                        <p>${blog.content.substring(0, 145)}...</p>
-                        <div class="card-footer">
-                            <span class="read-more">Read Article</span>
-                            <span class="author">Lukman Nawas</span>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
+const articles = [
+  {
+    id: "basel-health-insurer-ceo-premiums-2027",
+    title: "Basel Health Insurance CEO Warns 2027 Premiums Will Rise Again",
+    excerpt: "In an exclusive interview, the head of one of Basel's largest health insurers says hospital costs, drug prices and an ageing population are pushing premiums beyond what politics can fix.",
+    category: "Business",
+    author: "Halal Dreams Desk",
+    date: "2026-11-02",
+    image: IMG("photo-1454165804606-c3d57bc86b40"),
+    emoji: "🏥",
+    gradient: "linear-gradient(135deg,#0c2d48,#0891b2)",
+    body: `
+      <p>The CEO of a Basel-based health insurer has warned that premiums will rise again in 2027, saying the underlying cost drivers in the Swiss healthcare system have not been addressed. Speaking after the company published its latest quarterly figures, the CEO said the pressure is structural, not temporary.</p>
+      <h3>"The cost curve is not bending"</h3>
+      <p>The executive pointed to three forces pushing premiums higher: rising hospital costs, the price of new medicines, and an ageing population that uses more care each year. "We can manage our own costs," the CEO said. "We cannot manage the cost of the system we are paying into."</p>
+      <h3>What the insurer is doing</h3>
+      <p>The company has been investing in digital claims processing and preventive care programmes, which the CEO says reduce avoidable hospital admissions. It has also tightened reserves ahead of what it expects to be a difficult year for the whole sector.</p>
+      <h3>What it means for households</h3>
+      <p>Swiss health insurance is mandatory and premiums are paid largely by households, not employers. That makes every increase a direct hit to family budgets — and a political flashpoint in Bern. The CEO was blunt about the outlook: <strong>"Premium relief will not come from politics. It has to come from how care is delivered."</strong></p>
+      <h3>The bigger picture</h3>
+      <p>Insurers across Switzerland are facing the same squeeze. For readers, the practical takeaway is to review plans annually rather than auto-renew, and to check whether a higher deductible lowers the total annual cost.</p>
+    `
+  },
+  {
+    id: "musk-net-worth-nov-2026",
+    title: "Elon Musk's Net Worth Hits $512 Billion — A New All-Time High",
+    excerpt: "Tesla's rally and SpaceX's private valuation pushed Musk past a record no one has ever reached. Here's what's really behind the number.",
+    category: "Elon Musk",
+    author: "Halal Dreams Desk",
+    date: "2026-11-01",
+    image: IMG("photo-1517976487492-5750f3195933"),
+    emoji: "🚀",
+    gradient: "linear-gradient(135deg,#0b2a4a,#0ea5e9)",
+    body: `
+      <p>Elon Musk's estimated net worth has crossed <strong>$512 billion</strong>, the highest figure ever recorded for a private individual. The jump was driven by two forces working together: a strong rally in Tesla shares and a higher implied valuation for SpaceX following its latest secondary share sale.</p>
+      <h3>What moved the number</h3>
+      <p>Tesla's stock gained roughly 8% over the past two weeks, adding tens of billions to Musk's stake. Meanwhile, SpaceX's latest employee liquidity round priced the company meaningfully higher, lifting the value of Musk's roughly 42% ownership.</p>
+      <h3>Why it's not cash</h3>
+      <p>The vast majority of Musk's wealth is held in <strong>equity stakes</strong>, not bank deposits. A 5% move in Tesla can swing his net worth by more than $20 billion in a single trading session. The headline figure is a market snapshot, not a balance you can spend.</p>
+      <h3>The bigger picture</h3>
+      <p>Musk's trajectory illustrates a core principle of modern wealth: <strong>concentration plus time</strong>. He kept an enormous stake in companies he built rather than diversifying, and that decision is what created the number.</p>
+    `
+  },
+  {
+    id: "musk-xai-funding-round",
+    title: "xAI Raises Another $12 Billion — Musk's AI Bet Just Got Bigger",
+    excerpt: "The AI startup's new funding round values it well above $200 billion, cementing Musk's position as a major player in the AI race.",
+    category: "Elon Musk",
+    author: "Halal Dreams Desk",
+    date: "2026-10-29",
+    image: IMG("photo-1677442136019-21780ecad995"),
+    emoji: "🤖",
+    gradient: "linear-gradient(135deg,#1e1b4b,#7c3aed)",
+    body: `
+      <p>Elon Musk's AI company xAI has closed a fresh funding round worth roughly $12 billion, pushing its valuation past the $200 billion mark. The round was led by a mix of sovereign wealth funds and private equity, with Musk himself contributing a portion.</p>
+      <h3>What the money is for</h3>
+      <p>The capital will fund a massive expansion of the company's data centers and the procurement of advanced GPUs. Musk has been blunt that the bottleneck in AI is no longer chip design — it is <strong>power, land, and cooling</strong>.</p>
+      <h3>The competitive picture</h3>
+      <p>xAI now sits in the top tier of AI labs alongside OpenAI, Anthropic, and Google DeepMind. But the cost of competing has ballooned. Building frontier models now requires tens of billions in annual investment.</p>
+      <h3>What to watch</h3>
+      <p>The real test will be enterprise adoption. Consumer hype can drive headlines; recurring revenue decides who survives the next cycle.</p>
+    `
+  },
+  {
+    id: "bezos-amazon-sale-oct-2026",
+    title: "Jeff Bezos Offloads $2.4 Billion in Amazon Stock — Third Sale This Year",
+    excerpt: "Bezos has now sold over $8 billion in Amazon shares in 2026. What the cadence tells us about how the ultra-wealthy manage risk.",
+    category: "Billionaires",
+    author: "Halal Dreams Desk",
+    date: "2026-10-27",
+    image: IMG("photo-1553413077-190dd305871c"),
+    emoji: "💰",
+    gradient: "linear-gradient(135deg,#3b2a05,#d4a017)",
+    body: `
+      <p>Jeff Bezos has sold another <strong>$2.4 billion</strong> in Amazon shares, bringing his total divestments for the year past $8 billion. The sale was executed under a pre-arranged trading plan filed months in advance.</p>
+      <h3>Not a signal on Amazon</h3>
+      <p>Large insider sales by founders are typically scheduled long before execution. They are <strong>diversification events</strong>, not predictions about the stock's future. Bezos still retains an ownership stake worth well over $200 billion.</p>
+      <h3>Where the money goes</h3>
+      <p>Bezos has been consistently deploying capital into Blue Origin, his space venture, and into philanthropic commitments. The pattern — converting concentrated public equity into long-term private bets — is a textbook move for founders whose wealth is tied to one company.</p>
+      <h3>For everyday investors</h3>
+      <p>Watch the <strong>pace</strong> of insider sales, not a single transaction. A steady, pre-planned cadence is normal. A sudden, unplanned liquidation is the thing that deserves attention.</p>
+    `
+  },
+  {
+    id: "zuckerberg-meta-ai",
+    title: "Mark Zuckerberg's Meta AI Push Sends His Net Worth Past $230 Billion",
+    excerpt: "Meta's AI investments are paying off in the market. Here's how Zuckerberg's fortune is being reshaped by the company's turnaround.",
+    category: "Billionaires",
+    author: "Halal Dreams Desk",
+    date: "2026-10-24",
+    image: IMG("photo-1611162617213-7d7a39e9b1d7"),
+    emoji: "👓",
+    gradient: "linear-gradient(135deg,#0b3d91,#1877f2)",
+    body: `
+      <p>Mark Zuckerberg's net worth has climbed past <strong>$230 billion</strong> as Meta shares continue to rally on strong AI advertising revenue. The turnaround has been remarkable: just two years ago investors were punishing the company for its costly metaverse bets.</p>
+      <h3>What changed</h3>
+      <p>Meta's AI investment strategy — combining open-source models with advertising enhancements — has proven effective at increasing ad targeting precision. Revenue per user has risen significantly across all platforms.</p>
+      <h3>The concentration factor</h3>
+      <p>Zuckerberg controls roughly 13% of Meta through Class A shares, but holds a far larger share of voting power through super-voting Class B shares. That structure has allowed him to pursue long-term bets even when investors have objected.</p>
+      <h3>The lesson</h3>
+      <p>Founder control can be a double-edged sword. It allows for patience — but it also means shareholders are betting on one person's vision.</p>
+    `
+  },
+  {
+    id: "arnault-lvmh-q3",
+    title: "Bernard Arnault's LVMH Beats Expectations — Luxury Is Not Dead",
+    excerpt: "The world's third-richest person saw his fortune rise after LVMH reported stronger-than-expected third quarter results.",
+    category: "Billionaires",
+    author: "Halal Dreams Desk",
+    date: "2026-10-21",
+    image: IMG("photo-1584917865442-de89df76afd3"),
+    emoji: "👜",
+    gradient: "linear-gradient(135deg,#3f1d2e,#be123c)",
+    body: `
+      <p>Bernard Arnault's LVMH reported quarterly revenue that topped analyst expectations, pushing shares higher and adding to the French billionaire's fortune. The results suggest that the slowdown in luxury demand — feared for much of the year — may be easing.</p>
+      <h3>Where the strength came from</h3>
+      <p>Luxury fashion and leather goods were the biggest contributors, particularly in the Asia-Pacific region. Wines and spirits, which had been a drag, also stabilized.</p>
+      <h3>Why luxury is different</h3>
+      <p>Luxury businesses have a moat most companies envy: <strong>pricing power</strong>. In a downturn, they can raise prices or limit supply to protect margins instead of cutting them.</p>
+      <h3>The bigger point</h3>
+      <p>Arnault's wealth has compounded for decades not through disruption, but through <strong>brand stewardship</strong>. That is a very different playbook from the tech billionaires — and it has proven remarkably durable.</p>
+    `
+  },
+  {
+    id: "ellison-oracle-ai",
+    title: "Larry Ellison's Oracle Surges on AI Cloud Demand — Fortune Tops $200 Billion",
+    excerpt: "The 81-year-old Oracle founder is having his best year in decades, thanks to the company's booming AI infrastructure business.",
+    category: "Billionaires",
+    author: "Halal Dreams Desk",
+    date: "2026-10-18",
+    image: IMG("photo-1558494949-ef010cbdcc31"),
+    emoji: "🏛️",
+    gradient: "linear-gradient(135deg,#7c2d12,#ea580c)",
+    body: `
+      <p>Larry Ellison's net worth has moved past <strong>$200 billion</strong> as Oracle shares continue to climb on surging demand for AI cloud infrastructure. It is a remarkable late-career surge for the 81-year-old founder.</p>
+      <h3>The AI cloud boom</h3>
+      <p>Oracle's cloud division has won major contracts from AI startups and large enterprises, positioning itself as a serious competitor to AWS, Azure, and Google Cloud.</p>
+      <h3>Ellison's stake</h3>
+      <p>Ellison owns roughly 40% of Oracle — an unusually large stake for a public company founder. Every percentage point in Oracle's share price adds hundreds of millions to his fortune.</p>
+      <h3>What's notable</h3>
+      <p>Ellison has been one of the most durable figures in tech, but his fortune has historically lagged the top tier. The AI boom has rewritten that narrative in under two years.</p>
+    `
+  },
+  {
+    id: "spacex-valuation-2026",
+    title: "SpaceX Valued at $400 Billion in Secondary Sale — Musk's Biggest Asset",
+    excerpt: "The private space company is now worth more than most public companies on earth. Its valuation is reshaping how we think about Musk's wealth.",
+    category: "Elon Musk",
+    author: "Halal Dreams Desk",
+    date: "2026-10-15",
+    image: IMG("photo-1541185933-ef5d8ed016c2"),
+    emoji: "🛰️",
+    gradient: "linear-gradient(135deg,#0c1e3e,#1e40af)",
+    body: `
+      <p>SpaceX has been valued at approximately <strong>$400 billion</strong> in its latest secondary share sale, cementing its status as one of the most valuable private companies ever created. Musk's roughly 42% ownership stake is now worth close to $170 billion on its own.</p>
+      <h3>Why the valuation keeps climbing</h3>
+      <p>Starlink — the satellite internet division — has become a massive cash generator, with more than 6 million subscribers worldwide. Falcon 9 continues to dominate commercial launch.</p>
+      <h3>The Musk stake question</h3>
+      <p>Most of Musk's net worth is split between Tesla and SpaceX. That is an extraordinary concentration of risk in two capital-intensive businesses.</p>
+      <h3>What investors should take away</h3>
+      <p>Building transformative companies is a different game from building diversified portfolios. The rewards can be enormous — but so can the failure mode.</p>
+    `
+  },
+  {
+    id: "musk-vs-bezos-comparison",
+    title: "Musk vs. Bezos: Two Very Different Paths to Extreme Wealth",
+    excerpt: "The two richest men in the world built their fortunes in radically different ways. The comparison tells us a lot about how wealth compounds.",
+    category: "Billionaires",
+    author: "Halal Dreams Desk",
+    date: "2026-10-12",
+    image: IMG("photo-1563013544-824ae1b704d3"),
+    emoji: "⚖️",
+    gradient: "linear-gradient(135deg,#1e1b4b,#6366f1)",
+    body: `
+      <p>Elon Musk and Jeff Bezos are frequently compared, but their wealth rests on very different foundations. Understanding the difference is a useful lesson in how fortunes are actually built.</p>
+      <h3>Musk: hardware bets and vertical integration</h3>
+      <p>Musk's fortune is dominated by Tesla and SpaceX — capital-intensive, engineering-heavy businesses. He took large personal risks early, reinvesting nearly everything back into his companies.</p>
+      <h3>Bezos: a marketplace flywheel</h3>
+      <p>Bezos built Amazon into infrastructure: logistics, cloud computing, and advertising. His wealth grew because he held a large stake for decades while the business compounded.</p>
+      <h3>The common thread</h3>
+      <p>Both men held <strong>enormous ownership stakes for a very long time</strong>. The lesson is not about genius alone — it is about concentration, patience, and time.</p>
+    `
+  },
+  {
+    id: "how-wealth-measured-2026",
+    title: "How Billionaire Net Worth Is Actually Measured (And Why It Moves So Fast)",
+    excerpt: "Net worth trackers update daily, but the methodology is more fragile than most readers realize. Here's what the numbers really mean.",
+    category: "Net Worth",
+    author: "Halal Dreams Desk",
+    date: "2026-10-09",
+    image: IMG("photo-1611974789855-9c2a0a7236a3"),
+    emoji: "📊",
+    gradient: "linear-gradient(135deg,#042f2e,#14b8a6)",
+    body: `
+      <p>Billionaire rankings are everywhere, but few readers understand how they are calculated. The answer explains why the same person can appear to gain or lose $20 billion in a single week.</p>
+      <h3>Public equity is straightforward</h3>
+      <p>If a billionaire holds shares in a listed company, net worth is simply the share price multiplied by the number of shares held. That is why the figure moves with the market — sometimes hour by hour.</p>
+      <h3>Private assets are estimated</h3>
+      <p>Private company valuations are based on funding rounds, comparable transactions, or analyst estimates. They can be stale by months or optimistic by years.</p>
+      <h3>Debt is often invisible</h3>
+      <p>Most rankings do not fully account for personal debt or pledged shares. The headline figure is a <strong>gross estimate</strong>, not a net balance sheet.</p>
+    `
+  },
+  {
+    id: "buffett-cash-pile-2026",
+    title: "Warren Buffett's Cash Pile Hits a Record — A Warning or Just Patience?",
+    excerpt: "Berkshire's enormous cash position is being read as a market signal. The history suggests something more nuanced.",
+    category: "Markets",
+    author: "Halal Dreams Desk",
+    date: "2026-10-06",
+    image: IMG("photo-1554224155-6726b3ff858f"),
+    emoji: "🧓",
+    gradient: "linear-gradient(135deg,#1f2937,#6b7280)",
+    body: `
+      <p>Berkshire Hathaway's cash and Treasury holdings have reached record levels, prompting speculation that Buffett sees few attractive opportunities. That interpretation is partly right — and partly incomplete.</p>
+      <h3>Cash as an option</h3>
+      <p>For Berkshire, cash is not idle. It is a <strong>call option on future dislocation</strong> — the ability to buy great businesses when others are forced to sell.</p>
+      <h3>Rates changed the math</h3>
+      <p>Short-term Treasuries now yield meaningfully more than they did for most of the past decade. Holding cash is less costly than it once was.</p>
+      <h3>The takeaway</h3>
+      <p>Buffett's cash pile is a signal about <strong>discipline</strong>, not a prediction. It reminds investors that not buying is also a decision.</p>
+    `
+  },
+  {
+    id: "musk-tesla-q3-2026",
+    title: "Tesla Q3 Recap: Deliveries Beat, Margins Improve, Musk Pushes Robotaxi",
+    excerpt: "Tesla's third quarter results gave investors reason for optimism. The robotaxi timeline, however, remains the elephant in the room.",
+    category: "Elon Musk",
+    author: "Halal Dreams Desk",
+    date: "2026-10-03",
+    image: IMG("photo-1560958089-b8a1929cea89"),
+    emoji: "🚗",
+    gradient: "linear-gradient(135deg,#7f1d1d,#dc2626)",
+    body: `
+      <p>Tesla reported third quarter results that beat analyst expectations on both deliveries and margins, sending shares higher and adding billions to Elon Musk's net worth. The company delivered over 500,000 vehicles during the quarter — a record for the period.</p>
+      <h3>Margin recovery</h3>
+      <p>After several quarters of price cuts that compressed profitability, Tesla's automotive gross margin stabilized. Cost reductions in manufacturing and a favorable product mix were the main contributors.</p>
+      <h3>Robotaxi timeline</h3>
+      <p>Musk again promised that Tesla's robotaxi service would expand significantly in the coming quarters. Investors remain divided on the timeline — the technology is promising but regulation and real-world safety remain significant hurdles.</p>
+      <h3>What to watch</h3>
+      <p>Energy storage and the Optimus robot program are becoming increasingly material to the Tesla story. The market will be watching whether they can deliver at scale.</p>
+    `
+  },
+  {
+    id: "jensen-huang-nvidia",
+    title: "Jensen Huang's Nvidia Empire and the New Wealth of AI",
+    excerpt: "Nvidia's founder is now one of the ten richest people in the world. His fortune illustrates the scale of the AI infrastructure boom.",
+    category: "Billionaires",
+    author: "Halal Dreams Desk",
+    date: "2026-09-30",
+    image: IMG("photo-1591405351990-4726e331f141"),
+    emoji: "🖥️",
+    gradient: "linear-gradient(135deg,#14532d,#22c55e)",
+    body: `
+      <p>Jensen Huang, founder and CEO of Nvidia, has seen his net worth climb into the top ten globally as demand for AI chips continues to outstrip supply. It is a stunning rise for a company that was, just a few years ago, primarily known for gaming graphics cards.</p>
+      <h3>The AI infrastructure boom</h3>
+      <p>Nvidia's GPUs have become the de facto standard for AI training and inference. The company's data center segment now generates the overwhelming majority of its revenue, and growth shows little sign of slowing.</p>
+      <h3>Huang's stake</h3>
+      <p>Huang owns roughly 3.5% of Nvidia — a stake worth over $100 billion at current valuations. Unlike some founders, he has sold shares periodically to diversify, but retains an enormous position.</p>
+      <h3>The bigger picture</h3>
+      <p>The AI boom has created an entirely new category of billionaires whose wealth is tied directly to compute infrastructure. That is a different concentration risk than consumer tech or luxury.</p>
+    `
+  },
+  {
+    id: "bitcoin-institutional-2026",
+    title: "Bitcoin in the Institutional Era: What Changed in 2026",
+    excerpt: "Spot ETFs, corporate treasuries, and new accounting rules have fundamentally reshaped how institutions treat digital assets.",
+    category: "Crypto",
+    author: "Halal Dreams Desk",
+    date: "2026-09-27",
+    image: IMG("photo-1518546305927-5a555bb7020d"),
+    emoji: "₿",
+    gradient: "linear-gradient(135deg,#3b2f00,#f59e0b)",
+    body: `
+      <p>Bitcoin's market structure has changed materially over the past two years. What was once a retail-driven asset now has deep institutional participation — with meaningful consequences for volatility and correlation.</p>
+      <h3>ETFs changed access</h3>
+      <p>Spot ETFs made it possible for pension funds and financial advisors to gain exposure without managing private keys. The result was a wave of regulated inflows and greater legitimacy.</p>
+      <h3>Corporate treasuries</h3>
+      <p>Several public companies now hold bitcoin on their balance sheets. This amplifies both upside and downside for their shareholders.</p>
+      <h3>Risks remain</h3>
+      <p>Regulation is still uneven across jurisdictions, and volatility has not disappeared. Readers should treat digital assets as <strong>high-risk allocations</strong>, not core holdings.</p>
+    `
+  },
+  {
+    id: "halal-investing-101",
+    title: "Halal Investing 101: Screening, Purification, and the Core Rules",
+    excerpt: "A practical starting point for building a portfolio that respects Islamic finance principles without sacrificing diversification.",
+    category: "Markets",
+    author: "Halal Dreams Desk",
+    date: "2026-09-24",
+    image: IMG("photo-1519817650390-64a93db51149"),
+    emoji: "🕌",
+    gradient: "linear-gradient(135deg,#0c2d48,#0891b2)",
+    body: `
+      <p>Halal investing follows clear principles: avoid interest (riba), excessive uncertainty (gharar), and businesses that are impermissible. The practical implementation, however, requires a framework.</p>
+      <h3>Business screening</h3>
+      <p>Companies involved in alcohol, gambling, conventional banking, and similar sectors are excluded. Most modern halal indexes apply these screens systematically.</p>
+      <h3>Financial screening</h3>
+      <p>Firms with excessive interest-bearing debt or income are filtered out. Thresholds vary by scholar and index, so consistency matters more than the exact ratio.</p>
+      <h3>Purification</h3>
+      <p>If a small portion of income comes from impermissible sources, investors can <strong>donate that percentage</strong> of dividends to charity. This is a purification step, not a penalty.</p>
+      <h3>The bottom line</h3>
+      <p>Halal investing is compatible with diversified, long-term portfolios. The key is discipline and transparency — not perfection.</p>
+    `
+  }
+];
 
-        function openModal(blog) {
-            document.getElementById('modalTitle').textContent = blog.title;
-            document.getElementById('modalContent').textContent = blog.content;
-            document.getElementById('modalAuthor').textContent = 'Written by Lukman Nawas';
-            document.getElementById('blogModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
+const state = { category: "All", query: "" };
+const sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
+const featured = sortedArticles[0];
+const recentIds = sortedArticles.slice(0, 2).map(a => a.id);
 
-        function closeModal() {
-            document.getElementById('blogModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+function initials(name) {
+  return name.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
+}
+function formatDate(iso) {
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+function readTime(body) {
+  const words = body.replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
+}
+function mediaHTML(a) {
+  return `
+    <div class="media">
+      <div class="media-fallback" style="background:${a.gradient}">
+        <span aria-hidden="true">${a.emoji}</span>
+      </div>
+      ${a.image ? `<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'">` : ""}
+      <span class="chip">${a.category}</span>
+    </div>`;
+}
 
-        function filterBlogs() {
-            const query = document.getElementById('searchInput').value.toLowerCase().trim();
-            const filtered = blogs.filter(blog => 
-                blog.title.toLowerCase().includes(query) || 
-                blog.content.toLowerCase().includes(query)
-            );
-            renderBlogs(filtered);
-        }
+function renderHero() {
+  const a = featured;
+  document.getElementById("hero").innerHTML = `
+    ${mediaHTML(a)}
+    <div class="hero-content">
+      <p class="eyebrow">Featured Story</p>
+      <h1 class="hero-title">${a.title}</h1>
+      <p class="hero-excerpt">${a.excerpt}</p>
+      <div class="card-meta">
+        <span class="avatar" aria-hidden="true">${initials(a.author)}</span>
+        <span>${a.author}</span><span class="dot"></span>
+        <span>${formatDate(a.date)}</span><span class="dot"></span>
+        <span>${readTime(a.body)} min read</span>
+      </div>
+      <button class="btn btn-primary" data-open="${a.id}">Read the full story →</button>
+    </div>`;
+}
 
-        function showAll() {
-            document.getElementById('searchInput').value = '';
-            renderBlogs();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+function renderChips() {
+  const cats = ["All", ...new Set(articles.map(a => a.category))];
+  document.getElementById("chips").innerHTML = cats.map(c =>
+    `<button class="chip-btn${c === state.category ? " active" : ""}" data-cat="${c}">${c}</button>`
+  ).join("");
+}
 
-        // Close modal on outside click
-        window.onclick = function(event) {
-            if (event.target === document.getElementById('blogModal')) {
-                closeModal();
-            }
-        };
+function cardHTML(a) {
+  const isNew = recentIds.includes(a.id) && a.id !== featured.id;
+  return `
+    <article class="card" data-id="${a.id}" tabindex="0" role="button" aria-label="Read article: ${a.title}">
+      ${mediaHTML(a)}
+      ${isNew ? '<span class="badge-new">NEW</span>' : ''}
+      <div class="card-body">
+        <h3 class="card-title">${a.title}</h3>
+        <p class="card-excerpt">${a.excerpt}</p>
+        <div class="card-meta">
+          <span class="avatar" aria-hidden="true">${initials(a.author)}</span>
+          <span>${a.author}</span><span class="dot"></span>
+          <span>${formatDate(a.date)}</span><span class="dot"></span>
+          <span>${readTime(a.body)} min</span>
+        </div>
+      </div>
+    </article>`;
+}
 
-        // Close with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+function renderGrid() {
+  const q = state.query.trim().toLowerCase();
+  const list = sortedArticles
+    .filter(a => a.id !== featured.id)
+    .filter(a => state.category === "All" || a.category === state.category)
+    .filter(a => !q || (a.title + " " + a.excerpt + " " + a.category + " " + a.author).toLowerCase().includes(q));
 
-        // Initial render
-        renderBlogs();
-    </script>
+  document.getElementById("grid").innerHTML = list.length
+    ? list.map(cardHTML).join("")
+    : `<div class="empty"><strong>No stories match your search.</strong>Try a different keyword or clear the category filter.</div>`;
+
+  document.getElementById("resultCount").textContent =
+    list.length + " article" + (list.length === 1 ? "" : "s");
+}
+
+const modal = document.getElementById("modal");
+const modalBody = document.getElementById("modalBody");
+
+function openArticle(id) {
+  const a = articles.find(x => x.id === id);
+  if (!a) return;
+  modalBody.innerHTML = `
+    ${mediaHTML(a)}
+    <div class="modal-inner">
+      <span class="chip">${a.category}</span>
+      <h2>${a.title}</h2>
+      <div class="modal-meta">
+        <span class="avatar" aria-hidden="true">${initials(a.author)}</span>
+        <span>By ${a.author}</span><span class="dot"></span>
+        <span>${formatDate(a.date)}</span><span class="dot"></span>
+        <span>${readTime(a.body)} min read</span>
+      </div>
+      <div class="article-body">${a.body}</div>
+    </div>`;
+  modal.classList.add("open");
+  document.body.classList.add("no-scroll");
+  modal.querySelector(".modal-card").scrollTop = 0;
+}
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.classList.remove("no-scroll");
+}
+
+document.addEventListener("click", (e) => {
+  const openBtn = e.target.closest("[data-open]");
+  const card = e.target.closest(".card");
+  const chip = e.target.closest(".chip-btn");
+  if (openBtn) { openArticle(openBtn.dataset.open); return; }
+  if (card) { openArticle(card.dataset.id); return; }
+  if (chip) { state.category = chip.dataset.cat; renderChips(); renderGrid(); }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("card")) {
+    e.preventDefault();
+    openArticle(e.target.dataset.id);
+  }
+});
+
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  state.query = e.target.value;
+  renderGrid();
+});
+
+document.getElementById("newsletterForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const input = e.target.querySelector('input[type="email"]');
+  const msg = document.getElementById("formMsg");
+  if (!input.value || !input.value.includes("@")) {
+    msg.textContent = "Please enter a valid email address.";
+    msg.style.color = "#dc2626";
+    return;
+  }
+  msg.textContent = "✓ Thanks! Check your inbox to confirm your subscription.";
+  msg.style.color = "var(--accent)";
+  input.value = "";
+});
+
+const root = document.documentElement;
+const themeIcon = document.getElementById("themeIcon");
+const savedTheme = localStorage.getItem("hd-theme") || "light";
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  themeIcon.textContent = theme === "light" ? "🌙" : "☀️";
+  localStorage.setItem("hd-theme", theme);
+}
+applyTheme(savedTheme);
+document.getElementById("themeToggle").addEventListener("click", () => {
+  applyTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light");
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+renderHero();
+renderChips();
+renderGrid();
+</script>
 </body>
 </html>
