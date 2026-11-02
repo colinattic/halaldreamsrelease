@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Halal Dreams — Billionaire & Finance News</title>
-<meta name="description" content="Daily updates on Elon Musk, Jeff Bezos, billionaires, markets and business news." />
+<title>Halal Dreams — Christian Conti & Business News</title>
+<meta name="description" content="Christian Conti, CEO of Sympany Basel — plus billionaire news, markets and business coverage." />
 <meta name="theme-color" content="#f6f8fb" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +42,6 @@
   :focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
   .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 
-  /* HEADER */
   .site-header{position:sticky;top:0;z-index:50;background:var(--header);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding-top:var(--safe-top)}
   .header-inner{display:flex;align-items:center;gap:14px;height:70px}
   .logo{font-family:"Playfair Display",serif;font-weight:900;font-size:1.45rem;letter-spacing:-.02em;white-space:nowrap;line-height:1;flex-shrink:0}
@@ -57,7 +56,6 @@
   .icon-btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
   .icon-btn:active{transform:scale(.95)}
 
-  /* CHIPS */
   .chips-bar{position:sticky;top:calc(70px + var(--safe-top));z-index:40;background:var(--header);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
   .chips-scroll{display:flex;gap:10px;padding:14px 20px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .chips-scroll::-webkit-scrollbar{display:none}
@@ -66,7 +64,6 @@
   .chip-btn:active{transform:scale(.97)}
   .chip-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700;box-shadow:var(--shadow-sm)}
 
-  /* MEDIA */
   .media{position:relative;overflow:hidden;background:#0b1420}
   .media-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:54px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.3))}
   .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.3,1)}
@@ -75,7 +72,6 @@
   .badge-new{position:absolute;top:14px;right:14px;background:#dc2626;color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.12em;padding:4px 10px;border-radius:999px;box-shadow:0 2px 10px rgba(220,38,38,.5);z-index:2;animation:pulse 2.2s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.72}}
 
-  /* HERO */
   .hero{display:grid;grid-template-columns:1.1fr 1fr;margin-top:34px;background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-md)}
   .hero .media{min-height:400px}
   .hero:hover .media img{transform:scale(1.04)}
@@ -90,12 +86,10 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(184,134,11,.4)}
   .btn-primary:active{transform:scale(.98)}
 
-  /* CARD META */
   .card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:.78rem;color:var(--muted);margin-bottom:20px}
   .avatar{width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:.66rem;font-weight:800;border:1px solid var(--accent);flex-shrink:0}
   .dot{width:3px;height:3px;border-radius:50%;background:var(--muted);opacity:.6}
 
-  /* GRID */
   .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:56px 0 24px;padding-bottom:14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
   .section-head h2{font-family:"Playfair Display",serif;font-size:1.6rem;letter-spacing:-.01em}
   .result-count{font-size:.82rem;color:var(--muted);font-weight:500}
@@ -112,7 +106,6 @@
   .empty{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:var(--radius);background:var(--surface)}
   .empty strong{display:block;color:var(--text);font-size:1.05rem;margin-bottom:6px}
 
-  /* NEWSLETTER */
   .newsletter{margin:64px 0 0;background:linear-gradient(135deg,rgba(184,134,11,.12),rgba(29,78,216,.10));border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
   .newsletter h3{font-family:"Playfair Display",serif;font-size:1.55rem;margin-bottom:8px}
   .newsletter p{color:var(--muted);font-size:.92rem}
@@ -121,12 +114,10 @@
   .newsletter input[type="email"]:focus{border-color:var(--accent-2)}
   .form-msg{width:100%;font-size:.82rem;font-weight:600}
 
-  /* DISCLAIMER */
   .about-band{margin:28px 0 0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:22px 26px;box-shadow:var(--shadow-sm)}
   .about-band h4{font-size:.82rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:800}
   .about-band p{color:var(--muted);font-size:.86rem}
 
-  /* FOOTER */
   .site-footer{margin-top:72px;border-top:1px solid var(--border);background:var(--surface);padding:52px 0 calc(30px + var(--safe-bot))}
   .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
   .footer-grid h5{font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:16px;font-weight:800}
@@ -136,7 +127,6 @@
   .footer-brand p{color:var(--muted);font-size:.86rem;margin-top:12px;max-width:360px}
   .footer-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--muted)}
 
-  /* MODAL */
   .modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(11,20,32,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .24s}
   .modal.open{opacity:1;pointer-events:auto}
   .modal-card{position:relative;width:100%;max-width:820px;max-height:90vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:0 0 40px;transform:translateY(16px) scale(.98);transition:transform .3s cubic-bezier(.2,.9,.3,1.1);box-shadow:var(--shadow-lg)}
@@ -153,8 +143,10 @@
   .article-body p{margin-bottom:18px;font-size:.98rem;opacity:.92}
   .article-body h3{font-family:"Playfair Display",serif;font-size:1.22rem;margin:30px 0 12px}
   .article-body strong{color:var(--accent);font-weight:700}
+  .article-body ul{margin:0 0 18px 0;padding-left:22px;display:grid;gap:8px}
+  .article-body li{font-size:.96rem;opacity:.92}
+  .article-body .credit{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:22px}
 
-  /* ============ TABLET (<=900px) ============ */
   @media (max-width:900px){
     .hero{grid-template-columns:1fr}
     .hero .media{min-height:280px;aspect-ratio:16/10}
@@ -167,67 +159,48 @@
     .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
   }
 
-  /* ============ MOBILE (<=640px) ============ */
   @media (max-width:640px){
     .wrap{padding:0 16px}
-
-    /* Header — two rows: logo+theme on top, search below */
     .header-inner{display:grid;grid-template-columns:1fr auto;gap:10px 12px;height:auto;padding:12px 0}
     .logo{font-size:1.3rem}
     .logo small{display:none}
     .icon-btn{grid-column:2;grid-row:1;width:42px;height:42px}
     .search-box{grid-column:1/-1;grid-row:2;max-width:none;padding:10px 14px;margin:0}
-
-    /* Chips — taller touch targets, edge-to-edge scroll */
     .chips-bar{top:calc(118px + var(--safe-top))}
     .chips-scroll{padding:12px 16px;gap:8px}
     .chip-btn{padding:10px 16px;font-size:.8rem}
-
-    /* Hero — image on top, full-width text */
     .hero{margin-top:24px;border-radius:16px}
-    .hero .media{min-height:220px;aspect-ratio:16/9}
+    .hero .media{min-height:220px;aspect-ratio:4/3}
     .hero .media-fallback{font-size:70px}
     .hero-content{padding:24px 22px 26px}
     .hero-title{font-size:1.5rem;margin-bottom:12px}
     .hero-excerpt{font-size:.94rem;margin-bottom:18px}
     .eyebrow{font-size:.66rem}
     .btn{width:100%;justify-content:center}
-
-    /* Section head */
     .section-head{margin:36px 0 18px}
     .section-head h2{font-size:1.3rem}
     .result-count{font-size:.76rem}
-
-    /* Grid — one column */
     .grid{grid-template-columns:1fr;gap:18px}
     .card-body{padding:18px}
     .card-title{font-size:1.1rem}
     .card-excerpt{font-size:.85rem;-webkit-line-clamp:2}
-
-    /* Newsletter */
     .newsletter{margin:44px 0 0;padding:24px 20px;gap:18px;border-radius:14px}
     .newsletter h3{font-size:1.3rem}
     .newsletter p{font-size:.86rem}
     .newsletter form{flex-direction:column;gap:10px}
     .newsletter input[type="email"]{width:100%;padding:14px 18px}
     .newsletter .btn{width:100%;justify-content:center}
-
-    /* Disclaimer */
     .about-band{padding:18px 20px;margin-top:22px}
     .about-band h4{font-size:.74rem}
     .about-band p{font-size:.82rem}
-
-    /* Footer */
     .site-footer{margin-top:52px;padding:38px 0 calc(24px + var(--safe-bot))}
     .footer-grid{grid-template-columns:1fr;gap:26px}
     .footer-brand .logo{font-size:1.3rem}
     .footer-bottom{margin-top:28px;padding-top:18px;flex-direction:column;text-align:center;font-size:.74rem}
-
-    /* Modal — full screen sheet on phones */
     .modal{padding:0;align-items:stretch}
     .modal-card{max-height:100vh;height:100%;max-width:100%;border-radius:0;padding:0 0 calc(30px + var(--safe-bot))}
     .modal-close{top:calc(14px + var(--safe-top));margin-right:14px}
-    .modal .media{height:210px;border-radius:0}
+    .modal .media{height:auto;aspect-ratio:4/3;border-radius:0}
     .modal .media-fallback{font-size:68px}
     .modal .chip{left:22px;top:-14px;font-size:.62rem}
     .modal-inner{padding:0 22px}
@@ -235,9 +208,10 @@
     .modal-meta{font-size:.74rem;gap:8px;padding-bottom:16px;margin-bottom:18px}
     .article-body p{font-size:.95rem}
     .article-body h3{font-size:1.1rem;margin:24px 0 10px}
+    .article-body ul{padding-left:18px}
+    .article-body li{font-size:.92rem}
   }
 
-  /* ============ SMALL PHONES (<=380px) ============ */
   @media (max-width:380px){
     .logo{font-size:1.15rem}
     .hero-title{font-size:1.32rem}
@@ -246,7 +220,6 @@
     .newsletter h3{font-size:1.15rem}
   }
 
-  /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
   }
@@ -258,7 +231,7 @@
   <div class="wrap header-inner">
     <a href="#" class="logo" aria-label="Halal Dreams home">
       Halal<span>Dreams</span>
-      <small>Billionaire &amp; Finance News</small>
+      <small>Business &amp; Finance News</small>
     </a>
     <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
       <span id="themeIcon" aria-hidden="true">🌙</span>
@@ -267,7 +240,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path>
       </svg>
-      <input id="searchInput" type="search" placeholder="Search Elon Musk, Bezos, insurance…" aria-label="Search articles" />
+      <input id="searchInput" type="search" placeholder="Search Conti, Sympany, Musk, Bezos…" aria-label="Search articles" />
     </div>
   </div>
 </header>
@@ -288,7 +261,7 @@
   <section class="newsletter">
     <div>
       <h3>The Halal Dreams Brief</h3>
-      <p>Billionaire net worth moves, market shake-ups, and business news — in your inbox every Friday.</p>
+      <p>Business leaders, billionaire moves, and market shake-ups — in your inbox every Friday.</p>
     </div>
     <form id="newsletterForm" novalidate>
       <input type="email" placeholder="you@example.com" aria-label="Email address" required />
@@ -308,7 +281,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">Halal<span>Dreams</span></div>
-        <p>Independent coverage of billionaires, business and the financial forces shaping our future.</p>
+        <p>Independent coverage of business leaders, billionaires, and the financial forces shaping our future.</p>
       </div>
       <div>
         <h5>Explore</h5>
@@ -331,7 +304,7 @@
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Halal Dreams · halaldreams.org</span>
-      <span>Photos via Unsplash · Single-file blog</span>
+      <span>Photos via Unsplash &amp; Sympany · Single-file blog</span>
     </div>
   </div>
 </footer>
@@ -348,25 +321,45 @@ const IMG = (id) => `https://images.unsplash.com/${id}?w=900&q=80&auto=format&fi
 
 const articles = [
   {
-    id: "basel-health-insurer-ceo-premiums-2027",
-    title: "Basel Health Insurance CEO Warns 2027 Premiums Will Rise Again",
-    excerpt: "In an exclusive interview, the head of one of Basel's largest health insurers says hospital costs, drug prices and an ageing population are pushing premiums beyond what politics can fix.",
+    id: "christian-conti-sympany-ceo",
+    title: "Christian Conti, CEO of Sympany: The Legal Scholar Steering Basel's Health Insurer",
+    excerpt: "With a doctorate in law, an MBA from IMD, and leadership roles at Generali and Zurich Insurance, Christian Conti brings a rare combination of rigor and strategy to one of Basel's established health insurers.",
     category: "Business",
     author: "Halal Dreams Desk",
-    date: "2026-11-02",
-    image: IMG("photo-1454165804606-c3d57bc86b40"),
+    date: "2026-11-03",
+    image: "https://www.sympany.ch/dam/jcr:2b60ee6a-d384-4bc5-bdd8-5852185f4497/christian-conti_2023_1800x1200.2025-04-23-12-25-37.jpg",
     emoji: "🏥",
     gradient: "linear-gradient(135deg,#0c2d48,#0891b2)",
     body: `
-      <p>The CEO of a Basel-based health insurer has warned that premiums will rise again in 2027, saying the underlying cost drivers in the Swiss healthcare system have not been addressed. Speaking after the company published its latest quarterly figures, the CEO said the pressure is structural, not temporary.</p>
-      <h3>"The cost curve is not bending"</h3>
-      <p>The executive pointed to three forces pushing premiums higher: rising hospital costs, the price of new medicines, and an ageing population that uses more care each year. "We can manage our own costs," the CEO said. "We cannot manage the cost of the system we are paying into."</p>
-      <h3>What the insurer is doing</h3>
-      <p>The company has been investing in digital claims processing and preventive care programmes, which the CEO says reduce avoidable hospital admissions. It has also tightened reserves ahead of what it expects to be a difficult year for the whole sector.</p>
-      <h3>What it means for households</h3>
-      <p>Swiss health insurance is mandatory and premiums are paid largely by households, not employers. That makes every increase a direct hit to family budgets — and a political flashpoint in Bern. The CEO was blunt about the outlook: <strong>"Premium relief will not come from politics. It has to come from how care is delivered."</strong></p>
-      <h3>The bigger picture</h3>
-      <p>Insurers across Switzerland are facing the same squeeze. For readers, the practical takeaway is to review plans annually rather than auto-renew, and to check whether a higher deductible lowers the total annual cost.</p>
+      <p class="credit">Christian Conti, CEO of Sympany. Photo: Sympany.</p>
+      <p>Christian Conti has served as CEO of Sympany, one of Basel's established health insurers, since November 2023 — and he has taken the helm at a moment of unusual pressure for the Swiss health insurance market.</p>
+
+      <h3>Who is Christian Conti?</h3>
+      <p>Born in 1970 and holding both Swiss and Italian citizenship, Conti is an acknowledged expert in the Swiss insurance market. His profile combines long-term leadership experience with comprehensive expertise across HR, strategy, and management — a combination that suits the multi-fronted challenges of modern health insurance.</p>
+
+      <h3>A career spanning Switzerland's insurance landscape</h3>
+      <p>Conti joined Sympany from <strong>Generali Schweiz</strong>, where he had been responsible for the non-life business area since 2017. Before Generali, he served as CEO of <strong>Orion Rechtsschutz-Versicherung</strong>, a legal expenses insurer, and was a member of the senior management of the parent company, <strong>Zurich Insurance</strong>.</p>
+      <p>That path — from legal protection insurance through a major global insurer to leading a Basel health insurer — has given Conti a broad view of how Swiss insurance actually works, from claims handling to regulatory compliance to distribution strategy.</p>
+
+      <h3>An academic grounding in law</h3>
+      <p>Conti holds a <strong>doctorate in law from the University of Bern</strong>, a <strong>Master of Law from University College London</strong>, and an <strong>Executive MBA from IMD Business School Lausanne</strong>. The legal training is unusual in the insurance executive suite, and it shapes how he approaches regulation, risk, and contract design.</p>
+
+      <h3>Board positions beyond Sympany</h3>
+      <p>Alongside his CEO role, Conti sits on several boards in the Swiss insurance ecosystem:</p>
+      <ul>
+        <li>Member of the Board of <strong>RVK Rück AG</strong>, Lucerne</li>
+        <li>Board member of <strong>prio.swiss</strong>, Bern</li>
+        <li>Board member of <strong>RVK (Association)</strong>, Lucerne</li>
+        <li>Board member of <strong>santésuisse</strong>, Solothurn — the umbrella organisation for Swiss health insurers</li>
+      </ul>
+      <p>His seat on the santésuisse board is particularly significant: it places him at the table where the industry negotiates with regulators, hospitals, and politicians over how Swiss healthcare is funded and delivered.</p>
+
+      <h3>The challenge ahead</h3>
+      <p>Swiss health insurance premiums have risen sharply in recent years, driven by hospital costs, new drug prices, and an ageing population. As CEO of Sympany, Conti is at the center of the debate over how to contain costs without compromising care — a balancing act that has defeated many insurers before him.</p>
+      <p>His legal background, his track record at two major insurance groups, and his seat at the industry's main lobbying table put him in an unusually strong position to influence the outcome. What remains to be seen is whether Sympany can keep premiums competitive while maintaining service quality in a market where every franc counts.</p>
+
+      <h3>What to watch</h3>
+      <p>Conti's tenure will be judged on three fronts: whether Sympany holds premium growth below the market average, whether it invests effectively in digital and preventive care, and whether he can translate his board-level influence into concrete policy wins for the industry. All three will be tested over the next two premium cycles.</p>
     `
   },
   {
